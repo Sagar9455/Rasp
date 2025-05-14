@@ -5,7 +5,7 @@ import os
 # === Input Files ===
 input_cdd_file = "/home/mobase/Rasp/Sahithi/KY_MKBD_Diagnostic_Rev01.cdd"
 template_file = "/home/mobase/Rasp/Sahithi/template_DiagserviceList.xlsx"
-output_excel_file = "/home/mobase/Rasp/Sahithi/output/ouput_DiagserviceList_06xlsx"
+output_excel_file = "/home/mobase/Rasp/Sahithi/output/ouput_DiagserviceList_06.xlsx"
 # Extract file name for Excel column
 cdd_file_name = os.path.basename(input_cdd_file)
 
