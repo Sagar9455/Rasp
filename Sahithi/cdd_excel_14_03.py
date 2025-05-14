@@ -4,9 +4,9 @@ import re
 from openpyxl import load_workbook
 
 # === Input Files ===
-input_cdd_file = "/path/to/KY_MKBD_Diagnostic_Rev01.cdd"
-template_file = "/path/to/template_with_checkboxes.xlsx"
-output_excel_file = "template_DiagserviceList.xlsx"
+input_cdd_file = "/home/mobase/Rasp/Sahithi/KY_MKBD_Diagnostic_Rev01.cdd"
+template_file = "/home/mobase/Rasp/Sahithi/template_DiagserviceList.xlsx"
+output_excel_file = "/home/mobase/Rasp/Sahithi/output/ouput_DiagserviceList_04.xlsx"
 
 # Extract filename
 cdd_file_name = os.path.basename(input_cdd_file)
