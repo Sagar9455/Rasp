@@ -1,0 +1,9 @@
+#TC_ID-0 , Sub Service Description-5 , Service ID-2 , Sub service ID-4 , Positive response data-6
+TC_001 , DefaultSession , 0x10 , 0x01 , 0x50
+TC_003 , Extended Session , 0x10 , 0x03 , 0x50
+TC_007 , ECUManufacturingDateDataIdentifier , 0x22 , 0xF18B , 0x62
+TC_010 , SystemSupplierECUHardwareVersionNumberDataIdentifier
+(Vendor H/W Version) , 0x22 , 0xF193 , 0x62
+TC_013 , ECUSupplierCodeDataIdentifier  , 0x22 , 0xF1A1 , 0x62
+TC_015 , ECU Software UNIT1 Version Data Identifier , 0x22 , 0xF1B1 , 0x62
+TC_017 , ECUSoftwareUnit1IVDDataIdentifier , 0x22 , 0xF1C1 , 0x62
