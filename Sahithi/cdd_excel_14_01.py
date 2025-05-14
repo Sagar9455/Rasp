@@ -5,7 +5,7 @@ import os
 # === Input files ===
 input_cdd_file = "/home/mobase/Rasp/Sahithi/KY_MKBD_Diagnostic_Rev01.cdd"
 template_file = "/home/mobase/Rasp/Sahithi/template_DiagserviceList.xlsx"
-output_excel_file = "/home/mobase/Rasp/Sahithi/output/ouput_DiagserviceList_01.xlsx"
+output_excel_file = "/home/mobase/Rasp/Sahithi/output/ouput_DiagserviceList_02.xlsx"
 
 # === Step 1: Parse the CDD file ===
 tree = etree.parse(input_cdd_file)
