@@ -1,0 +1,24 @@
+#TC_ID-0 , Sub Service Description-5 , Service ID-2 , Sub service ID-4 , Positive response data-6
+TC_001 , DefaultSession , 0x10 , 0x01 , 0x50
+TC_002 , Programming session , 0x10 , 0x02 , 0x50
+TC_003 , Extended Session , 0x10 , 0x03 , 0x50
+TC_004 , S/W Version Dataidentifier , 0x22 , 0xF1DD , 0x62
+TC_005 , BodyCANDataBaseVersionNumBErDataIdentifier , 0x22 , 0xF100 , 0x62
+TC_006 , VehicleManufacturerSparePartNumBErDataIdentifier
+(HKMC Part Number) , 0x22 , 0xF187 , 0x62
+TC_007 , ECUManufacturingDateDataIdentifier , 0x22 , 0xF18B , 0x62
+TC_008 , ECUSerialNumberDataIdentifier , 0x22 , 0xF18C , 0x62
+TC_009 , SystemSupplierECUHardwareVersionNumberDataIdentifier
+(HKMC H/W Version) , 0x22 , 0xF191 , 0x62
+TC_010 , SystemSupplierECUHardwareVersionNumberDataIdentifier
+(Vendor H/W Version) , 0x22 , 0xF193 , 0x62
+TC_011 , SystemSupplierECUSoftwareVersionNumbe DataIdentifier
+(HKMC IBU S/W Version) , 0x22 , 0xF195 , 0x62
+TC_012 , SoftwareVersionHKMCVehicleManufactureDataIdentifier , 0x22 , 0xF1A0 , 0x62
+TC_013 , ECUSupplierCodeDataIdentifier  , 0x22 , 0xF1A1 , 0x62
+TC_014 , ECUSoftwareUNITnumberDataIdentifier
+(ECU Manufacturer S/W Module Number : 01h) , 0x22 , 0xF1B0 , 0x62
+TC_015 , ECU Software UNIT1 Version Data Identifier , 0x22 , 0xF1B1 , 0x62
+TC_016 , SystemNameOrEngineTypeDataIdentifier , 0x22 , 0xF197 , 0x62
+TC_017 , ECUSoftwareUnit1IVDDataIdentifier , 0x22 , 0xF1C1 , 0x62
+TC_018 , LocalRXSWINDataIdentifier , 0x22 , 0xF1EF , 0x62

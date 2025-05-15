@@ -66,9 +66,12 @@ for diagclass in root.xpath(".//DIAGCLASS"):
         # === Step 4: Get service ID through reference chain ===
         service_elem = diaginst.find(".//SERVICE")
         tmplref_v1 = service_elem.get("tmplref") if service_elem is not None else ""
-
+        print(f"✅ Excel*******saved: {tmplref_v1}")
         tmplref_v2 = dclsrvtmpl_map.get(tmplref_v1, "")
+        
+        print(f"✅ Excel*******saved: {tmplref_v2}")
         service_id = protocol_map.get(tmplref_v2, "")
+        print(f"✅ Excel*******saved: {service_id }")
 
         results.append([service_name, subservice_name, static_value_hex, service_id])
 
