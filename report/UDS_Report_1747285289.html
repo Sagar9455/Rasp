@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UDS Diagnostic Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+        }
+        button.accordion {
+            background-color: #ddd;
+            color: black;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        .panel {
+            display: none;
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: white;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            white-space: normal;
+            max-width: 200px;
+        }
+        th {
+            background-color: #eee;
+        }
+        .step-pass {
+            background-color: #c8e6c9;
+        }
+        .step-fail {
+            background-color: #ffcdd2;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const acc = document.getElementsByClassName("accordion");
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+                });
+            }
+
+            const ctx = document.getElementById("summaryChart").getContext("2d");
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Passed', 'Failed'],
+                    datasets: [{
+                        label: 'Test Case Results',
+                        data: [0, 13],
+                        backgroundColor: ['#4CAF50', '#F44336'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>UDS Diagnostic Report</h1>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <p><strong>Generated:</strong> 2025-05-15 10:31:29</p>
+        <p><strong>CAN Log File:</strong> CANLog_Testcase_20250515_103055.asc</p>
+        <p><strong>Total Test Cases:</strong> 13</p>
+        <p style="color:green;"><strong>Passed:</strong> 0</p>
+        <p style="color:red;"><strong>Failed:</strong> 13</p>
+        <p><strong>Test Duration:</strong> 34.294 seconds
+    </div>
+    <canvas id="summaryChart" width="300" height="300" style="display: block; margin: 0 auto 30px;"></canvas>
+    <button class="accordion">▶ TC_001 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">DefaultSession</td><td>0.006886</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>0.519924</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_002 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">Programming session</td><td>2.623848</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>3.139217</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_003 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">Extended Session</td><td>5.284235</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>5.797018</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_004 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">S/W Version Dataidentifier</td><td>7.902016</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>8.412822</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_005 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">BodyCANDataBaseVersionNumBErDataIdentifier</td><td>10.567877</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>11.078180</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_007 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUManufacturingDateDataIdentifier</td><td>13.189864</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>13.703237</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_008 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSerialNumberDataIdentifier</td><td>15.852208</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>16.364922</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_012 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">SoftwareVersionHKMCVehicleManufactureDataIdentifier</td><td>18.474020</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>18.986666</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_013 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSupplierCodeDataIdentifier</td><td>21.117185</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>21.628447</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_015 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECU Software UNIT1 Version Data Identifier</td><td>23.742052</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>24.254097</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_016 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">SystemNameOrEngineTypeDataIdentifier</td><td>26.390261</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>26.901596</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_017 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSoftwareUnit1IVDDataIdentifier</td><td>29.007941</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>29.517434</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_018 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">LocalRXSWINDataIdentifier</td><td>31.654398</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+<tr class="step-fail"><td>32.169611</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.500 sec)</td></tr>
+</table></div>
+
+</body>
+</html>
