@@ -1,204 +1,59 @@
-2025-05-16 13:58:12,737 [DEBUG] Sending 3 bytes : [22f197]
-2025-05-16 13:58:12,737 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 13:58:12,738 [DEBUG] Waiting for server response
-2025-05-16 13:58:12,738 [DEBUG] Tx: <716> (08) [ ]	 0322f19700000000
-2025-05-16 13:58:12,739 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:12,740 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 97 00 00 00 00
-2025-05-16 13:58:12,764 [DEBUG] Rx: <71E> (08) [p]	 0762f1974d4b4244
-2025-05-16 13:58:12,765 [DEBUG] Received 7 bytes : [62f1974d4b4244]
-2025-05-16 13:58:12,767 [DEBUG] Received response from server
-2025-05-16 13:58:12,768 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-16 13:58:12,769 [INFO] TC_016 SystemNameOrEngineTypeDataIdentifier -> PASS
-2025-05-16 13:58:14,885 [INFO] Running Test Case: TC_017
-2025-05-16 13:58:14,886 [INFO] TC_017 - ECUSoftwareUnit1IVDDataIdentifier: SID=0x22, Sub=0xF1C1, Expected=[98]
-2025-05-16 13:58:14,886 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1c1 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 13:58:14,887 [DEBUG] Sending request to server
-2025-05-16 13:58:14,888 [DEBUG] Sending 3 bytes : [22f1c1]
-2025-05-16 13:58:14,888 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 13:58:14,889 [DEBUG] Waiting for server response
-2025-05-16 13:58:14,890 [DEBUG] Tx: <716> (08) [ ]	 0322f1c100000000
-2025-05-16 13:58:14,890 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:14,891 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 c1 00 00 00 00
-2025-05-16 13:58:14,914 [DEBUG] Rx: <71E> (08) [p]	 102362f1c1a632f7
-2025-05-16 13:58:14,915 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 13:58:14,916 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:14,916 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 13:58:14,917 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 13:58:14,924 [DEBUG] Rx: <71E> (08) [p]	 21cd4df6cda604eb
-2025-05-16 13:58:14,940 [DEBUG] Rx: <71E> (08) [p]	 227e3a2e850a392d
-2025-05-16 13:58:14,941 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 13:58:14,944 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 13:58:14,945 [ERROR] TC_017 ECUSoftwareUnit1IVDDataIdentifier -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 13:58:14,965 [DEBUG] Rx: <71E> (08) [p]	 236df1c0aa2c5af0
-2025-05-16 13:58:14,970 [DEBUG] Rx: <71E> (08) [p]	 2413b545f5bcc9d6
-2025-05-16 13:58:14,989 [DEBUG] Rx: <71E> (08) [p]	 25fdaaaaaaaaaaaa
-2025-05-16 13:58:15,066 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 13:58:17,063 [INFO] Running Test Case: TC_018
-2025-05-16 13:58:17,064 [INFO] TC_018 - LocalRXSWINDataIdentifier: SID=0x22, Sub=0xF1EF, Expected=[98]
-2025-05-16 13:58:17,065 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1ef (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 13:58:17,066 [DEBUG] Sending request to server
-2025-05-16 13:58:17,068 [DEBUG] Sending 3 bytes : [22f1ef]
-2025-05-16 13:58:17,069 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 13:58:17,070 [DEBUG] Waiting for server response
-2025-05-16 13:58:17,071 [DEBUG] Tx: <716> (08) [ ]	 0322f1ef00000000
-2025-05-16 13:58:17,072 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:17,073 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 ef 00 00 00 00
-2025-05-16 13:58:17,095 [DEBUG] Rx: <71E> (08) [p]	 102b62f1ef07160b
-2025-05-16 13:58:17,097 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 13:58:17,098 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:17,099 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 13:58:17,102 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 13:58:17,110 [DEBUG] Rx: <71E> (08) [p]	 21523130204b5931
-2025-05-16 13:58:17,123 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 13:58:17,125 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 13:58:17,126 [ERROR] TC_018 LocalRXSWINDataIdentifier -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 13:58:17,157 [DEBUG] Rx: <71E> (08) [p]	 222f312f300c5231
-2025-05-16 13:58:17,160 [DEBUG] Rx: <71E> (08) [p]	 233535204b59312f
-2025-05-16 13:58:17,162 [DEBUG] Rx: <71E> (08) [p]	 24312f300c523135
-2025-05-16 13:58:17,170 [DEBUG] Rx: <71E> (08) [p]	 2536204b59312f31
-2025-05-16 13:58:17,186 [DEBUG] Rx: <71E> (08) [p]	 262f30aaaaaaaaaa
-2025-05-16 13:58:17,240 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 13:58:19,269 [INFO] Running Test Case: TC_019
-2025-05-16 13:58:19,270 [INFO] TC_019 - DTC setting ON: SID=0x85, Sub=0x01, Expected=[197]
-2025-05-16 13:58:19,271 [INFO] ControlDTCSetting<0x85> - SettingType=0x01 (on) - Turning DTC On with a payload of 0 bytes
-2025-05-16 13:58:19,272 [DEBUG] Sending request to server
-2025-05-16 13:58:19,273 [DEBUG] Sending 2 bytes : [8501]
-2025-05-16 13:58:19,273 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 13:58:19,274 [DEBUG] Waiting for server response
-2025-05-16 13:58:19,275 [DEBUG] Tx: <716> (08) [ ]	 0285010000000000
-2025-05-16 13:58:19,275 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:19,275 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 85 01 00 00 00 00 00
-2025-05-16 13:58:19,284 [DEBUG] Rx: <71E> (08) [p]	 02c501aaaaaaaaaa
-2025-05-16 13:58:19,285 [DEBUG] Received 2 bytes : [c501]
-2025-05-16 13:58:19,287 [DEBUG] Received response from server
-2025-05-16 13:58:19,288 [INFO] Received positive response for service ControlDTCSetting (0x85) from server.
-2025-05-16 13:58:19,288 [INFO] TC_019 DTC setting ON -> PASS
-2025-05-16 13:58:21,389 [INFO] Running Test Case: TC_020
-2025-05-16 13:58:21,390 [INFO] TC_020 - DTC setting OFF: SID=0x85, Sub=0x02, Expected=[197]
-2025-05-16 13:58:21,391 [INFO] ControlDTCSetting<0x85> - SettingType=0x02 (off) - Turning DTC Off with a payload of 0 bytes
-2025-05-16 13:58:21,392 [DEBUG] Sending request to server
-2025-05-16 13:58:21,393 [DEBUG] Sending 2 bytes : [8502]
-2025-05-16 13:58:21,394 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 13:58:21,394 [DEBUG] Waiting for server response
-2025-05-16 13:58:21,395 [DEBUG] Tx: <716> (08) [ ]	 0285020000000000
-2025-05-16 13:58:21,396 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:21,396 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 85 02 00 00 00 00 00
-2025-05-16 13:58:21,405 [DEBUG] Rx: <71E> (08) [p]	 02c502aaaaaaaaaa
-2025-05-16 13:58:21,406 [DEBUG] Received 2 bytes : [c502]
-2025-05-16 13:58:21,408 [DEBUG] Received response from server
-2025-05-16 13:58:21,409 [INFO] Received positive response for service ControlDTCSetting (0x85) from server.
-2025-05-16 13:58:21,409 [INFO] TC_020 DTC setting OFF -> PASS
-2025-05-16 13:58:23,509 [INFO] Running Test Case: TC_021
-2025-05-16 13:58:23,511 [INFO] TC_021 - Hard Reset: SID=0x11, Sub=0x01, Expected=[81]
-2025-05-16 13:58:23,513 [INFO] ECUReset<0x11> - Requesting reset of type 0x01 (hardReset)
-2025-05-16 13:58:23,514 [DEBUG] Sending request to server
-2025-05-16 13:58:23,515 [DEBUG] Sending 2 bytes : [1101]
-2025-05-16 13:58:23,516 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 13:58:23,517 [DEBUG] Waiting for server response
-2025-05-16 13:58:23,518 [DEBUG] Tx: <716> (08) [ ]	 0211010000000000
-2025-05-16 13:58:23,519 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:23,520 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 11 01 00 00 00 00 00
-2025-05-16 13:58:23,536 [DEBUG] Rx: <71E> (08) [p]	 025101aaaaaaaaaa
-2025-05-16 13:58:23,537 [DEBUG] Received 2 bytes : [5101]
-2025-05-16 13:58:23,539 [DEBUG] Received response from server
-2025-05-16 13:58:23,540 [INFO] Received positive response for service ECUReset (0x11) from server.
-2025-05-16 13:58:23,541 [INFO] TC_021 Hard Reset -> PASS
-2025-05-16 13:58:25,670 [INFO] Running Test Case: TC_022
-2025-05-16 13:58:25,670 [INFO] TC_022 - Soft Reset: SID=0x11, Sub=0x03, Expected=[81]
-2025-05-16 13:58:25,672 [INFO] ECUReset<0x11> - Requesting reset of type 0x03 (softReset)
-2025-05-16 13:58:25,673 [DEBUG] Sending request to server
-2025-05-16 13:58:25,673 [DEBUG] Sending 2 bytes : [1103]
-2025-05-16 13:58:25,674 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 13:58:25,674 [DEBUG] Waiting for server response
-2025-05-16 13:58:25,675 [DEBUG] Tx: <716> (08) [ ]	 0211030000000000
-2025-05-16 13:58:25,676 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 13:58:25,676 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 11 03 00 00 00 00 00
-2025-05-16 13:58:25,689 [DEBUG] Rx: <71E> (08) [p]	 037f1112aaaaaaaa
-2025-05-16 13:58:25,690 [DEBUG] Received 3 bytes : [7f1112]
-2025-05-16 13:58:25,692 [DEBUG] Received response from server
-2025-05-16 13:58:25,693 [WARNING] ECUReset service execution returned a negative response SubFunctionNotSupported (0x12)
-2025-05-16 13:58:25,693 [WARNING] TC_022 Soft Reset -> FAIL - NRC: 0x12
-2025-05-16 13:58:27,790 [INFO] Running Test Case: TC_023
-2025-05-16 13:58:27,791 [INFO] TC_023 - Number(19): SID=0x19, Sub=0x01, Expected=[89]
-2025-05-16 13:58:27,792 [ERROR] [ValueError] : status_mask must be provided for subfunction 0x01
-2025-05-16 13:58:27,793 [ERROR] TC_023 Number(19) -> EXCEPTION - status_mask must be provided for subfunction 0x01
-2025-05-16 13:58:29,886 [INFO] Running Test Case: TC_024
-2025-05-16 13:58:29,888 [INFO] TC_024 - All identified(19): SID=0x19, Sub=0x01, Expected=[89]
-2025-05-16 13:58:29,890 [ERROR] [ValueError] : status_mask must be provided for subfunction 0x01
-2025-05-16 13:58:29,891 [ERROR] TC_024 All identified(19) -> EXCEPTION - status_mask must be provided for subfunction 0x01
-2025-05-16 13:58:32,026 [INFO] Running Test Case: TC_025
-2025-05-16 13:58:32,027 [INFO] TC_025 - Fault memory clear(14): SID=0x14, Sub=0xFF, Expected=[84]
-2025-05-16 13:58:32,028 [ERROR] TC_025 Fault memory clear(14) -> EXCEPTION - 'Client' object has no attribute 'clear_diagnostic_information'
-2025-05-16 13:58:34,127 [INFO] Running Test Case: TC_026
-2025-05-16 13:58:34,127 [INFO] TC_026 - EnableRxAndEnableTx(28): SID=0x28, Sub=0x00, Expected=[104]
-2025-05-16 13:58:34,128 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:34,129 [ERROR] TC_026 EnableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:36,234 [INFO] Running Test Case: TC_027
-2025-05-16 13:58:36,235 [INFO] TC_027 - EnableRxAndDisableTx(28): SID=0x28, Sub=0x01, Expected=[104]
-2025-05-16 13:58:36,236 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:36,237 [ERROR] TC_027 EnableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:38,365 [INFO] Running Test Case: TC_028
-2025-05-16 13:58:38,366 [INFO] TC_028 - DisableRxAndEnableTx(28): SID=0x28, Sub=0x02, Expected=[104]
-2025-05-16 13:58:38,367 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:38,367 [ERROR] TC_028 DisableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:40,471 [INFO] Running Test Case: TC_029
-2025-05-16 13:58:40,472 [INFO] TC_029 - DisableRxAndDisableTx(28): SID=0x28, Sub=0x03, Expected=[104]
-2025-05-16 13:58:40,473 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:40,473 [ERROR] TC_029 DisableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 13:58:42,575 [INFO] Running Test Case: TC_030
-2025-05-16 13:58:42,576 [INFO] TC_030 - Request seed: SID=0x27, Sub=0x01, Expected=[103]
-2025-05-16 13:58:42,577 [ERROR] TC_030 Request seed -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 13:58:44,719 [INFO] Running Test Case: TC_031
-2025-05-16 13:58:44,720 [INFO] TC_031 - send key: SID=0x27, Sub=0x02, Expected=[103]
-2025-05-16 13:58:44,721 [ERROR] TC_031 send key -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 13:58:46,816 [INFO] Running Test Case: TC_032
-2025-05-16 13:58:46,817 [INFO] TC_032 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
-2025-05-16 13:58:46,819 [ERROR] TC_032 Request seed(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 13:58:48,919 [INFO] Running Test Case: TC_033
-2025-05-16 13:58:48,920 [INFO] TC_033 - send key(ASK): SID=0x27, Sub=0x12, Expected=[103]
-2025-05-16 13:58:48,921 [ERROR] TC_033 send key(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 13:58:51,019 [INFO] Running Test Case: TC_034
-2025-05-16 13:58:51,019 [INFO] TC_034 - VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number): SID=0x2E, Sub=0xF187, Expected=[110]
-2025-05-16 13:58:51,020 [ERROR] [ValueError] : String must be 10 long
-2025-05-16 13:58:51,021 [ERROR] TC_034 VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number) -> EXCEPTION - String must be 10 long
-2025-05-16 13:58:53,123 [INFO] Running Test Case: TC_035
-2025-05-16 13:58:53,124 [INFO] TC_035 - ECUManufacturingDateDataIdentifier: SID=0x2E, Sub=0xF18B, Expected=[110]
-2025-05-16 13:58:53,125 [ERROR] [ValueError] : String must be 4 long
-2025-05-16 13:58:53,125 [ERROR] TC_035 ECUManufacturingDateDataIdentifier -> EXCEPTION - String must be 4 long
-2025-05-16 13:58:55,232 [INFO] Running Test Case: TC_036
-2025-05-16 13:58:55,233 [INFO] TC_036 - ECUSerialNumberDataIdentifier: SID=0x2E, Sub=0xF18C, Expected=[110]
-2025-05-16 13:58:55,234 [ERROR] [ValueError] : String must be 32 long
-2025-05-16 13:58:55,234 [ERROR] TC_036 ECUSerialNumberDataIdentifier -> EXCEPTION - String must be 32 long
-2025-05-16 13:58:57,379 [INFO] Running Test Case: TC_037
-2025-05-16 13:58:57,379 [INFO] TC_037 - SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version): SID=0x2E, Sub=0xF191, Expected=[110]
-2025-05-16 13:58:57,380 [ERROR] [ValueError] : String must be 5 long
-2025-05-16 13:58:57,381 [ERROR] TC_037 SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version) -> EXCEPTION - String must be 5 long
-2025-05-16 13:58:59,481 [INFO] Running Test Case: TC_038
-2025-05-16 13:58:59,482 [INFO] TC_038 - SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version): SID=0x2E, Sub=0xF193, Expected=[110]
-2025-05-16 13:58:59,482 [ERROR] [ValueError] : String must be 5 long
-2025-05-16 13:58:59,483 [ERROR] TC_038 SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version) -> EXCEPTION - String must be 5 long
-2025-05-16 13:59:01,584 [INFO] Running Test Case: TC_039
-2025-05-16 13:59:01,586 [INFO] TC_039 - SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version): SID=0x2E, Sub=0xF195, Expected=[110]
-2025-05-16 13:59:01,587 [ERROR] [ValueError] : String must be 5 long
-2025-05-16 13:59:01,588 [ERROR] TC_039 SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version) -> EXCEPTION - String must be 5 long
-2025-05-16 13:59:03,729 [INFO] Running Test Case: TC_040
-2025-05-16 13:59:03,729 [INFO] TC_040 - ECUSupplierCodeDataIdentifier: SID=0x2E, Sub=0xF1A1, Expected=[110]
-2025-05-16 13:59:03,730 [ERROR] [ValueError] : String must be 4 long
-2025-05-16 13:59:03,730 [ERROR] TC_040 ECUSupplierCodeDataIdentifier -> EXCEPTION - String must be 4 long
-2025-05-16 13:59:05,833 [INFO] Running Test Case: TC_041
-2025-05-16 13:59:05,834 [INFO] TC_041 - SystemNameOrEngineTypeDataIdentifier: SID=0x2E, Sub=0xF197, Expected=[110]
-2025-05-16 13:59:05,835 [ERROR] [ValueError] : String must be 4 long
-2025-05-16 13:59:05,835 [ERROR] TC_041 SystemNameOrEngineTypeDataIdentifier -> EXCEPTION - String must be 4 long
-2025-05-16 13:59:07,939 [INFO] Running Test Case: TC_042
-2025-05-16 13:59:07,940 [INFO] TC_042 - ECUSoftwareUnit1IVDDataIdentifier: SID=0x2E, Sub=0xF1C1, Expected=[110]
-2025-05-16 13:59:07,941 [ERROR] [ValueError] : String must be 32 long
-2025-05-16 13:59:07,942 [ERROR] TC_042 ECUSoftwareUnit1IVDDataIdentifier -> EXCEPTION - String must be 32 long
-2025-05-16 13:59:10,073 [DEBUG] Stopping CanStack
-2025-05-16 13:59:10,074 [DEBUG] Main thread is exiting
-2025-05-16 13:59:10,077 [DEBUG] CanStack Stopped
-2025-05-16 13:59:10,078 [INFO] Connection closed
-Full path:/home/mobase/Rasp_Tool/MKBD/udsoncan/output/can_logs/CANLog_Testcase_20250516_135740.asc
-File name:CANLog_Testcase_20250516_135740.asc
-Report generated: /home/mobase/Rasp_Tool/MKBD/udsoncan/output/html_reports/UDS_Report_1747384150.html
-2025-05-16 13:59:10,183 [INFO] Test report saved: UDS_Report_1747384150.html
-2025-05-16 13:59:10,201 [ERROR] [CANLogger] Error during stop: I/O operation on closed file.
+2025-05-16 15:23:02,671 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-16 15:23:02,671 [DEBUG] Waiting for server response
+2025-05-16 15:23:02,672 [DEBUG] Tx: <716> (08) [ ]	 023e000000000000
+2025-05-16 15:23:02,673 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 15:23:02,674 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 3e 00 00 00 00 00 00
+2025-05-16 15:23:02,685 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
+2025-05-16 15:23:02,686 [DEBUG] Received 2 bytes : [7e00]
+2025-05-16 15:23:02,688 [DEBUG] Received response from server
+2025-05-16 15:23:02,689 [INFO] Received positive response for service TesterPresent (0x3e) from server.
+2025-05-16 15:23:02,690 [INFO] TC_003 TesterPresent -> PASS
+2025-05-16 15:23:04,790 [INFO] Running Test Case: TC_032
+2025-05-16 15:23:04,791 [INFO] TC_032 - Number(19): SID=0x19, Sub=0x01, Expected=[89]
+2025-05-16 15:23:04,792 [ERROR] [ValueError] : status_mask must be provided for subfunction 0x01
+2025-05-16 15:23:04,793 [ERROR] TC_032 Number(19) -> EXCEPTION - status_mask must be provided for subfunction 0x01
+2025-05-16 15:23:06,892 [INFO] Running Test Case: TC_033
+2025-05-16 15:23:06,893 [INFO] TC_033 - All identified(19): SID=0x19, Sub=0x01, Expected=[89]
+2025-05-16 15:23:06,894 [ERROR] [ValueError] : status_mask must be provided for subfunction 0x01
+2025-05-16 15:23:06,895 [ERROR] TC_033 All identified(19) -> EXCEPTION - status_mask must be provided for subfunction 0x01
+2025-05-16 15:23:09,022 [INFO] Running Test Case: TC_034
+2025-05-16 15:23:09,023 [INFO] TC_034 - Fault memory clear(14): SID=0x14, Sub=0xFF, Expected=[84]
+2025-05-16 15:23:09,023 [ERROR] TC_034 Fault memory clear(14) -> EXCEPTION - 'Client' object has no attribute 'clear_diagnostic_information'
+2025-05-16 15:23:11,125 [INFO] Running Test Case: TC_035
+2025-05-16 15:23:11,125 [INFO] TC_035 - EnableRxAndEnableTx(28): SID=0x28, Sub=0x00, Expected=[104]
+2025-05-16 15:23:11,126 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:11,126 [ERROR] TC_035 EnableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:13,231 [INFO] Running Test Case: TC_036
+2025-05-16 15:23:13,232 [INFO] TC_036 - EnableRxAndDisableTx(28): SID=0x28, Sub=0x01, Expected=[104]
+2025-05-16 15:23:13,233 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:13,234 [ERROR] TC_036 EnableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:15,364 [INFO] Running Test Case: TC_037
+2025-05-16 15:23:15,365 [INFO] TC_037 - DisableRxAndEnableTx(28): SID=0x28, Sub=0x02, Expected=[104]
+2025-05-16 15:23:15,366 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:15,367 [ERROR] TC_037 DisableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:17,469 [INFO] Running Test Case: TC_038
+2025-05-16 15:23:17,470 [INFO] TC_038 - DisableRxAndDisableTx(28): SID=0x28, Sub=0x03, Expected=[104]
+2025-05-16 15:23:17,471 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:17,472 [ERROR] TC_038 DisableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:23:19,575 [INFO] Running Test Case: TC_039
+2025-05-16 15:23:19,577 [INFO] TC_039 - Request seed: SID=0x27, Sub=0x01, Expected=[103]
+2025-05-16 15:23:19,577 [ERROR] TC_039 Request seed -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+2025-05-16 15:23:21,723 [INFO] Running Test Case: TC_040
+2025-05-16 15:23:21,724 [INFO] TC_040 - send key: SID=0x27, Sub=0x02, Expected=[103]
+2025-05-16 15:23:21,725 [ERROR] TC_040 send key -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+2025-05-16 15:23:23,815 [INFO] Running Test Case: TC_041
+2025-05-16 15:23:23,816 [INFO] TC_041 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
+2025-05-16 15:23:23,817 [ERROR] TC_041 Request seed(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+2025-05-16 15:23:25,918 [INFO] Running Test Case: TC_042
+2025-05-16 15:23:25,920 [INFO] TC_042 - send key(ASK): SID=0x27, Sub=0x12, Expected=[103]
+2025-05-16 15:23:25,922 [ERROR] TC_042 send key(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+2025-05-16 15:23:28,053 [DEBUG] Stopping CanStack
+2025-05-16 15:23:28,054 [DEBUG] Main thread is exiting
+2025-05-16 15:23:28,074 [DEBUG] CanStack Stopped
+2025-05-16 15:23:28,075 [INFO] Connection closed
+Full path:/home/mobase/Rasp_Tool/MKBD/udsoncan/output/can_logs/CANLog_Testcase_20250516_152258.asc
+File name:CANLog_Testcase_20250516_152258.asc
+Report generated: /home/mobase/Rasp_Tool/MKBD/udsoncan/output/html_reports/UDS_Report_1747389208.html
+2025-05-16 15:23:28,177 [INFO] Test report saved: UDS_Report_1747389208.html
+2025-05-16 15:23:28,234 [ERROR] [CANLogger] Error during stop: I/O operation on closed file.
+
