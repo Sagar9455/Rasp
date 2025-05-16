@@ -1,548 +1,167 @@
-2025-05-16 19:07:39,165 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:39,166 [DEBUG] Waiting for server response
-2025-05-16 19:07:39,167 [DEBUG] Tx: <716> (08) [ ]	 0322f19300000000
-2025-05-16 19:07:39,170 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:39,171 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 93 00 00 00 00
-2025-05-16 19:07:39,192 [DEBUG] Rx: <71E> (08) [p]	 100862f19330312e
-2025-05-16 19:07:39,193 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 19:07:39,194 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:39,195 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 19:07:39,200 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 19:07:39,207 [DEBUG] Rx: <71E> (08) [p]	 213030aaaaaaaaaa
-2025-05-16 19:07:39,211 [DEBUG] Received 8 bytes : [62f19330312e3030]
-2025-05-16 19:07:39,213 [DEBUG] Received response from server
-2025-05-16 19:07:39,216 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-16 19:07:39,219 [INFO] TC_010 SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version) -> PASS
-2025-05-16 19:07:39,260 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:07:40,387 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:07:41,338 [INFO] Running Test Case: TC_011
-2025-05-16 19:07:41,340 [INFO] TC_011 - SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version): SID=0x22, Sub=0xF195, Expected=[98]
-2025-05-16 19:07:41,342 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf195 (SystemSupplierECUSoftwareVersionNumberDataIdentifier)
-2025-05-16 19:07:41,343 [DEBUG] Sending request to server
-2025-05-16 19:07:41,344 [DEBUG] Sending 3 bytes : [22f195]
-2025-05-16 19:07:41,345 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:41,346 [DEBUG] Waiting for server response
-2025-05-16 19:07:41,347 [DEBUG] Tx: <716> (08) [ ]	 0322f19500000000
-2025-05-16 19:07:41,348 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:41,350 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 95 00 00 00 00
-2025-05-16 19:07:41,373 [DEBUG] Rx: <71E> (08) [p]	 100862f19530312e
-2025-05-16 19:07:41,375 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 19:07:41,376 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:41,380 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 19:07:41,387 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 19:07:41,392 [DEBUG] Rx: <71E> (08) [p]	 213031aaaaaaaaaa
-2025-05-16 19:07:41,396 [DEBUG] Received 8 bytes : [62f19530312e3031]
-2025-05-16 19:07:41,399 [DEBUG] Received response from server
-2025-05-16 19:07:41,400 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-16 19:07:41,403 [INFO] TC_011 SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version) -> PASS
-2025-05-16 19:07:41,445 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:07:43,401 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:07:43,544 [INFO] Running Test Case: TC_012
-2025-05-16 19:07:43,544 [INFO] TC_012 - SoftwareVersionHKMCVehicleManufactureDataIdentifier: SID=0x22, Sub=0xF1A0, Expected=[98]
-2025-05-16 19:07:43,545 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1a0 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:07:43,545 [DEBUG] Sending request to server
-2025-05-16 19:07:43,546 [DEBUG] Sending 3 bytes : [22f1a0]
-2025-05-16 19:07:43,548 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:43,549 [DEBUG] Waiting for server response
-2025-05-16 19:07:43,550 [DEBUG] Tx: <716> (08) [ ]	 0322f1a000000000
-2025-05-16 19:07:43,552 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:43,553 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 a0 00 00 00 00
-2025-05-16 19:07:43,572 [DEBUG] Rx: <71E> (08) [p]	 100862f1a030312e
-2025-05-16 19:07:43,574 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 19:07:43,575 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:43,575 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 19:07:43,578 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 19:07:43,592 [DEBUG] Rx: <71E> (08) [p]	 213031aaaaaaaaaa
-2025-05-16 19:07:43,593 [DEBUG] Received 8 bytes : [62f1a030312e3031]
-2025-05-16 19:07:43,595 [DEBUG] Received response from server
-2025-05-16 19:07:43,596 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-16 19:07:43,596 [INFO] TC_012 SoftwareVersionHKMCVehicleManufactureDataIdentifier -> PASS
-2025-05-16 19:07:43,643 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:07:45,726 [INFO] Running Test Case: TC_013
-2025-05-16 19:07:45,727 [INFO] TC_013 - ECUSupplierCodeDataIdentifier: SID=0x22, Sub=0xF1A1, Expected=[98]
-2025-05-16 19:07:45,729 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1a1 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:07:45,732 [DEBUG] Sending request to server
-2025-05-16 19:07:45,734 [DEBUG] Sending 3 bytes : [22f1a1]
-2025-05-16 19:07:45,735 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:45,735 [DEBUG] Waiting for server response
-2025-05-16 19:07:45,736 [DEBUG] Tx: <716> (08) [ ]	 0322f1a100000000
-2025-05-16 19:07:45,739 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:45,741 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 a1 00 00 00 00
-2025-05-16 19:07:45,765 [DEBUG] Rx: <71E> (08) [p]	 0762f1a100000000
-2025-05-16 19:07:45,767 [DEBUG] Received 7 bytes : [62f1a100000000]
-2025-05-16 19:07:45,769 [DEBUG] Received response from server
-2025-05-16 19:07:45,773 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-16 19:07:45,774 [INFO] TC_013 ECUSupplierCodeDataIdentifier -> PASS
-2025-05-16 19:07:46,435 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:07:47,879 [INFO] Running Test Case: TC_014
-2025-05-16 19:07:47,882 [INFO] TC_014 - ECUSoftwareUNITnumberDataIdentifier(ECU Manufacturer S/W Module Number : 01h): SID=0x22, Sub=0xF1B0, Expected=[98]
-2025-05-16 19:07:47,883 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1b0 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:07:47,883 [DEBUG] Sending request to server
-2025-05-16 19:07:47,884 [DEBUG] Sending 3 bytes : [22f1b0]
-2025-05-16 19:07:47,885 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:47,886 [DEBUG] Waiting for server response
-2025-05-16 19:07:47,887 [DEBUG] Tx: <716> (08) [ ]	 0322f1b000000000
-2025-05-16 19:07:47,890 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:47,891 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 b0 00 00 00 00
-2025-05-16 19:07:47,922 [DEBUG] Rx: <71E> (08) [p]	 0462f1b001aaaaaa
-2025-05-16 19:07:47,925 [DEBUG] Received 4 bytes : [62f1b001]
-2025-05-16 19:07:47,930 [DEBUG] Received response from server
-2025-05-16 19:07:47,932 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-16 19:07:47,935 [INFO] TC_014 ECUSoftwareUNITnumberDataIdentifier(ECU Manufacturer S/W Module Number : 01h) -> PASS
-2025-05-16 19:07:49,441 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:07:50,059 [INFO] Running Test Case: TC_015
-2025-05-16 19:07:50,059 [INFO] TC_015 - ECU Software UNIT1 Version Data Identifier: SID=0x22, Sub=0xF1B1, Expected=[98]
-2025-05-16 19:07:50,061 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1b1 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:07:50,062 [DEBUG] Sending request to server
-2025-05-16 19:07:50,063 [DEBUG] Sending 3 bytes : [22f1b1]
-2025-05-16 19:07:50,064 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:50,064 [DEBUG] Waiting for server response
-2025-05-16 19:07:50,065 [DEBUG] Tx: <716> (08) [ ]	 0322f1b100000000
-2025-05-16 19:07:50,066 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:50,066 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 b1 00 00 00 00
-2025-05-16 19:07:50,097 [DEBUG] Rx: <71E> (08) [p]	 100862f1b130312e
-2025-05-16 19:07:50,098 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 19:07:50,099 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:50,102 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 19:07:50,105 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 19:07:50,116 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 19:07:50,117 [DEBUG] Rx: <71E> (08) [p]	 213031aaaaaaaaaa
-2025-05-16 19:07:50,118 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:07:50,123 [ERROR] TC_015 ECU Software UNIT1 Version Data Identifier -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:07:50,184 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:07:52,234 [INFO] Running Test Case: TC_016
-2025-05-16 19:07:52,235 [INFO] TC_016 - SystemNameOrEngineTypeDataIdentifier: SID=0x22, Sub=0xF197, Expected=[98]
-2025-05-16 19:07:52,237 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf197 (SystemNameOrEngineTypeDataIdentifier)
-2025-05-16 19:07:52,239 [DEBUG] Sending request to server
-2025-05-16 19:07:52,241 [DEBUG] Sending 3 bytes : [22f197]
-2025-05-16 19:07:52,241 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:52,242 [DEBUG] Waiting for server response
-2025-05-16 19:07:52,243 [DEBUG] Tx: <716> (08) [ ]	 0322f19700000000
-2025-05-16 19:07:52,243 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:52,244 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 97 00 00 00 00
-2025-05-16 19:07:52,263 [DEBUG] Rx: <71E> (08) [p]	 0762f1974d4b4244
-2025-05-16 19:07:52,265 [DEBUG] Received 7 bytes : [62f1974d4b4244]
-2025-05-16 19:07:52,266 [DEBUG] Received response from server
-2025-05-16 19:07:52,268 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-16 19:07:52,275 [INFO] TC_016 SystemNameOrEngineTypeDataIdentifier -> PASS
-2025-05-16 19:07:52,451 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:07:54,396 [INFO] Running Test Case: TC_017
-2025-05-16 19:07:54,397 [INFO] TC_017 - ECUSoftwareUnit1IVDDataIdentifier: SID=0x22, Sub=0xF1C1, Expected=[98]
-2025-05-16 19:07:54,398 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1c1 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:07:54,399 [DEBUG] Sending request to server
-2025-05-16 19:07:54,402 [DEBUG] Sending 3 bytes : [22f1c1]
-2025-05-16 19:07:54,403 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:54,403 [DEBUG] Waiting for server response
-2025-05-16 19:07:54,404 [DEBUG] Tx: <716> (08) [ ]	 0322f1c100000000
-2025-05-16 19:07:54,405 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:54,406 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 c1 00 00 00 00
-2025-05-16 19:07:54,453 [DEBUG] Rx: <71E> (08) [p]	 102362f1c1a632f7
-2025-05-16 19:07:54,454 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 19:07:54,455 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:54,456 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 19:07:54,457 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 19:07:54,459 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:07:54,463 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 19:07:54,465 [ERROR] TC_017 ECUSoftwareUnit1IVDDataIdentifier -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:07:54,469 [DEBUG] Rx: <71E> (08) [p]	 21cd4df6cda604eb
-2025-05-16 19:07:54,497 [DEBUG] Rx: <71E> (08) [p]	 227e3a2e850a392d
-2025-05-16 19:07:54,500 [DEBUG] Rx: <71E> (08) [p]	 236df1c0aa2c5af0
-2025-05-16 19:07:54,524 [DEBUG] Rx: <71E> (08) [p]	 2413b545f5bcc9d6
-2025-05-16 19:07:54,550 [DEBUG] Rx: <71E> (08) [p]	 25fdaaaaaaaaaaaa
-2025-05-16 19:07:54,611 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:07:55,464 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:07:56,598 [INFO] Running Test Case: TC_018
-2025-05-16 19:07:56,599 [INFO] TC_018 - LocalRXSWINDataIdentifier: SID=0x22, Sub=0xF1EF, Expected=[98]
-2025-05-16 19:07:56,600 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1ef (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:07:56,601 [DEBUG] Sending request to server
-2025-05-16 19:07:56,602 [DEBUG] Sending 3 bytes : [22f1ef]
-2025-05-16 19:07:56,602 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:07:56,603 [DEBUG] Waiting for server response
-2025-05-16 19:07:56,603 [DEBUG] Tx: <716> (08) [ ]	 0322f1ef00000000
-2025-05-16 19:07:56,605 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:56,605 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 ef 00 00 00 00
-2025-05-16 19:07:56,652 [DEBUG] Rx: <71E> (08) [p]	 102b62f1ef07160b
-2025-05-16 19:07:56,653 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-16 19:07:56,654 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:56,654 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 19:07:56,655 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-16 19:07:56,655 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:07:56,658 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 19:07:56,660 [ERROR] TC_018 LocalRXSWINDataIdentifier -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:07:56,677 [DEBUG] Rx: <71E> (08) [p]	 21523130204b5931
-2025-05-16 19:07:56,685 [DEBUG] Rx: <71E> (08) [p]	 222f312f300c5231
-2025-05-16 19:07:56,697 [DEBUG] Rx: <71E> (08) [p]	 233535204b59312f
-2025-05-16 19:07:56,723 [DEBUG] Rx: <71E> (08) [p]	 24312f300c523135
-2025-05-16 19:07:56,741 [DEBUG] Rx: <71E> (08) [p]	 2536204b59312f31
-2025-05-16 19:07:56,758 [DEBUG] Rx: <71E> (08) [p]	 262f30aaaaaaaaaa
-2025-05-16 19:07:56,811 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:07:58,475 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:07:58,785 [INFO] Running Test Case: TC_019
-2025-05-16 19:07:58,786 [INFO] TC_019 - DTC setting ON: SID=0x85, Sub=0x01, Expected=[197]
-2025-05-16 19:07:58,788 [INFO] ControlDTCSetting<0x85> - SettingType=0x01 (on) - Turning DTC On with a payload of 0 bytes
-2025-05-16 19:07:58,789 [DEBUG] Sending request to server
-2025-05-16 19:07:58,791 [DEBUG] Sending 2 bytes : [8501]
-2025-05-16 19:07:58,792 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 19:07:58,793 [DEBUG] Waiting for server response
-2025-05-16 19:07:58,794 [DEBUG] Tx: <716> (08) [ ]	 0285010000000000
-2025-05-16 19:07:58,794 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:07:58,795 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 85 01 00 00 00 00 00
-2025-05-16 19:07:58,803 [DEBUG] Rx: <71E> (08) [p]	 02c501aaaaaaaaaa
-2025-05-16 19:07:58,804 [DEBUG] Received 2 bytes : [c501]
-2025-05-16 19:07:58,809 [DEBUG] Received response from server
-2025-05-16 19:07:58,817 [INFO] Received positive response for service ControlDTCSetting (0x85) from server.
-2025-05-16 19:07:58,824 [INFO] TC_019 DTC setting ON -> PASS
-2025-05-16 19:08:00,924 [INFO] Running Test Case: TC_020
-2025-05-16 19:08:00,925 [INFO] TC_020 - DTC setting OFF: SID=0x85, Sub=0x02, Expected=[197]
-2025-05-16 19:08:00,927 [INFO] ControlDTCSetting<0x85> - SettingType=0x02 (off) - Turning DTC Off with a payload of 0 bytes
-2025-05-16 19:08:00,929 [DEBUG] Sending request to server
-2025-05-16 19:08:00,931 [DEBUG] Sending 2 bytes : [8502]
-2025-05-16 19:08:00,934 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 19:08:00,936 [DEBUG] Waiting for server response
-2025-05-16 19:08:00,937 [DEBUG] Tx: <716> (08) [ ]	 0285020000000000
-2025-05-16 19:08:00,941 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:00,942 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 85 02 00 00 00 00 00
-2025-05-16 19:08:00,958 [DEBUG] Rx: <71E> (08) [p]	 02c502aaaaaaaaaa
-2025-05-16 19:08:00,963 [DEBUG] Received 2 bytes : [c502]
-2025-05-16 19:08:00,967 [DEBUG] Received response from server
-2025-05-16 19:08:00,971 [INFO] Received positive response for service ControlDTCSetting (0x85) from server.
-2025-05-16 19:08:00,973 [INFO] TC_020 DTC setting OFF -> PASS
-2025-05-16 19:08:01,484 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:03,086 [INFO] Running Test Case: TC_021
-2025-05-16 19:08:03,087 [INFO] TC_021 - Hard Reset: SID=0x11, Sub=0x01, Expected=[81]
-2025-05-16 19:08:03,089 [INFO] ECUReset<0x11> - Requesting reset of type 0x01 (hardReset)
-2025-05-16 19:08:03,090 [DEBUG] Sending request to server
-2025-05-16 19:08:03,092 [DEBUG] Sending 2 bytes : [1101]
-2025-05-16 19:08:03,094 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 19:08:03,095 [DEBUG] Waiting for server response
-2025-05-16 19:08:03,096 [DEBUG] Tx: <716> (08) [ ]	 0211010000000000
-2025-05-16 19:08:03,097 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:03,097 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 11 01 00 00 00 00 00
-2025-05-16 19:08:03,118 [DEBUG] Rx: <71E> (08) [p]	 025101aaaaaaaaaa
-2025-05-16 19:08:03,122 [DEBUG] Received 2 bytes : [5101]
-2025-05-16 19:08:03,124 [DEBUG] Received response from server
-2025-05-16 19:08:03,132 [INFO] Received positive response for service ECUReset (0x11) from server.
-2025-05-16 19:08:03,134 [INFO] TC_021 Hard Reset -> PASS
-2025-05-16 19:08:04,493 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:05,230 [INFO] Running Test Case: TC_022
-2025-05-16 19:08:05,231 [INFO] TC_022 - Soft Reset: SID=0x11, Sub=0x03, Expected=[81]
-2025-05-16 19:08:05,233 [INFO] ECUReset<0x11> - Requesting reset of type 0x03 (softReset)
-2025-05-16 19:08:05,235 [DEBUG] Sending request to server
-2025-05-16 19:08:05,236 [DEBUG] Sending 2 bytes : [1103]
-2025-05-16 19:08:05,238 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 19:08:05,239 [DEBUG] Waiting for server response
-2025-05-16 19:08:05,240 [DEBUG] Tx: <716> (08) [ ]	 0211030000000000
-2025-05-16 19:08:05,241 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:05,242 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 11 03 00 00 00 00 00
-2025-05-16 19:08:05,251 [DEBUG] Rx: <71E> (08) [p]	 037f1112aaaaaaaa
-2025-05-16 19:08:05,252 [DEBUG] Received 3 bytes : [7f1112]
-2025-05-16 19:08:05,254 [DEBUG] Received response from server
-2025-05-16 19:08:05,256 [WARNING] ECUReset service execution returned a negative response SubFunctionNotSupported (0x12)
-2025-05-16 19:08:05,258 [WARNING] TC_022 Soft Reset -> FAIL - NRC: 0x12
-2025-05-16 19:08:07,359 [INFO] Running Test Case: TC_023
-2025-05-16 19:08:07,362 [INFO] TC_023 - VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number): SID=0x2E, Sub=0xF187, Expected=[110]
-2025-05-16 19:08:07,365 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf187 (VehicleManufacturerSparePartNumberDataIdentifier)
-2025-05-16 19:08:07,366 [DEBUG] Sending request to server
-2025-05-16 19:08:07,368 [DEBUG] Sending 13 bytes : [2ef18761383132336138313233]
-2025-05-16 19:08:07,369 [DEBUG] Enqueuing a SendRequest for 13 bytes and TAT=Physical
-2025-05-16 19:08:07,372 [DEBUG] Waiting for server response
-2025-05-16 19:08:07,373 [DEBUG] Tx: <716> (08) [ ]	 100d2ef187613831
-2025-05-16 19:08:07,376 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:07,377 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    10 0d 2e f1 87 61 38 31
-2025-05-16 19:08:07,380 [DEBUG] TxState=WAIT_FC - RxState=IDLE
-2025-05-16 19:08:07,394 [DEBUG] Rx: <71E> (08) [p]	 300005aaaaaaaaaa
-2025-05-16 19:08:07,396 [DEBUG] TxState=TRANSMIT_CF - RxState=IDLE
-2025-05-16 19:08:07,402 [DEBUG] Tx: <716> (08) [ ]	 2132336138313233
-2025-05-16 19:08:07,404 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:07,405 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    21 32 33 61 38 31 32 33
-2025-05-16 19:08:07,407 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:08:07,426 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 19:08:07,428 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:07,430 [ERROR] TC_023 VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number) -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:07,452 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:07,515 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:09,570 [INFO] Running Test Case: TC_024
-2025-05-16 19:08:09,571 [INFO] TC_024 - ECUManufacturingDateDataIdentifier: SID=0x2E, Sub=0xF18B, Expected=[110]
-2025-05-16 19:08:09,573 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf18b (ECUManufacturingDateDataIdentifier)
-2025-05-16 19:08:09,573 [DEBUG] Sending request to server
-2025-05-16 19:08:09,574 [DEBUG] Sending 7 bytes : [2ef18b61383132]
-2025-05-16 19:08:09,575 [DEBUG] Enqueuing a SendRequest for 7 bytes and TAT=Physical
-2025-05-16 19:08:09,575 [DEBUG] Waiting for server response
-2025-05-16 19:08:09,576 [DEBUG] Tx: <716> (08) [ ]	 072ef18b61383132
-2025-05-16 19:08:09,577 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:09,577 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    07 2e f1 8b 61 38 31 32
-2025-05-16 19:08:09,603 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:09,607 [DEBUG] Received 3 bytes : [7f2e33]
-2025-05-16 19:08:09,609 [DEBUG] Received response from server
-2025-05-16 19:08:09,611 [WARNING] WriteDataByIdentifier service execution returned a negative response SecurityAccessDenied (0x33)
-2025-05-16 19:08:09,613 [WARNING] TC_024 ECUManufacturingDateDataIdentifier -> FAIL - NRC: 0x33
-2025-05-16 19:08:10,524 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:11,720 [INFO] Running Test Case: TC_025
-2025-05-16 19:08:11,721 [INFO] TC_025 - ECUSerialNumberDataIdentifier: SID=0x2E, Sub=0xF18C, Expected=[110]
-2025-05-16 19:08:11,722 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf18c (ECUSerialNumberDataIdentifier)
-2025-05-16 19:08:11,724 [DEBUG] Sending request to server
-2025-05-16 19:08:11,725 [DEBUG] Sending 35 bytes : [2ef18c6138313132333435613831313233343561383131323334356138313132333435]
-2025-05-16 19:08:11,725 [DEBUG] Enqueuing a SendRequest for 35 bytes and TAT=Physical
-2025-05-16 19:08:11,726 [DEBUG] Waiting for server response
-2025-05-16 19:08:11,726 [DEBUG] Tx: <716> (08) [ ]	 10232ef18c613831
-2025-05-16 19:08:11,727 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:11,727 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    10 23 2e f1 8c 61 38 31
-2025-05-16 19:08:11,730 [DEBUG] TxState=WAIT_FC - RxState=IDLE
-2025-05-16 19:08:11,737 [DEBUG] Rx: <71E> (08) [p]	 300005aaaaaaaaaa
-2025-05-16 19:08:11,739 [DEBUG] TxState=TRANSMIT_CF - RxState=IDLE
-2025-05-16 19:08:11,745 [DEBUG] Tx: <716> (08) [ ]	 2131323334356138
-2025-05-16 19:08:11,747 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:11,748 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    21 31 32 33 34 35 61 38
-2025-05-16 19:08:11,753 [DEBUG] Tx: <716> (08) [ ]	 2231313233343561
-2025-05-16 19:08:11,755 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:11,756 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    22 31 31 32 33 34 35 61
-2025-05-16 19:08:11,760 [DEBUG] Tx: <716> (08) [ ]	 2338313132333435
-2025-05-16 19:08:11,762 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:11,764 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    23 38 31 31 32 33 34 35
-2025-05-16 19:08:11,768 [DEBUG] Tx: <716> (08) [ ]	 2461383131323334
-2025-05-16 19:08:11,770 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:11,771 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    24 61 38 31 31 32 33 34
-2025-05-16 19:08:11,774 [DEBUG] Tx: <716> (08) [ ]	 2535000000000000
-2025-05-16 19:08:11,777 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:11,778 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 19:08:11,779 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    25 35 00 00 00 00 00 00
-2025-05-16 19:08:11,781 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:11,783 [ERROR] TC_025 ECUSerialNumberDataIdentifier -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:11,783 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:08:11,802 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:13,536 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:13,895 [INFO] Running Test Case: TC_026
-2025-05-16 19:08:13,896 [INFO] TC_026 - SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version): SID=0x2E, Sub=0xF191, Expected=[110]
-2025-05-16 19:08:13,897 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf191 (VehicleManufacturerECUHardwareNumberDataIdentifier)
-2025-05-16 19:08:13,899 [DEBUG] Sending request to server
-2025-05-16 19:08:13,902 [DEBUG] Sending 8 bytes : [2ef1916138313233]
-2025-05-16 19:08:13,905 [DEBUG] Enqueuing a SendRequest for 8 bytes and TAT=Physical
-2025-05-16 19:08:13,906 [DEBUG] Waiting for server response
-2025-05-16 19:08:13,907 [DEBUG] Tx: <716> (08) [ ]	 10082ef191613831
-2025-05-16 19:08:13,908 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:13,911 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    10 08 2e f1 91 61 38 31
-2025-05-16 19:08:13,916 [DEBUG] TxState=WAIT_FC - RxState=IDLE
-2025-05-16 19:08:13,921 [DEBUG] Rx: <71E> (08) [p]	 300005aaaaaaaaaa
-2025-05-16 19:08:13,929 [DEBUG] TxState=TRANSMIT_CF - RxState=IDLE
-2025-05-16 19:08:13,935 [DEBUG] Tx: <716> (08) [ ]	 2132330000000000
-2025-05-16 19:08:13,941 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:13,945 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    21 32 33 00 00 00 00 00
-2025-05-16 19:08:13,949 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:08:13,958 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 19:08:13,961 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:13,963 [ERROR] TC_026 SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version) -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:13,981 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:16,088 [INFO] Running Test Case: TC_027
-2025-05-16 19:08:16,089 [INFO] TC_027 - SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version): SID=0x2E, Sub=0xF193, Expected=[110]
-2025-05-16 19:08:16,090 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf193 (SystemSupplierECUHardwareVersionNumberDataIdentifier)
-2025-05-16 19:08:16,091 [DEBUG] Sending request to server
-2025-05-16 19:08:16,094 [DEBUG] Sending 8 bytes : [2ef1936138313233]
-2025-05-16 19:08:16,095 [DEBUG] Enqueuing a SendRequest for 8 bytes and TAT=Physical
-2025-05-16 19:08:16,095 [DEBUG] Waiting for server response
-2025-05-16 19:08:16,096 [DEBUG] Tx: <716> (08) [ ]	 10082ef193613831
-2025-05-16 19:08:16,097 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:16,098 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    10 08 2e f1 93 61 38 31
-2025-05-16 19:08:16,099 [DEBUG] TxState=WAIT_FC - RxState=IDLE
-2025-05-16 19:08:16,106 [DEBUG] Rx: <71E> (08) [p]	 300005aaaaaaaaaa
-2025-05-16 19:08:16,107 [DEBUG] TxState=TRANSMIT_CF - RxState=IDLE
-2025-05-16 19:08:16,115 [DEBUG] Tx: <716> (08) [ ]	 2132330000000000
-2025-05-16 19:08:16,116 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:16,119 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    21 32 33 00 00 00 00 00
-2025-05-16 19:08:16,122 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:08:16,135 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:16,138 [DEBUG] Received 3 bytes : [7f2e33]
-2025-05-16 19:08:16,140 [DEBUG] Received response from server
-2025-05-16 19:08:16,143 [WARNING] WriteDataByIdentifier service execution returned a negative response SecurityAccessDenied (0x33)
-2025-05-16 19:08:16,144 [WARNING] TC_027 SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version) -> FAIL - NRC: 0x33
-2025-05-16 19:08:16,557 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:18,249 [INFO] Running Test Case: TC_028
-2025-05-16 19:08:18,250 [INFO] TC_028 - SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version): SID=0x2E, Sub=0xF195, Expected=[110]
-2025-05-16 19:08:18,251 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf195 (SystemSupplierECUSoftwareVersionNumberDataIdentifier)
-2025-05-16 19:08:18,252 [DEBUG] Sending request to server
-2025-05-16 19:08:18,252 [DEBUG] Sending 8 bytes : [2ef1956138313233]
-2025-05-16 19:08:18,253 [DEBUG] Enqueuing a SendRequest for 8 bytes and TAT=Physical
-2025-05-16 19:08:18,254 [DEBUG] Waiting for server response
-2025-05-16 19:08:18,254 [DEBUG] Tx: <716> (08) [ ]	 10082ef195613831
-2025-05-16 19:08:18,255 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:18,256 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    10 08 2e f1 95 61 38 31
-2025-05-16 19:08:18,257 [DEBUG] TxState=WAIT_FC - RxState=IDLE
-2025-05-16 19:08:18,264 [DEBUG] Rx: <71E> (08) [p]	 300005aaaaaaaaaa
-2025-05-16 19:08:18,265 [DEBUG] TxState=TRANSMIT_CF - RxState=IDLE
-2025-05-16 19:08:18,270 [DEBUG] Tx: <716> (08) [ ]	 2132330000000000
-2025-05-16 19:08:18,272 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:18,275 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    21 32 33 00 00 00 00 00
-2025-05-16 19:08:18,277 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:08:18,294 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:18,295 [DEBUG] Received 3 bytes : [7f2e33]
-2025-05-16 19:08:18,297 [DEBUG] Received response from server
-2025-05-16 19:08:18,300 [WARNING] WriteDataByIdentifier service execution returned a negative response SecurityAccessDenied (0x33)
-2025-05-16 19:08:18,302 [WARNING] TC_028 SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version) -> FAIL - NRC: 0x33
-2025-05-16 19:08:19,574 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:20,411 [INFO] Running Test Case: TC_029
-2025-05-16 19:08:20,413 [INFO] TC_029 - ECUSupplierCodeDataIdentifier: SID=0x2E, Sub=0xF1A1, Expected=[110]
-2025-05-16 19:08:20,415 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf1a1 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:08:20,418 [DEBUG] Sending request to server
-2025-05-16 19:08:20,422 [DEBUG] Sending 7 bytes : [2ef1a161383132]
-2025-05-16 19:08:20,424 [DEBUG] Enqueuing a SendRequest for 7 bytes and TAT=Physical
-2025-05-16 19:08:20,427 [DEBUG] Waiting for server response
-2025-05-16 19:08:20,431 [DEBUG] Tx: <716> (08) [ ]	 072ef1a161383132
-2025-05-16 19:08:20,433 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:20,435 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    07 2e f1 a1 61 38 31 32
-2025-05-16 19:08:20,453 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:20,455 [DEBUG] Received 3 bytes : [7f2e33]
-2025-05-16 19:08:20,458 [DEBUG] Received response from server
-2025-05-16 19:08:20,464 [WARNING] WriteDataByIdentifier service execution returned a negative response SecurityAccessDenied (0x33)
-2025-05-16 19:08:20,466 [WARNING] TC_029 ECUSupplierCodeDataIdentifier -> FAIL - NRC: 0x33
-2025-05-16 19:08:22,589 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:22,592 [INFO] Running Test Case: TC_030
-2025-05-16 19:08:22,593 [INFO] TC_030 - SystemNameOrEngineTypeDataIdentifier: SID=0x2E, Sub=0xF197, Expected=[110]
-2025-05-16 19:08:22,593 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf197 (SystemNameOrEngineTypeDataIdentifier)
-2025-05-16 19:08:22,594 [DEBUG] Sending request to server
-2025-05-16 19:08:22,595 [DEBUG] Sending 7 bytes : [2ef19761383132]
-2025-05-16 19:08:22,595 [DEBUG] Enqueuing a SendRequest for 7 bytes and TAT=Physical
-2025-05-16 19:08:22,596 [DEBUG] Waiting for server response
-2025-05-16 19:08:22,596 [DEBUG] Tx: <716> (08) [ ]	 072ef19761383132
-2025-05-16 19:08:22,597 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:22,598 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    07 2e f1 97 61 38 31 32
-2025-05-16 19:08:22,634 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:22,636 [DEBUG] Received 3 bytes : [7f2e33]
-2025-05-16 19:08:22,639 [DEBUG] Received response from server
-2025-05-16 19:08:22,640 [WARNING] WriteDataByIdentifier service execution returned a negative response SecurityAccessDenied (0x33)
-2025-05-16 19:08:22,641 [WARNING] TC_030 SystemNameOrEngineTypeDataIdentifier -> FAIL - NRC: 0x33
-2025-05-16 19:08:24,743 [INFO] Running Test Case: TC_031
-2025-05-16 19:08:24,744 [INFO] TC_031 - ECUSoftwareUnit1IVDDataIdentifier: SID=0x2E, Sub=0xF1C1, Expected=[110]
-2025-05-16 19:08:24,745 [INFO] WriteDataByIdentifier<0x2e> - Writing data identifier 0xf1c1 (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-16 19:08:24,746 [DEBUG] Sending request to server
-2025-05-16 19:08:24,747 [DEBUG] Sending 35 bytes : [2ef1c16138313132333435613831313233343561383131323334356138313132333435]
-2025-05-16 19:08:24,747 [DEBUG] Enqueuing a SendRequest for 35 bytes and TAT=Physical
-2025-05-16 19:08:24,748 [DEBUG] Waiting for server response
-2025-05-16 19:08:24,749 [DEBUG] Tx: <716> (08) [ ]	 10232ef1c1613831
-2025-05-16 19:08:24,751 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:24,751 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    10 23 2e f1 c1 61 38 31
-2025-05-16 19:08:24,753 [DEBUG] TxState=WAIT_FC - RxState=IDLE
-2025-05-16 19:08:24,759 [DEBUG] Rx: <71E> (08) [p]	 300005aaaaaaaaaa
-2025-05-16 19:08:24,761 [DEBUG] TxState=TRANSMIT_CF - RxState=IDLE
-2025-05-16 19:08:24,766 [DEBUG] Tx: <716> (08) [ ]	 2131323334356138
-2025-05-16 19:08:24,767 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:24,768 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    21 31 32 33 34 35 61 38
-2025-05-16 19:08:24,774 [DEBUG] Tx: <716> (08) [ ]	 2231313233343561
-2025-05-16 19:08:24,778 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:24,779 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    22 31 31 32 33 34 35 61
-2025-05-16 19:08:24,785 [DEBUG] Tx: <716> (08) [ ]	 2338313132333435
-2025-05-16 19:08:24,787 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:24,788 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    23 38 31 31 32 33 34 35
-2025-05-16 19:08:24,791 [DEBUG] Tx: <716> (08) [ ]	 2461383131323334
-2025-05-16 19:08:24,793 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:24,796 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    24 61 38 31 31 32 33 34
-2025-05-16 19:08:24,797 [DEBUG] Tx: <716> (08) [ ]	 2535000000000000
-2025-05-16 19:08:24,798 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:24,798 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    25 35 00 00 00 00 00 00
-2025-05-16 19:08:24,800 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-16 19:08:24,802 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 19:08:24,804 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:24,805 [ERROR] TC_031 ECUSoftwareUnit1IVDDataIdentifier -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 19:08:24,833 [DEBUG] Rx: <71E> (08) [p]	 037f2e33aaaaaaaa
-2025-05-16 19:08:25,602 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:26,915 [INFO] Running Test Case: TC_032
-2025-05-16 19:08:26,917 [INFO] TC_032 - Number(19): SID=0x19, Sub=0x01, Expected=[89]
-2025-05-16 19:08:26,921 [INFO] ReadDTCInformation<0x19> - Sending request with subfunction "reportNumberOfDTCByStatusMask" (0x01).
-2025-05-16 19:08:26,923 [DEBUG] Sending request to server
-2025-05-16 19:08:26,925 [DEBUG] Sending 3 bytes : [1901ff]
-2025-05-16 19:08:26,926 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:08:26,928 [DEBUG] Waiting for server response
-2025-05-16 19:08:26,931 [DEBUG] Tx: <716> (08) [ ]	 031901ff00000000
-2025-05-16 19:08:26,934 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:26,935 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 19 01 ff 00 00 00 00
-2025-05-16 19:08:26,959 [DEBUG] Rx: <71E> (08) [p]	 065901ff000000aa
-2025-05-16 19:08:26,964 [DEBUG] Received 6 bytes : [5901ff000000]
-2025-05-16 19:08:26,968 [DEBUG] Received response from server
-2025-05-16 19:08:26,971 [INFO] Received positive response for service ReadDTCInformation (0x19) from server.
-2025-05-16 19:08:26,975 [INFO] TC_032 Number(19) -> PASS
-2025-05-16 19:08:28,634 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:29,087 [INFO] Running Test Case: TC_033
-2025-05-16 19:08:29,088 [INFO] TC_033 - All identified(19): SID=0x19, Sub=0x01, Expected=[89]
-2025-05-16 19:08:29,090 [INFO] ReadDTCInformation<0x19> - Sending request with subfunction "reportNumberOfDTCByStatusMask" (0x01).
-2025-05-16 19:08:29,092 [DEBUG] Sending request to server
-2025-05-16 19:08:29,094 [DEBUG] Sending 3 bytes : [1901ff]
-2025-05-16 19:08:29,095 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:08:29,095 [DEBUG] Waiting for server response
-2025-05-16 19:08:29,096 [DEBUG] Tx: <716> (08) [ ]	 031901ff00000000
-2025-05-16 19:08:29,097 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:29,097 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 19 01 ff 00 00 00 00
-2025-05-16 19:08:29,118 [DEBUG] Rx: <71E> (08) [p]	 065901ff000000aa
-2025-05-16 19:08:29,119 [DEBUG] Received 6 bytes : [5901ff000000]
-2025-05-16 19:08:29,121 [DEBUG] Received response from server
-2025-05-16 19:08:29,123 [INFO] Received positive response for service ReadDTCInformation (0x19) from server.
-2025-05-16 19:08:29,129 [INFO] TC_033 All identified(19) -> PASS
-2025-05-16 19:08:31,231 [INFO] Running Test Case: TC_034
-2025-05-16 19:08:31,233 [INFO] TC_034 - Fault memory clear(14): SID=0x14, Sub=0xFFFFFF, Expected=[84]
-2025-05-16 19:08:31,236 [INFO] ClearDiagnosticInformation<0x14> - Clearing all DTCs (group mask : 0xFFFFFF)
-2025-05-16 19:08:31,239 [DEBUG] Sending request to server
-2025-05-16 19:08:31,241 [DEBUG] Sending 4 bytes : [14ffffff]
-2025-05-16 19:08:31,244 [DEBUG] Enqueuing a SendRequest for 4 bytes and TAT=Physical
-2025-05-16 19:08:31,248 [DEBUG] Waiting for server response
-2025-05-16 19:08:31,249 [DEBUG] Tx: <716> (08) [ ]	 0414ffffff000000
-2025-05-16 19:08:31,252 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:31,253 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    04 14 ff ff ff 00 00 00
-2025-05-16 19:08:31,266 [DEBUG] Rx: <71E> (08) [p]	 0154aaaaaaaaaaaa
-2025-05-16 19:08:31,272 [DEBUG] Received 1 bytes : [54]
-2025-05-16 19:08:31,277 [DEBUG] Received response from server
-2025-05-16 19:08:31,287 [INFO] Received positive response for service ClearDiagnosticInformation (0x14) from server.
-2025-05-16 19:08:31,289 [INFO] TC_034 Fault memory clear(14) -> PASS
-2025-05-16 19:08:31,643 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:33,416 [INFO] Running Test Case: TC_035
-2025-05-16 19:08:33,417 [INFO] TC_035 - EnableRxAndEnableTx(28): SID=0x28, Sub=0x00, Expected=[104]
-2025-05-16 19:08:33,418 [ERROR] [ValueError] : At least one message type must be controlled
-2025-05-16 19:08:33,419 [ERROR] TC_035 EnableRxAndEnableTx(28) -> EXCEPTION - At least one message type must be controlled
-2025-05-16 19:08:34,652 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:35,536 [INFO] Running Test Case: TC_036
-2025-05-16 19:08:35,537 [INFO] TC_036 - EnableRxAndDisableTx(28): SID=0x28, Sub=0x01, Expected=[104]
-2025-05-16 19:08:35,539 [INFO] CommunicationControl<0x28> - ControlType=0x01 (enableRxAndDisableTx) - Sending request with a CommunicationType byte of 0x01 (subnet=0x0. Flags : [NormalMsg]). nodeIdentificationNumber=None 
-2025-05-16 19:08:35,541 [DEBUG] Sending request to server
-2025-05-16 19:08:35,543 [DEBUG] Sending 3 bytes : [280101]
-2025-05-16 19:08:35,544 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:08:35,545 [DEBUG] Waiting for server response
-2025-05-16 19:08:35,546 [DEBUG] Tx: <716> (08) [ ]	 0328010100000000
-2025-05-16 19:08:35,547 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:35,547 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 28 01 01 00 00 00 00
-2025-05-16 19:08:35,566 [DEBUG] Rx: <71E> (08) [p]	 037f287faaaaaaaa
-2025-05-16 19:08:35,567 [DEBUG] Received 3 bytes : [7f287f]
-2025-05-16 19:08:35,569 [DEBUG] Received response from server
-2025-05-16 19:08:35,570 [WARNING] CommunicationControl service execution returned a negative response ServiceNotSupportedInActiveSession (0x7f)
-2025-05-16 19:08:35,572 [WARNING] TC_036 EnableRxAndDisableTx(28) -> FAIL - NRC: 0x7f
-2025-05-16 19:08:37,665 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:37,694 [INFO] Running Test Case: TC_037
-2025-05-16 19:08:37,695 [INFO] TC_037 - DisableRxAndEnableTx(28): SID=0x28, Sub=0x02, Expected=[104]
-2025-05-16 19:08:37,697 [INFO] CommunicationControl<0x28> - ControlType=0x02 (disableRxAndEnableTx) - Sending request with a CommunicationType byte of 0x02 (subnet=0x0. Flags : [NetworkManagementMsg]). nodeIdentificationNumber=None 
-2025-05-16 19:08:37,698 [DEBUG] Sending request to server
-2025-05-16 19:08:37,699 [DEBUG] Sending 3 bytes : [280202]
-2025-05-16 19:08:37,700 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:08:37,701 [DEBUG] Waiting for server response
-2025-05-16 19:08:37,702 [DEBUG] Tx: <716> (08) [ ]	 0328020200000000
-2025-05-16 19:08:37,704 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:37,706 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 28 02 02 00 00 00 00
-2025-05-16 19:08:37,726 [DEBUG] Rx: <71E> (08) [p]	 037f287faaaaaaaa
-2025-05-16 19:08:37,728 [DEBUG] Received 3 bytes : [7f287f]
-2025-05-16 19:08:37,731 [DEBUG] Received response from server
-2025-05-16 19:08:37,732 [WARNING] CommunicationControl service execution returned a negative response ServiceNotSupportedInActiveSession (0x7f)
-2025-05-16 19:08:37,736 [WARNING] TC_037 DisableRxAndEnableTx(28) -> FAIL - NRC: 0x7f
-2025-05-16 19:08:39,885 [INFO] Running Test Case: TC_038
-2025-05-16 19:08:39,886 [INFO] TC_038 - DisableRxAndDisableTx(28): SID=0x28, Sub=0x03, Expected=[104]
-2025-05-16 19:08:39,887 [INFO] CommunicationControl<0x28> - ControlType=0x03 (disableRxAndTx) - Sending request with a CommunicationType byte of 0x03 (subnet=0x0. Flags : [NormalMsg,NetworkManagementMsg]). nodeIdentificationNumber=None 
-2025-05-16 19:08:39,888 [DEBUG] Sending request to server
-2025-05-16 19:08:39,889 [DEBUG] Sending 3 bytes : [280303]
-2025-05-16 19:08:39,891 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-16 19:08:39,892 [DEBUG] Waiting for server response
-2025-05-16 19:08:39,893 [DEBUG] Tx: <716> (08) [ ]	 0328030300000000
-2025-05-16 19:08:39,895 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 19:08:39,895 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 28 03 03 00 00 00 00
-2025-05-16 19:08:39,906 [DEBUG] Rx: <71E> (08) [p]	 037f287faaaaaaaa
-2025-05-16 19:08:39,908 [DEBUG] Received 3 bytes : [7f287f]
-2025-05-16 19:08:39,910 [DEBUG] Received response from server
-2025-05-16 19:08:39,912 [WARNING] CommunicationControl service execution returned a negative response ServiceNotSupportedInActiveSession (0x7f)
-2025-05-16 19:08:39,914 [WARNING] TC_038 DisableRxAndDisableTx(28) -> FAIL - NRC: 0x7f
-2025-05-16 19:08:40,676 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 19:08:42,054 [DEBUG] Stopping CanStack
-2025-05-16 19:08:42,056 [DEBUG] Main thread is exiting
-2025-05-16 19:08:42,083 [DEBUG] CanStack Stopped
-2025-05-16 19:08:42,084 [INFO] Connection closed
+import socket
+import logging
+import time
+from datetime import datetime
+
+MAX_RETRIES = 3
+TIMEOUT = 5  # seconds
+
+def send_seed_with_retry(seed_hex, udp_ip, udp_port):
+    attempt = 0
+    while attempt < MAX_RETRIES:
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(TIMEOUT)
+            sock.sendto(seed_hex.encode(), (udp_ip, udp_port))
+            logging.info(f"Attempt {attempt + 1}: Seed sent to {udp_ip}:{udp_port}")
+            key, _ = sock.recvfrom(1024)
+            logging.info(f"Received Key: {key}")
+            return key
+        except socket.timeout:
+            logging.warning(f"Attempt {attempt + 1}: Timeout waiting for key from PC")
+            attempt += 1
+            time.sleep(1)  # Optional: wait before retrying
+        except Exception as e:
+            logging.error(f"Attempt {attempt + 1}: Exception occurred - {e}")
+            attempt += 1
+            time.sleep(1)  # Optional: wait before retrying
+        finally:
+            sock.close()
+    raise Exception("Failed to receive key after multiple attempts")
+
+def run_testcase(self, oled):
+    self.check_memory(oled) 
+    self.start_logging(log_name_suffix="Testcase")
+    grouped_cases = load_testcases() 
+    report_entries = []
+   
+    run_start = datetime.now()
+
+    start_time = datetime.now()
+    first_request_time = None
+    last_response_time = None
+    
+    with Client(self.conn, request_timeout=2, config=self.client_config) as client:
+        client.config['p2_timeout'] = 6.0
+        for tc_id, steps in grouped_cases.items():
+            logging.info(f"Running Test Case: {tc_id}")
+            for step in steps:
+                _, step_desc, service, subfunc, expected = step
+                try:
+                    service_int = int(service, 16)
+                    subfunc_int = int(subfunc, 16)
+                    expected_bytes = [int(b, 16) for b in expected.strip().split()]
+                    logging.info(f"{tc_id} - {step_desc}: SID={service}, Sub={subfunc}, Expected={expected_bytes}")
+
+                    request_time = datetime.now()
+
+                    response = None
+                    if service_int == 0x10:
+                        response = client.change_session(subfunc_int)
+                    elif service_int == 0x11:
+                        response = client.ecu_reset(subfunc_int)
+                    elif service_int == 0x22:
+                        response = client.read_data_by_identifier(subfunc_int)
+                    elif service_int == 0x2E:  # WriteDataByIdentifier
+                        # Implement write_data_by_identifier logic here
+                        pass
+                    elif service_int == 0x19:  # ReadDTCInformation
+                        response = client.read_dtc_information(subfunc_int, status_mask=0xFF)
+                    elif service_int == 0x14:  # ClearDiagnosticInformation
+                        group_of_dtc = subfunc_int
+                        response = client.clear_dtc(group_of_dtc)
+                    elif service_int == 0x3E:  # TesterPresent
+                        response = client.tester_present()
+                    elif service_int == 0x85:
+                        response = client.control_dtc_setting(subfunc_int)
+                    elif service_int == 0x27: 
+                        if subfunc_int == 0x11:  
+                            response = client.request_seed(subfunc_int)
+                            
+                            if not response.positive:
+                                failure_reason = f"NRC (seed): {hex(response.code)}"
+                                logging.warning(f"{tc_id} {step_desc} -> FAIL - {failure_reason}")
+                                raise Exception(failure_reason)
+                            
+                            seed = response.service_data.seed
+                            logging.info(f"Received Seed: {seed.hex()}")
+                            
+                            # Send seed to PC via UDP with retry mechanism
+                            udp_ip = "192.168.10.220"  # PC IP address
+                            udp_port = 5005  # PC UDP server port
+                            
+                            try:
+                                seed_hex = seed.hex()
+                                key = send_seed_with_retry(seed_hex, udp_ip, udp_port)
+                            except Exception as e:
+                                failure_reason = str(e)
+                                logging.error(f"{tc_id} {step_desc} -> FAIL - {failure_reason}")
+                                raise
+                            
+                            # Send Key
+                            key_subfunc = 0x12
+                            response = client.send_key(key_subfunc, key)
+                            if not response.positive:
+                                failure_reason = f"NRC (key): {hex(response.code)}"
+                                logging.warning(f"{tc_id} {step_desc} -> FAIL - {failure_reason}")
+                                raise Exception(failure_reason)
+                    elif service_int == 0x28:  # CommunicationControl
+                        control_type = subfunc_int  # Subfunction
+                        communication_type = 0x00  # Default: Enable Rx and Tx
+                        if control_type == 0x00:
+                            communication_type = 0x00  # Enable Rx and Tx
+                        elif control_type == 0x01:
+                            communication_type = 0x01  # Enable Rx, disable Tx
+                        elif control_type == 0x02:
+                            communication_type = 0x02  # Disable Rx, enable Tx
+                        elif control_type == 0x03:
+                            communication_type = 0x03  # Disable Rx and Tx
+                        else:
+                            logging.warning(f"Unknown subfunc for CommControl: {hex(control_type)}. Using 0x00.")
+                            communication_type = 0x00
+                        response = client.communication_control(control_type, communication_type)
+                    else:
+                        raise ValueError(f"Unsupported service: {service}")                           
+
+                    response_time = datetime.now()
+                    
+                    if first_request_time is None:
+                        first_request_time = request_time
+                        last_response_time = response_time
+                    
+                    status = "Fail"
+                    failure_reason = "-"
+                    if response.positive:
+                        actual = list(response.original_payload)
+                        if actual[:len(expected_bytes)] == expected_bytes:
+                            status = "Pass"
+                            logging.info(f"{tc_id} {step_desc} -> PASS")
+                        else:
+                            failure_reason = f"Expected {expected_bytes}, got {actual}"
+                            logging.warning(f"{tc_id} {step_desc} -> FAIL - {failure_reason}")
+                    else:
+                        failure_reason = f"NRC: {hex(response.code)}"
+                        logging.warning(f"{tc_id} {step_desc} -> FAIL - {failure_reason}")
+                except Exception as e:
+                    response_time = datetime.now() 
+                    status = "Fail"                        
+                    failure_reason = str(e)
+                    logging.error(f"{tc_id} {step_desc} -> EXCEPTION - {failure_reason}")
+
+                oled.display_centered_text(f"{tc_id}\n{step_desc[:20]}\n{status}")
+                time.sleep(2)
+                
+                relative_request_time = f"{(request_time - start_time).total_seconds():.6f}"
+                relative_response_time = f"{(response_time - start_time).total_seconds():.6f}"
+                
+                report_entries.append({
+                    "id": tc_id,
+                    "timestamp": relative_request_time,
+                    "response_timestamp": relative_response_time,
+                    "description": step_desc,
+                    "type": "Request Sent",
+                    "status": status,
+                    "failure_reason": failure_reason
+                })
+
+    run_end = datetime.now()
