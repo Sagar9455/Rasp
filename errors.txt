@@ -1,30 +1,7 @@
-2025-05-16 15:38:52,435 [INFO] TC_034 - Fault memory clear(14): SID=0x14, Sub=0xFF, Expected=[84]
-2025-05-16 15:38:52,436 [ERROR] TC_034 Fault memory clear(14) -> EXCEPTION - 'Client' object has no attribute 'clear_diagnostic_information'
-2025-05-16 15:38:54,537 [INFO] Running Test Case: TC_035
-2025-05-16 15:38:54,538 [INFO] TC_035 - EnableRxAndEnableTx(28): SID=0x28, Sub=0x00, Expected=[104]
-2025-05-16 15:38:54,539 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:38:54,539 [ERROR] TC_035 EnableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:38:56,641 [INFO] Running Test Case: TC_036
-2025-05-16 15:38:56,642 [INFO] TC_036 - EnableRxAndDisableTx(28): SID=0x28, Sub=0x01, Expected=[104]
-2025-05-16 15:38:56,643 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:38:56,645 [ERROR] TC_036 EnableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:38:58,784 [INFO] Running Test Case: TC_037
-2025-05-16 15:38:58,785 [INFO] TC_037 - DisableRxAndEnableTx(28): SID=0x28, Sub=0x02, Expected=[104]
-2025-05-16 15:38:58,786 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:38:58,786 [ERROR] TC_037 DisableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:39:00,886 [INFO] Running Test Case: TC_038
-2025-05-16 15:39:00,887 [INFO] TC_038 - DisableRxAndDisableTx(28): SID=0x28, Sub=0x03, Expected=[104]
-2025-05-16 15:39:00,888 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:39:00,888 [ERROR] TC_038 DisableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:39:02,990 [INFO] Running Test Case: TC_039
-2025-05-16 15:39:02,991 [INFO] TC_039 - Request seed: SID=0x27, Sub=0x01, Expected=[103]
-2025-05-16 15:39:02,992 [ERROR] TC_039 Request seed -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 15:39:05,120 [INFO] Running Test Case: TC_040
-2025-05-16 15:39:05,121 [INFO] TC_040 - send key: SID=0x27, Sub=0x02, Expected=[103]
-2025-05-16 15:39:05,122 [ERROR] TC_040 send key -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 15:39:07,212 [INFO] Running Test Case: TC_041
-2025-05-16 15:39:07,213 [INFO] TC_041 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
-2025-05-16 15:39:07,213 [ERROR] TC_041 Request seed(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 15:39:09,312 [INFO] Running Test Case: TC_042
-2025-05-16 15:39:09,314 [INFO] TC_042 - send key(ASK): SID=0x27, Sub=0x12, Expected=[103]
-2025-05-16 15:39:09,315 [ERROR] TC_042 send key(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+['PayloadOverrider', 'SuppressPositiveResponse', '__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'access_timing_parameter', 'add_file', 'authentication', 'authentication_configuration', 'change_session', 'clear_all_dynamically_defined_did', 'clear_dtc', 'clear_dynamically_defined_did', 'close', 'communication_control', 'config', 'configure_logger', 'conn', 'control_dtc_setting', 'deauthenticate', 'delete_file', 'do_clear_dynamically_defined_did', 'dynamically_define_did', 'ecu_reset', 'get_dtc_by_status_mask', 'get_dtc_by_status_severity_mask', 'get_dtc_extended_data_by_dtc_number', 'get_dtc_extended_data_by_record_number', 'get_dtc_fault_counter', 'get_dtc_severity', 'get_dtc_snapshot_by_dtc_number', 'get_dtc_snapshot_by_record_number', 'get_dtc_snapshot_identification', 'get_dtc_with_permanent_status', 
+'get_emission_dtc_by_status_mask', 'get_first_confirmed_dtc', 'get_first_test_failed_dtc', 'get_mirrormemory_dtc_by_status_mask',
+ 'get_mirrormemory_dtc_extended_data_by_dtc_number', 'get_mirrormemory_number_of_dtc_by_status_mask', 'get_most_recent_confirmed_dtc', 
+ 'get_most_recent_test_failed_dtc', 'get_number_of_dtc_by_status_mask', 'get_number_of_dtc_by_status_severity_mask', 'get_number_of_emission_dtc_by_status_mask', 
+ 'get_routine_result', 'get_supported_dtc', 'get_user_defined_dtc_extended_data_by_dtc_number', 'get_user_defined_dtc_snapshot_by_dtc_number', 'get_user_defined_memory_dtc_by_status_mask', 
+ 'io_control', 'last_response', 'link_control', 'logger', 'open', 'payload_override', 'proof_of_ownership', 'read_active_timing_parameters', 'read_data_by_identifier',
+  'read_data_by_identifier_first', 'read_dir', 'read_dtc_information', 'read_extended_timing_parameters', 'read_file', 'read_memory_by_address', 'refresh_config', 'replace_file', 'request_challenge_for_authentication', 'request_download', 'request_file_transfer', 'request_seed', 'request_transfer_exit', 'request_upload', 'request_upload_download', 'reset_default_timing_parameters', 'resume_file', 'routine_control', 'send_key', 'send_request', 'service_log_prefix', 'session_timing', 'set_config', 'set_configs', 'set_timing_parameters', 'standard_error_management', 'start_routine', 'stop_routine', 'suppress_positive_response', 'test_data_identifier', 'tester_present', 'transfer_data', 'transmit_certificate', 'unlock_security_access', 'validate_config', 'verify_certificate_bidirectional', 'verify_certificate_unidirectional', 'verify_proof_of_ownership_bidirectional', 'verify_proof_of_ownership_unidirectional', 'write_data_by_identifier', 'write_memory_by_address']
