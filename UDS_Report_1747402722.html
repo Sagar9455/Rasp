@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UDS Diagnostic Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+        }
+        button.accordion {
+            background-color: #ddd;
+            color: black;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        .panel {
+            display: none;
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: white;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            white-space: normal;
+            max-width: 200px;
+        }
+        th {
+            background-color: #eee;
+        }
+        .step-pass {
+            background-color: #c8e6c9;
+        }
+        .step-fail {
+            background-color: #ffcdd2;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const acc = document.getElementsByClassName("accordion");
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+                });
+            }
+
+            const ctx = document.getElementById("summaryChart").getContext("2d");
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Passed', 'Failed'],
+                    datasets: [{
+                        label: 'Test Case Results',
+                        data: [19, 21],
+                        backgroundColor: ['#4CAF50', '#F44336'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>UDS Diagnostic Report</h1>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <p><strong>Generated:</strong> 2025-05-16 19:08:42</p>
+        <p><strong>CAN Log File:</strong> CANLog_Testcase_20250516_190715.asc</p>
+        <p><strong>Total Test Cases:</strong> 40</p>
+        <p style="color:green;"><strong>Passed:</strong> 19</p>
+        <p style="color:red;"><strong>Failed:</strong> 21</p>
+        <p><strong>Test Duration:</strong> 86.764 seconds
+    </div>
+    <canvas id="summaryChart" width="300" height="300" style="display: block; margin: 0 auto 30px;"></canvas>
+    <button class="accordion">▶ TC_001 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">DefaultSession</td><td>0.027521</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>0.078961</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_002 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">Extended Session</td><td>2.182640</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>2.240714</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_041 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">Request seed(ASK)</td><td>4.343659</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>4.406000</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ #TC_042 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">send key(ASK)</td><td>6.520441</td><td>Request Sent</td><td class="fail">Fail</td><td>'NoneType' object has no attribute 'positive'</td></tr>
+<tr class="step-fail"><td>6.520584</td><td>Response Received</td><td class="fail">Fail</td><td>'NoneType' object has no attribute 'positive'</td></tr>
+</table></div>
+<button class="accordion">▶ TC_003 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">TesterPresent</td><td>8.658025</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>8.688930</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_004 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">S/W Version Dataidentifier</td><td>10.793970</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>10.848954</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_005 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">BodyCANDataBaseVersionNumBErDataIdentifier</td><td>12.960259</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>13.023211</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_006 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number)</td><td>15.143070</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>15.196606</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_007 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">ECUManufacturingDateDataIdentifier</td><td>17.311536</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>17.355971</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_008 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSerialNumberDataIdentifier</td><td>19.465482</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>19.525034</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_009 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version)</td><td>21.660157</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>21.723142</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_010 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version)</td><td>23.840946</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>23.898004</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_011 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version)</td><td>26.021183</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>26.081978</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_012 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">SoftwareVersionHKMCVehicleManufactureDataIdentifier</td><td>28.224219</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>28.275768</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_013 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">ECUSupplierCodeDataIdentifier</td><td>30.408684</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>30.453568</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_014 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">ECUSoftwareUNITnumberDataIdentifier(ECU Manufacturer S/W Module Number : 01h)</td><td>32.561701</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>32.614469</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_015 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECU Software UNIT1 Version Data Identifier</td><td>34.739779</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>34.802141</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_016 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">SystemNameOrEngineTypeDataIdentifier</td><td>36.916064</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>36.953528</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_017 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSoftwareUnit1IVDDataIdentifier</td><td>39.076606</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>39.143880</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_018 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">LocalRXSWINDataIdentifier</td><td>41.279375</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>41.339083</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_019 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">DTC setting ON</td><td>43.465999</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>43.502900</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_020 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">DTC setting OFF</td><td>45.605350</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>45.652610</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_021 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">Hard Reset</td><td>47.767029</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>47.813406</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_022 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">Soft Reset</td><td>49.911822</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x12</td></tr>
+<tr class="step-fail"><td>49.936974</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x12</td></tr>
+</table></div>
+<button class="accordion">▶ TC_023 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number)</td><td>52.043707</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>52.109670</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_024 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUManufacturingDateDataIdentifier</td><td>54.251758</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+<tr class="step-fail"><td>54.292383</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+</table></div>
+<button class="accordion">▶ TC_025 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSerialNumberDataIdentifier</td><td>56.401521</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>56.462337</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_026 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version)</td><td>58.576279</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>58.642592</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_027 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version)</td><td>60.769078</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+<tr class="step-fail"><td>60.823673</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+</table></div>
+<button class="accordion">▶ TC_028 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version)</td><td>62.930054</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+<tr class="step-fail"><td>62.981416</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+</table></div>
+<button class="accordion">▶ TC_029 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSupplierCodeDataIdentifier</td><td>65.094122</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+<tr class="step-fail"><td>65.145360</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+</table></div>
+<button class="accordion">▶ TC_030 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">SystemNameOrEngineTypeDataIdentifier</td><td>67.272698</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+<tr class="step-fail"><td>67.320372</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x33</td></tr>
+</table></div>
+<button class="accordion">▶ TC_031 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">ECUSoftwareUnit1IVDDataIdentifier</td><td>69.424010</td><td>Request Sent</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+<tr class="step-fail"><td>69.483847</td><td>Response Received</td><td class="fail">Fail</td><td>Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)</td></tr>
+</table></div>
+<button class="accordion">▶ TC_032 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">Number(19)</td><td>71.597050</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>71.654191</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_033 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">All identified(19)</td><td>73.768150</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>73.808599</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_034 - <span class="pass">Pass</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-pass"><td rowspan="2">1</td><td rowspan="2">Fault memory clear(14)</td><td>75.914950</td><td>Request Sent</td><td class="pass">Pass</td><td>-</td></tr>
+<tr class="step-pass"><td>75.968155</td><td>Response Received</td><td class="pass">Pass</td><td>-</td></tr>
+</table></div>
+<button class="accordion">▶ TC_035 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">EnableRxAndEnableTx(28)</td><td>78.097205</td><td>Request Sent</td><td class="fail">Fail</td><td>At least one message type must be controlled</td></tr>
+<tr class="step-fail"><td>78.098519</td><td>Response Received</td><td class="fail">Fail</td><td>At least one message type must be controlled</td></tr>
+</table></div>
+<button class="accordion">▶ TC_036 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">EnableRxAndDisableTx(28)</td><td>80.217439</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x7f</td></tr>
+<tr class="step-fail"><td>80.251514</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x7f</td></tr>
+</table></div>
+<button class="accordion">▶ TC_037 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">DisableRxAndEnableTx(28)</td><td>82.375039</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x7f</td></tr>
+<tr class="step-fail"><td>82.415000</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x7f</td></tr>
+</table></div>
+<button class="accordion">▶ TC_038 - <span class="fail">Fail</span></button>
+<div class="panel"><table><tr><th>Step</th><th>Description</th><th>Timestamp</th><th>Type</th><th>Status</th><th>Failure Reason</th></tr>
+<tr class="step-fail"><td rowspan="2">1</td><td rowspan="2">DisableRxAndDisableTx(28)</td><td>84.565814</td><td>Request Sent</td><td class="fail">Fail</td><td>NRC: 0x7f</td></tr>
+<tr class="step-fail"><td>84.593441</td><td>Response Received</td><td class="fail">Fail</td><td>NRC: 0x7f</td></tr>
+</table></div>
+
+</body>
+</html>
