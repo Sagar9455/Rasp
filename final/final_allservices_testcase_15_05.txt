@@ -1,0 +1,48 @@
+#TC_ID-0 , Sub Service Description , Service ID , Sub service ID , Positive response data
+TC_001 , DefaultSession , 0x10 , 0x01 , 0x50
+TC_002 , Extended Session , 0x10 , 0x03 , 0x50
+TC_003 , TesterPresent , 0x3E , 0x00 , 0x7E
+TC_004 , LocalRXSWINDataIdentifier , 0x22 , 0xF1EF , 0x62
+TC_005 , BodyCANDataBaseVersionNumBErDataIdentifier , 0x22 , 0xF100 , 0x62
+TC_006 , VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number) , 0x22 , 0xF187 , 0x62
+TC_007 , ECUManufacturingDateDataIdentifier , 0x22 , 0xF18B , 0x62
+TC_008 , ECUSerialNumberDataIdentifier , 0x22 , 0xF18C , 0x62
+TC_009 , SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version) , 0x22 , 0xF191 , 0x62
+TC_010 , SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version) , 0x22 , 0xF193 , 0x62
+TC_011 , SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version) , 0x22 , 0xF195 , 0x62
+TC_012 , SoftwareVersionHKMCVehicleManufactureDataIdentifier , 0x22 , 0xF1A0 , 0x62
+TC_013 , ECUSupplierCodeDataIdentifier  , 0x22 , 0xF1A1 , 0x62
+TC_014 , ECUSoftwareUNITnumberDataIdentifier(ECU Manufacturer S/W Module Number : 01h) , 0x22 , 0xF1B0 , 0x62
+TC_015 , ECU Software UNIT1 Version Data Identifier , 0x22 , 0xF1B1 , 0x62
+TC_016 , SystemNameOrEngineTypeDataIdentifier , 0x22 , 0xF197 , 0x62
+TC_017 , ECUSoftwareUnit1IVDDataIdentifier , 0x22 , 0xF1C1 , 0x62
+TC_018 , S/W Version Dataidentifier , 0x22 , 0xF1DD , 0x62
+TC_019 , Number , 0x19 , 0x01 , 0x59
+TC_020 , All identified , 0x19 , 0x01 , 0x59
+TC_021 , Fault memory clear , 0x14 , 0xFFFFFF , 0x54
+TC_022 , Extended Session , 0x10 , 0x03 , 0x50
+TC_023 , TesterPresent , 0x3E , 0x00 , 0x7E
+TC_024 , DTC setting ON , 0x85 , 0x01 , 0xC5
+TC_025 , DTC setting OFF , 0x85 , 0x02 , 0xC5
+TC_026 , Hard Reset , 0x11 , 0x01 , 0x51
+TC_027 , Soft Reset , 0x11 , 0x03 , 0x51
+TC_028 , EnableRxAndEnableTx , 0x28 , 0x00 , 0x68
+TC_029 , EnableRxAndDisableTx , 0x28 , 0x01 , 0x68
+TC_030 , DisableRxAndEnableTx , 0x28 , 0x02 , 0x68
+TC_031 , DisableRxAndDisableTx , 0x28 , 0x03 , 0x68
+TC_032 , DefaultSession , 0x10 , 0x01 , 0x50
+TC_033 , Extended Session , 0x10 , 0x03 , 0x50
+TC_034 , Request seed , 0x27 , 0x01 , 0x67
+TC_035 , send key , 0x27 , 0x02 , 0x67
+TC_036 , Request seed(ASK) , 0x27 , 0x11 , 0x67
+TC_037 , send key(ASK) , 0x27 , 0x12 , 0x67
+TC_038 , Extended Session , 0x10 , 0x03 , 0x50
+TC_039 , VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number) , 0x2E , 0xF187 , 0x6E
+TC_040 , ECUManufacturingDateDataIdentifier , 0x2E , 0xF18B , 0x6E
+TC_041 , ECUSerialNumberDataIdentifier , 0x2E , 0xF18C , 0x6E
+TC_042 , SystemSupplierECUHardwareVersionNumberDataIdentifier(HKMC H/W Version) , 0x2E , 0xF191 , 0x6E
+TC_043 , SystemSupplierECUHardwareVersionNumberDataIdentifier(Vendor H/W Version) , 0x2E , 0xF193 , 0x6E
+TC_044 , SystemSupplierECUSoftwareVersionNumbe DataIdentifier(HKMC IBU S/W Version) , 0x2E , 0xF195 , 0x6E
+TC_045 , ECUSupplierCodeDataIdentifier  , 0x2E , 0xF1A1 , 0x6E
+TC_046 , SystemNameOrEngineTypeDataIdentifier , 0x2E , 0xF197 , 0x6E
+TC_047 , ECUSoftwareUnit1IVDDataIdentifier , 0x2E , 0xF1C1 , 0x6E
