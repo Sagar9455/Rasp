@@ -1,59 +1,30 @@
-2025-05-16 15:23:02,671 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 15:23:02,671 [DEBUG] Waiting for server response
-2025-05-16 15:23:02,672 [DEBUG] Tx: <716> (08) [ ]	 023e000000000000
-2025-05-16 15:23:02,673 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 15:23:02,674 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 3e 00 00 00 00 00 00
-2025-05-16 15:23:02,685 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
-2025-05-16 15:23:02,686 [DEBUG] Received 2 bytes : [7e00]
-2025-05-16 15:23:02,688 [DEBUG] Received response from server
-2025-05-16 15:23:02,689 [INFO] Received positive response for service TesterPresent (0x3e) from server.
-2025-05-16 15:23:02,690 [INFO] TC_003 TesterPresent -> PASS
-2025-05-16 15:23:04,790 [INFO] Running Test Case: TC_032
-2025-05-16 15:23:04,791 [INFO] TC_032 - Number(19): SID=0x19, Sub=0x01, Expected=[89]
-2025-05-16 15:23:04,792 [ERROR] [ValueError] : status_mask must be provided for subfunction 0x01
-2025-05-16 15:23:04,793 [ERROR] TC_032 Number(19) -> EXCEPTION - status_mask must be provided for subfunction 0x01
-2025-05-16 15:23:06,892 [INFO] Running Test Case: TC_033
-2025-05-16 15:23:06,893 [INFO] TC_033 - All identified(19): SID=0x19, Sub=0x01, Expected=[89]
-2025-05-16 15:23:06,894 [ERROR] [ValueError] : status_mask must be provided for subfunction 0x01
-2025-05-16 15:23:06,895 [ERROR] TC_033 All identified(19) -> EXCEPTION - status_mask must be provided for subfunction 0x01
-2025-05-16 15:23:09,022 [INFO] Running Test Case: TC_034
-2025-05-16 15:23:09,023 [INFO] TC_034 - Fault memory clear(14): SID=0x14, Sub=0xFF, Expected=[84]
-2025-05-16 15:23:09,023 [ERROR] TC_034 Fault memory clear(14) -> EXCEPTION - 'Client' object has no attribute 'clear_diagnostic_information'
-2025-05-16 15:23:11,125 [INFO] Running Test Case: TC_035
-2025-05-16 15:23:11,125 [INFO] TC_035 - EnableRxAndEnableTx(28): SID=0x28, Sub=0x00, Expected=[104]
-2025-05-16 15:23:11,126 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:11,126 [ERROR] TC_035 EnableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:13,231 [INFO] Running Test Case: TC_036
-2025-05-16 15:23:13,232 [INFO] TC_036 - EnableRxAndDisableTx(28): SID=0x28, Sub=0x01, Expected=[104]
-2025-05-16 15:23:13,233 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:13,234 [ERROR] TC_036 EnableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:15,364 [INFO] Running Test Case: TC_037
-2025-05-16 15:23:15,365 [INFO] TC_037 - DisableRxAndEnableTx(28): SID=0x28, Sub=0x02, Expected=[104]
-2025-05-16 15:23:15,366 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:15,367 [ERROR] TC_037 DisableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:17,469 [INFO] Running Test Case: TC_038
-2025-05-16 15:23:17,470 [INFO] TC_038 - DisableRxAndDisableTx(28): SID=0x28, Sub=0x03, Expected=[104]
-2025-05-16 15:23:17,471 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:17,472 [ERROR] TC_038 DisableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
-2025-05-16 15:23:19,575 [INFO] Running Test Case: TC_039
-2025-05-16 15:23:19,577 [INFO] TC_039 - Request seed: SID=0x27, Sub=0x01, Expected=[103]
-2025-05-16 15:23:19,577 [ERROR] TC_039 Request seed -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 15:23:21,723 [INFO] Running Test Case: TC_040
-2025-05-16 15:23:21,724 [INFO] TC_040 - send key: SID=0x27, Sub=0x02, Expected=[103]
-2025-05-16 15:23:21,725 [ERROR] TC_040 send key -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 15:23:23,815 [INFO] Running Test Case: TC_041
-2025-05-16 15:23:23,816 [INFO] TC_041 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
-2025-05-16 15:23:23,817 [ERROR] TC_041 Request seed(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 15:23:25,918 [INFO] Running Test Case: TC_042
-2025-05-16 15:23:25,920 [INFO] TC_042 - send key(ASK): SID=0x27, Sub=0x12, Expected=[103]
-2025-05-16 15:23:25,922 [ERROR] TC_042 send key(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
-2025-05-16 15:23:28,053 [DEBUG] Stopping CanStack
-2025-05-16 15:23:28,054 [DEBUG] Main thread is exiting
-2025-05-16 15:23:28,074 [DEBUG] CanStack Stopped
-2025-05-16 15:23:28,075 [INFO] Connection closed
-Full path:/home/mobase/Rasp_Tool/MKBD/udsoncan/output/can_logs/CANLog_Testcase_20250516_152258.asc
-File name:CANLog_Testcase_20250516_152258.asc
-Report generated: /home/mobase/Rasp_Tool/MKBD/udsoncan/output/html_reports/UDS_Report_1747389208.html
-2025-05-16 15:23:28,177 [INFO] Test report saved: UDS_Report_1747389208.html
-2025-05-16 15:23:28,234 [ERROR] [CANLogger] Error during stop: I/O operation on closed file.
-
+2025-05-16 15:38:52,435 [INFO] TC_034 - Fault memory clear(14): SID=0x14, Sub=0xFF, Expected=[84]
+2025-05-16 15:38:52,436 [ERROR] TC_034 Fault memory clear(14) -> EXCEPTION - 'Client' object has no attribute 'clear_diagnostic_information'
+2025-05-16 15:38:54,537 [INFO] Running Test Case: TC_035
+2025-05-16 15:38:54,538 [INFO] TC_035 - EnableRxAndEnableTx(28): SID=0x28, Sub=0x00, Expected=[104]
+2025-05-16 15:38:54,539 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:38:54,539 [ERROR] TC_035 EnableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:38:56,641 [INFO] Running Test Case: TC_036
+2025-05-16 15:38:56,642 [INFO] TC_036 - EnableRxAndDisableTx(28): SID=0x28, Sub=0x01, Expected=[104]
+2025-05-16 15:38:56,643 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:38:56,645 [ERROR] TC_036 EnableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:38:58,784 [INFO] Running Test Case: TC_037
+2025-05-16 15:38:58,785 [INFO] TC_037 - DisableRxAndEnableTx(28): SID=0x28, Sub=0x02, Expected=[104]
+2025-05-16 15:38:58,786 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:38:58,786 [ERROR] TC_037 DisableRxAndEnableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:39:00,886 [INFO] Running Test Case: TC_038
+2025-05-16 15:39:00,887 [INFO] TC_038 - DisableRxAndDisableTx(28): SID=0x28, Sub=0x03, Expected=[104]
+2025-05-16 15:39:00,888 [ERROR] [TypeError] : Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:39:00,888 [ERROR] TC_038 DisableRxAndDisableTx(28) -> EXCEPTION - Client.communication_control() missing 1 required positional argument: 'communication_type'
+2025-05-16 15:39:02,990 [INFO] Running Test Case: TC_039
+2025-05-16 15:39:02,991 [INFO] TC_039 - Request seed: SID=0x27, Sub=0x01, Expected=[103]
+2025-05-16 15:39:02,992 [ERROR] TC_039 Request seed -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+2025-05-16 15:39:05,120 [INFO] Running Test Case: TC_040
+2025-05-16 15:39:05,121 [INFO] TC_040 - send key: SID=0x27, Sub=0x02, Expected=[103]
+2025-05-16 15:39:05,122 [ERROR] TC_040 send key -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+2025-05-16 15:39:07,212 [INFO] Running Test Case: TC_041
+2025-05-16 15:39:07,213 [INFO] TC_041 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
+2025-05-16 15:39:07,213 [ERROR] TC_041 Request seed(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
+2025-05-16 15:39:09,312 [INFO] Running Test Case: TC_042
+2025-05-16 15:39:09,314 [INFO] TC_042 - send key(ASK): SID=0x27, Sub=0x12, Expected=[103]
+2025-05-16 15:39:09,315 [ERROR] TC_042 send key(ASK) -> EXCEPTION - 'Client' object has no attribute 'security_access_request'
