@@ -1,19 +1,102 @@
-2025-05-16 20:30:38,241 [INFO] TC_041 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
-2025-05-16 20:30:38,243 [INFO] SecurityAccess<0x27> - Requesting seed to unlock security access level 0x11
-2025-05-16 20:30:38,244 [DEBUG] Sending request to server
-2025-05-16 20:30:38,245 [DEBUG] Sending 2 bytes : [2711]
-2025-05-16 20:30:38,246 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-16 20:30:38,247 [DEBUG] Waiting for server response
-2025-05-16 20:30:38,248 [DEBUG] Tx: <716> (08) [ ]	 0227110000000000
-2025-05-16 20:30:38,253 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 20:30:38,255 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 27 11 00 00 00 00 00
-2025-05-16 20:30:38,290 [DEBUG] Rx: <71E> (08) [p]	 100a67114cb15f19
-2025-05-16 20:30:38,293 [DEBUG] Tx: <716> (08) [ ]	 30080f0000000000
-2025-05-16 20:30:38,295 [DEBUG] We've been asked to write a message to the bus
-2025-05-16 20:30:38,295 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0f 00 00 00 00 00
-2025-05-16 20:30:38,297 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-16 20:30:38,301 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-16 20:30:38,303 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 20:30:38,306 [ERROR] TC_041 Request seed(ASK) -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-16 20:30:38,307 [DEBUG] Rx: <71E> (08) [p]	 2174c504caaaaaaa
-2025-05-16 20:30:38,376 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-16 20:50:58,912 [INFO] TC_001 - DefaultSession: SID=0x10, Sub=0x01, Expected=[80]
+2025-05-16 20:50:58,914 [INFO] DiagnosticSessionControl<0x10> - Switching session to defaultSession (0x01)
+2025-05-16 20:50:58,916 [DEBUG] Sending request to server
+2025-05-16 20:50:58,917 [DEBUG] Sending 2 bytes : [1001]
+2025-05-16 20:50:58,918 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-16 20:50:58,918 [DEBUG] Waiting for server response
+2025-05-16 20:50:58,919 [DEBUG] Tx: <716> (08) [ ]	 0210010000000000
+2025-05-16 20:50:58,925 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:50:58,927 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 01 00 00 00 00 00
+2025-05-16 20:50:58,962 [DEBUG] Rx: <71E> (08) [p]	 065001003201f4aa
+2025-05-16 20:50:58,964 [DEBUG] Received 6 bytes : [5001003201f4]
+2025-05-16 20:50:58,966 [DEBUG] Received response from server
+2025-05-16 20:50:58,967 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
+2025-05-16 20:50:58,968 [INFO] DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.050s and P2*=5.000s.  Using these value from now on.
+2025-05-16 20:50:58,969 [INFO] TC_001 DefaultSession -> PASS
+2025-05-16 20:51:01,079 [INFO] Running Test Case: TC_002
+2025-05-16 20:51:01,079 [INFO] TC_002 - Extended Session: SID=0x10, Sub=0x03, Expected=[80]
+2025-05-16 20:51:01,081 [INFO] DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2025-05-16 20:51:01,083 [DEBUG] Sending request to server
+2025-05-16 20:51:01,084 [DEBUG] Sending 2 bytes : [1003]
+2025-05-16 20:51:01,086 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-16 20:51:01,087 [DEBUG] Waiting for server response
+2025-05-16 20:51:01,088 [DEBUG] Tx: <716> (08) [ ]	 0210030000000000
+2025-05-16 20:51:01,090 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:51:01,090 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 03 00 00 00 00 00
+2025-05-16 20:51:01,112 [DEBUG] Rx: <71E> (08) [p]	 065003003201f4aa
+2025-05-16 20:51:01,115 [DEBUG] Received 6 bytes : [5003003201f4]
+2025-05-16 20:51:01,118 [DEBUG] Received response from server
+2025-05-16 20:51:01,119 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
+2025-05-16 20:51:01,121 [INFO] DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.050s and P2*=5.000s.  Using these value from now on.
+2025-05-16 20:51:01,124 [INFO] TC_002 Extended Session -> PASS
+2025-05-16 20:51:03,226 [INFO] Running Test Case: TC_003
+2025-05-16 20:51:03,227 [INFO] TC_003 - TesterPresent: SID=0x3E, Sub=0x00, Expected=[126]
+2025-05-16 20:51:03,228 [INFO] TesterPresent<0x3e> - Sending TesterPresent request
+2025-05-16 20:51:03,229 [DEBUG] Sending request to server
+2025-05-16 20:51:03,230 [DEBUG] Sending 2 bytes : [3e00]
+2025-05-16 20:51:03,231 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-16 20:51:03,232 [DEBUG] Waiting for server response
+2025-05-16 20:51:03,234 [DEBUG] Tx: <716> (08) [ ]	 023e000000000000
+2025-05-16 20:51:03,237 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:51:03,238 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 3e 00 00 00 00 00 00
+2025-05-16 20:51:03,272 [DEBUG] Rx: <71E> (08) [p]	 027e00aaaaaaaaaa
+2025-05-16 20:51:03,276 [DEBUG] Received 2 bytes : [7e00]
+2025-05-16 20:51:03,279 [DEBUG] Received response from server
+2025-05-16 20:51:03,286 [INFO] Received positive response for service TesterPresent (0x3e) from server.
+2025-05-16 20:51:03,290 [INFO] TC_003 TesterPresent -> PASS
+2025-05-16 20:51:05,409 [INFO] Running Test Case: TC_041
+2025-05-16 20:51:05,410 [INFO] TC_041 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
+2025-05-16 20:51:05,411 [INFO] SecurityAccess<0x27> - Requesting seed to unlock security access level 0x11
+2025-05-16 20:51:05,412 [DEBUG] Sending request to server
+2025-05-16 20:51:05,414 [DEBUG] Sending 2 bytes : [2711]
+2025-05-16 20:51:05,415 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-16 20:51:05,416 [DEBUG] Waiting for server response
+2025-05-16 20:51:05,417 [DEBUG] Tx: <716> (08) [ ]	 0227110000000000
+2025-05-16 20:51:05,418 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:51:05,418 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 27 11 00 00 00 00 00
+2025-05-16 20:51:05,442 [DEBUG] Rx: <71E> (08) [p]	 100a67115e47fa5e
+2025-05-16 20:51:05,445 [DEBUG] Tx: <716> (08) [ ]	 30080f0000000000
+2025-05-16 20:51:05,446 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:51:05,447 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0f 00 00 00 00 00
+2025-05-16 20:51:05,448 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-16 20:51:05,464 [DEBUG] Rx: <71E> (08) [p]	 21d834966caaaaaa
+2025-05-16 20:51:05,466 [DEBUG] Received 10 bytes : [67115e47fa5ed834966c]
+2025-05-16 20:51:05,468 [DEBUG] Received response from server
+2025-05-16 20:51:05,469 [INFO] Received positive response for service SecurityAccess (0x27) from server.
+2025-05-16 20:51:05,470 [DEBUG] Received seed [5e47fa5ed834966c]
+2025-05-16 20:51:05,471 [INFO] Received Seed: 5e47fa5ed834966c
+2025-05-16 20:51:05,517 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-16 20:51:05,589 [INFO] Received Key: b'6\xab<"z\x11\xf4\xf4'
+2025-05-16 20:51:05,590 [INFO] SecurityAccess<0x27> - Sending key to unlock security access level 0x12
+2025-05-16 20:51:05,591 [DEBUG] 	Key to send [36ab3c227a11f4f4]
+2025-05-16 20:51:05,592 [DEBUG] Sending request to server
+2025-05-16 20:51:05,594 [DEBUG] Sending 10 bytes : [271236ab3c227a11f4f4]
+2025-05-16 20:51:05,595 [DEBUG] Enqueuing a SendRequest for 10 bytes and TAT=Physical
+2025-05-16 20:51:05,596 [DEBUG] Waiting for server response
+2025-05-16 20:51:05,597 [DEBUG] Tx: <716> (08) [ ]	 100a271236ab3c22
+2025-05-16 20:51:05,599 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:51:05,599 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    10 0a 27 12 36 ab 3c 22
+2025-05-16 20:51:05,601 [DEBUG] TxState=WAIT_FC - RxState=IDLE
+2025-05-16 20:51:05,608 [DEBUG] Rx: <71E> (08) [p]	 300005aaaaaaaaaa
+2025-05-16 20:51:05,609 [DEBUG] TxState=TRANSMIT_CF - RxState=IDLE
+2025-05-16 20:51:05,615 [DEBUG] Tx: <716> (08) [ ]	 217a11f4f4000000
+2025-05-16 20:51:05,619 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:51:05,620 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    21 7a 11 f4 f4 00 00 00
+2025-05-16 20:51:05,624 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-16 20:51:05,650 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
+2025-05-16 20:51:05,653 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
+2025-05-16 20:51:05,654 [DEBUG] Rx: <71E> (08) [p]	 026712aaaaaaaaaa
+2025-05-16 20:51:05,657 [ERROR] TC_041 Request seed(ASK) -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
+2025-05-16 20:51:07,768 [INFO] Running Test Case: TC_042
+2025-05-16 20:51:07,769 [INFO] TC_042 - send key(ASK): SID=0x27, Sub=0x12, Expected=[103]
+2025-05-16 20:51:07,769 [ERROR] TC_042 send key(ASK) -> EXCEPTION - 'NoneType' object has no attribute 'positive'
+2025-05-16 20:51:09,872 [DEBUG] Stopping CanStack
+2025-05-16 20:51:09,874 [DEBUG] Main thread is exiting
+2025-05-16 20:51:09,921 [DEBUG] CanStack Stopped
+2025-05-16 20:51:09,925 [INFO] Connection closed
+Full path:/home/mobase/Rasp_Tool/MKBD/udsoncan/output/can_logs/CANLog_Testcase_20250516_205058.asc
+File name:CANLog_Testcase_20250516_205058.asc
+Report generated: /home/mobase/Rasp_Tool/MKBD/udsoncan/output/html_reports/UDS_Report_1747408869.html
+2025-05-16 20:51:10,051 [INFO] Test report saved: UDS_Report_1747408869.html
+2025-05-16 20:51:10,053 [ERROR] [CANLogger] Error during stop: I/O operation on closed file.
+
