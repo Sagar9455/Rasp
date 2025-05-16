@@ -1,3 +1,18 @@
+#TC_ID-0 , Sub Service Description , Service ID , Sub service ID , Positive response data
+TC_001 , Default Session , 0x10 , 0x01 , 0x50
+TC_002 , Extended Session , 0x10 , 0x03 , 0x50
+TC_003 , Tester Present , 0x3E , 0x00 , 0x7E
+TC_004 , Read S/W Version , 0x22 , 0xF1DD , 0x62
+TC_005 , Read VIN , 0x22 , 0xF190 , 0x62
+TC_006 , Security Access Level 0x01 , 0x27 , 0x01 , 0x67
+TC_007 , Security Access Level 0x03 , 0x27 , 0x03 , 0x67
+TC_008 , Security Access Level 0x0B , 0x27 , 0x0B , 0x67
+TC_009 , Read ECU Serial Number , 0x22 , 0xF187 , 0x62
+TC_010 , Read Supplier ECU HW Number , 0x22 , 0xF192 , 0x62
+
+####
+
+
 import socket
 
 ...
