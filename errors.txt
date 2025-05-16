@@ -1,30 +1,19 @@
-class UDSClient:
-    def __init__(self, config):
-        # ... existing initialization code ...
-        pass
-
-    def send_seed_with_retry(self, seed_hex, udp_ip, udp_port):
-        MAX_RETRIES = 3
-        TIMEOUT = 5  # seconds
-        attempt = 0
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.settimeout(TIMEOUT)
-        try:
-            while attempt < MAX_RETRIES:
-                try:
-                    sock.sendto(seed_hex.encode(), (udp_ip, udp_port))
-                    logging.info(f"Attempt {attempt + 1}: Seed sent to {udp_ip}:{udp_port}")
-                    key, _ = sock.recvfrom(1024)
-                    logging.info(f"Received Key: {key}")
-                    return key
-                except socket.timeout:
-                    logging.warning(f"Attempt {attempt + 1}: Timeout waiting for key from PC")
-                    attempt += 1
-                    time.sleep(1)  # Optional: wait before retrying
-                except Exception as e:
-                    logging.error(f"Attempt {attempt + 1}: Exception occurred - {e}")
-                    attempt += 1
-                    time.sleep(1)  # Optional: wait before retrying
-            raise Exception("Failed to receive key after multiple attempts")
-        finally:
-            sock.close()
+2025-05-16 20:30:38,241 [INFO] TC_041 - Request seed(ASK): SID=0x27, Sub=0x11, Expected=[103]
+2025-05-16 20:30:38,243 [INFO] SecurityAccess<0x27> - Requesting seed to unlock security access level 0x11
+2025-05-16 20:30:38,244 [DEBUG] Sending request to server
+2025-05-16 20:30:38,245 [DEBUG] Sending 2 bytes : [2711]
+2025-05-16 20:30:38,246 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-16 20:30:38,247 [DEBUG] Waiting for server response
+2025-05-16 20:30:38,248 [DEBUG] Tx: <716> (08) [ ]	 0227110000000000
+2025-05-16 20:30:38,253 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:30:38,255 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 27 11 00 00 00 00 00
+2025-05-16 20:30:38,290 [DEBUG] Rx: <71E> (08) [p]	 100a67114cb15f19
+2025-05-16 20:30:38,293 [DEBUG] Tx: <716> (08) [ ]	 30080f0000000000
+2025-05-16 20:30:38,295 [DEBUG] We've been asked to write a message to the bus
+2025-05-16 20:30:38,295 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0f 00 00 00 00 00
+2025-05-16 20:30:38,297 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-16 20:30:38,301 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
+2025-05-16 20:30:38,303 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
+2025-05-16 20:30:38,306 [ERROR] TC_041 Request seed(ASK) -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
+2025-05-16 20:30:38,307 [DEBUG] Rx: <71E> (08) [p]	 2174c504caaaaaaa
+2025-05-16 20:30:38,376 [DEBUG] TxState=IDLE - RxState=IDLE
