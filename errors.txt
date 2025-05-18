@@ -1,3 +1,54 @@
+90>, 61935: <drivers.uds_client.SafeAsciiCodec object at 0x7f9ff94bd0>, 61836: <drivers.uds_client.SafeAsciiCodec object at 0x7f9ff94c10>}
+:input_output:{}
+:request_timeout:5
+:p2_timeout:0.2
+:p2_star_timeout:5.0
+:standard_version:2020
+:use_server_timing:True
+:extended_data_size:None
+:s3_client_timeout:4.0
+###
+   "can_interface": {
+    "bringup_on_startup": true,
+    "shutdown_on_exit": true,
+    "bitrate": 100000,
+    "dbitrate": 1000000,
+    "restart_ms": 1000
+  },
+  "uds": {
+	"can": {
+       "channel": "can0",
+       "interface": "socketcan",
+       "bitrate": 100000,
+       "dbitrate": 1000000,
+       "tx_id": "0x716",
+       "rx_id": "0x71E",
+       "is_extended": false,
+       "can_fd": false
+    },  
+    "isotp": {
+      "stmin": 15,
+      "blocksize": 8,
+      "wftmax": 0,
+      "tx_padding": 0,
+      "rx_flowcontrol_timeout": 3000,
+      "rx_consecutive_frame_timeout": 3000,
+      "max_frame_size": 4095,
+      "can_fd": false,
+      "bitrate_switch": false
+      
+    },
+    "timing": {
+      "s3_client": 4000,
+      "s3_server": 6000,
+      "p2_client": 200,
+      "p2_extended_client": 5000,
+      "p2_server": 200,
+      "p2_extended_server": 3000
+###
+
+
+
 2025-05-16 20:50:58,912 [INFO] TC_001 - DefaultSession: SID=0x10, Sub=0x01, Expected=[80]
 2025-05-16 20:50:58,914 [INFO] DiagnosticSessionControl<0x10> - Switching session to defaultSession (0x01)
 2025-05-16 20:50:58,916 [DEBUG] Sending request to server
