@@ -1,51 +1,57 @@
-90>, 61935: <drivers.uds_client.SafeAsciiCodec object at 0x7f9ff94bd0>, 61836: <drivers.uds_client.SafeAsciiCodec object at 0x7f9ff94c10>}
+Effective UDS Client Config:
+:exception_on_negative_response:False
+:exception_on_invalid_response:False
+:exception_on_unexpected_response:False
+:security_algo:None
+:security_algo_params:None
+:tolerate_zero_padding:True
+:ignore_all_zero_dtc:True
+:dtc_snapshot_did_size:2
+:server_address_format:None
+:server_memorysize_format:None
+:data_identifiers:{61696: <drivers.uds_client.SafeAsciiCodec object at 0x7f9a032a50>, 61889: <drivers.uds_client.SafeAsciiCodec object at 0x7f9a0596d0>, 61831: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedb50>, 61856: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedb90>, 61857: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedbd0>, 61873: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc10>, 61872: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc50>, 61843: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc90>, 61841: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedcd0>, 61845: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd10>, 61847: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd50>, 61917: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd90>, 61728: <drivers.uds_client.SafeAsciiCodec object at 0x7f99beddd0>, 61835: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede10>, 61935: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede50>, 61836: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede90>}
 :input_output:{}
 :request_timeout:5
-:p2_timeout:0.2
+:p2_timeout:7.0
 :p2_star_timeout:5.0
 :standard_version:2020
 :use_server_timing:True
 :extended_data_size:None
 :s3_client_timeout:4.0
+
+
+
 ###
-   "can_interface": {
-    "bringup_on_startup": true,
-    "shutdown_on_exit": true,
-    "bitrate": 100000,
-    "dbitrate": 1000000,
-    "restart_ms": 1000
-  },
-  "uds": {
-	"can": {
-       "channel": "can0",
-       "interface": "socketcan",
-       "bitrate": 100000,
-       "dbitrate": 1000000,
-       "tx_id": "0x716",
-       "rx_id": "0x71E",
-       "is_extended": false,
-       "can_fd": false
-    },  
-    "isotp": {
-      "stmin": 15,
-      "blocksize": 8,
-      "wftmax": 0,
-      "tx_padding": 0,
-      "rx_flowcontrol_timeout": 3000,
-      "rx_consecutive_frame_timeout": 3000,
-      "max_frame_size": 4095,
-      "can_fd": false,
-      "bitrate_switch": false
-      
-    },
-    "timing": {
-      "s3_client": 4000,
-      "s3_server": 6000,
-      "p2_client": 200,
-      "p2_extended_client": 5000,
-      "p2_server": 200,
-      "p2_extended_server": 3000
-###
+2025-05-18 15:04:13,366 [INFO] Running Test Case: TC_001
+2025-05-18 15:04:13,367 [INFO] TC_001 - DefaultSession: SID=0x10, Sub=0x01, Expected=[80]
+2025-05-18 15:04:13,369 [INFO] DiagnosticSessionControl<0x10> - Switching session to defaultSession (0x01)
+2025-05-18 15:04:13,372 [DEBUG] Sending request to server
+2025-05-18 15:04:13,374 [DEBUG] Sending 2 bytes : [1001]
+2025-05-18 15:04:13,376 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-18 15:04:13,377 [DEBUG] Waiting for server response
+2025-05-18 15:04:13,378 [DEBUG] Tx: <716> (08) [ ]	 0210010000000000
+2025-05-18 15:04:13,380 [DEBUG] We've been asked to write a message to the bus
+2025-05-18 15:04:13,382 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 01 00 00 00 00 00
+2025-05-18 15:04:13,429 [DEBUG] Rx: <71E> (08) [p]	 065001003201f4aa
+2025-05-18 15:04:13,437 [DEBUG] Received 6 bytes : [5001003201f4]
+2025-05-18 15:04:13,442 [DEBUG] Received response from server
+2025-05-18 15:04:13,443 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
+2025-05-18 15:04:13,446 [INFO] DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.050s and P2*=5.000s.  Using these value from now on.
+2025-05-18 15:04:13,648 [INFO] TC_001 DefaultSession -> PASS
+2025-05-18 15:04:15,797 [INFO] Running Test Case: TC_002
+2025-05-18 15:04:15,797 [INFO] TC_002 - Extended Session: SID=0x10, Sub=0x03, Expected=[80]
+2025-05-18 15:04:15,799 [INFO] DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2025-05-18 15:04:15,802 [DEBUG] Sending request to server
+2025-05-18 15:04:15,804 [DEBUG] Sending 2 bytes : [1003]
+2025-05-18 15:04:15,805 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-18 15:04:15,806 [DEBUG] Waiting for server response
+2025-05-18 15:04:15,807 [DEBUG] Tx: <716> (08) [ ]	 0210030000000000
+2025-05-18 15:04:15,809 [DEBUG] We've been asked to write a message to the bus
+2025-05-18 15:04:15,811 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 03 00 00 00 00 00
+2025-05-18 15:04:15,847 [DEBUG] Rx: <71E> (08) [p]	 065003003201f4aa
+2025-05-18 15:04:15,850 [DEBUG] Received 6 bytes : [5003003201f4]
+2025-05-18 15:04:15,854 [DEBUG] Received response from server
+
 
 
 
