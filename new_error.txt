@@ -1,3 +1,27 @@
+if isinstance(values, (bytes, bytearray)):
+    try:
+        decoded = values.decode('ascii').strip()
+        # Check if decoded string is printable and non-empty
+        if not decoded or not all(c.isprintable() for c in decoded):
+            raise ValueError("Decoded string not usable")
+    except Exception:
+        decoded = ' '.join(f"{b:02X}" for b in values)
+elif isinstance(values, str):
+    decoded = values.strip()
+else:
+    decoded = str(values).strip()
+
+if not decoded:
+    decoded = "<no data>"
+
+display_text = f"{label}\n{decoded}"
+print(f"[DEBUG] OLED: {display_text}")
+oled.display_centered_text(display_text)
+
+
+
+##
+
 25-05-19 16:21:05,052 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf100 (IdentificationOptionVehicleManufacturerSpecificDataIdentifier)
 2025-05-19 16:21:05,053 [DEBUG] Sending request to server
 2025-05-19 16:21:05,054 [DEBUG] Sending 3 bytes : [22f100]
