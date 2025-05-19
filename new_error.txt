@@ -1,3 +1,32 @@
+if isinstance(values, (bytes, bytearray)):
+    try:
+        # Try decoding to ASCII and strip nulls
+        decoded = values.decode('ascii', errors='ignore').replace('\x00', '').strip()
+        # Fallback to hex if it's empty or has unprintables
+        if not decoded or not all(c.isprintable() for c in decoded):
+            raise ValueError("Non-printable or empty ASCII")
+    except Exception:
+        decoded = ' '.join(f"{b:02X}" for b in values)
+elif isinstance(values, str):
+    decoded = values.strip()
+else:
+    decoded = str(values).strip()
+
+# Always ensure we show something
+if not decoded:
+    decoded = "<no data>"
+
+display_text = f"{label}\n{decoded}"
+print(f"[DEBUG] Displaying on OLED:\n{display_text!r}")
+oled.display_centered_text(display_text)
+
+
+
+
+
+
+
+###
 [DEBUG] OLED: 
 'B-CAN Version\n%\x04\x01'
 [DEBUG] OLED: 
