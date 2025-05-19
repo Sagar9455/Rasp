@@ -1,23 +1,7 @@
-if isinstance(values, (bytes, bytearray)):
-    try:
-        decoded = values.decode('ascii').strip()
-        # Check if decoded string is printable and non-empty
-        if not decoded or not all(c.isprintable() for c in decoded):
-            raise ValueError("Decoded string not usable")
-    except Exception:
-        decoded = ' '.join(f"{b:02X}" for b in values)
-elif isinstance(values, str):
-    decoded = values.strip()
-else:
-    decoded = str(values).strip()
-
-if not decoded:
-    decoded = "<no data>"
-
-display_text = f"{label}\n{decoded}"
-print(f"[DEBUG] OLED: {display_text}")
-oled.display_centered_text(display_text)
-
+[DEBUG] OLED: 
+'B-CAN Version\n%\x04\x01'
+[DEBUG] OLED: 
+'ECU_Serial Number\n\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
 
 
 ##
