@@ -1,20 +1,61 @@
-if isinstance(values, (bytes, bytearray)):
-    try:
-        # Try decoding as ASCII first
-        ascii_str = values.decode('ascii')
-        hex_str = ascii_str.strip()
-    except UnicodeDecodeError:
-        # Fallback to hex if not ASCII
-        hex_str = ' '.join(f"{b:02X}" for b in values)
-elif isinstance(values, str):
-    hex_str = values
-else:
-    hex_str = str(values)
+def get_ecu_information(self, oled):
+    self.check_memory(oled) 
+         
+    self.start_logging(log_name_suffix="ECU_Info")
+    session_default = int(self.uds_config["default_session"], 16)
+    session_extended = int(self.uds_config["extended_session"], 16)
+    
+    with Client(self.conn, request_timeout=2, config=self.client_config) as client:
+        try:
+            client.change_session(session_default)
+            time.sleep(0.2)
+            client.change_session(session_extended)
+            time.sleep(0.2)
+        except Exception as e:
+            oled.display_centered_text(f"Session Error:\n{str(e)}")
+            logging.error(f"Session change failed: {e}")
+            self.stop_logging()
+            return
 
-# Now chunk hex_str into lines for OLED if it's too long
-lines = [label]
-chunk_size = 16  # Fits within 128px width
-for i in range(0, len(hex_str), chunk_size):
-    lines.append(hex_str[i:i+chunk_size])
+        for did_hex, info in self.info_dids.items():
+            label = info["label"]
+            did = int(did_hex, 16)
 
-oled.display_centered_text('\n'.join(lines[:3]))  # Show max 3 lines
+            try:
+                response = client.read_data_by_identifier(did)
+                if response.positive:
+                    values = response.service_data.values[did]
+
+                    # Normalize the output
+                    if isinstance(values, (bytes, bytearray)):
+                        try:
+                            decoded = values.decode('ascii').strip()
+                            if not decoded:
+                                raise ValueError("Decoded ASCII is empty")
+                        except Exception:
+                            decoded = ' '.join(f"{b:02X}" for b in values)
+                    elif isinstance(values, str):
+                        decoded = values.strip()
+                    else:
+                        decoded = str(values).strip()
+
+                    if not decoded:
+                        decoded = "<no data>"
+
+                    # Logging and OLED display
+                    display_text = f"{label}\n{decoded}"
+                    print(f"[DEBUG] OLED: {display_text}")
+                    oled.display_centered_text(display_text)
+                    logging.info(f"[ECU Info] {label} ({did_hex}) = {decoded}")
+                else:
+                    nrc = hex(response.code)
+                    oled.display_centered_text(f"{label}\nNRC: {nrc}")
+                    logging.warning(f"[ECU Info] {label} - Negative Response Code: {nrc}")
+            except Exception as e:
+                error_msg = str(e)[:40]
+                oled.display_centered_text(f"{label}\nError: {error_msg}")
+                logging.error(f"[ECU Info] {label} - Exception: {e}")
+
+            time.sleep(3)  # Let the user read the text
+
+    self.stop_logging()
