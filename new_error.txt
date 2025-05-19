@@ -1,61 +1,99 @@
-def get_ecu_information(self, oled):
-    self.check_memory(oled) 
-         
-    self.start_logging(log_name_suffix="ECU_Info")
-    session_default = int(self.uds_config["default_session"], 16)
-    session_extended = int(self.uds_config["extended_session"], 16)
-    
-    with Client(self.conn, request_timeout=2, config=self.client_config) as client:
-        try:
-            client.change_session(session_default)
-            time.sleep(0.2)
-            client.change_session(session_extended)
-            time.sleep(0.2)
-        except Exception as e:
-            oled.display_centered_text(f"Session Error:\n{str(e)}")
-            logging.error(f"Session change failed: {e}")
-            self.stop_logging()
-            return
+25-05-19 16:21:05,052 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf100 (IdentificationOptionVehicleManufacturerSpecificDataIdentifier)
+2025-05-19 16:21:05,053 [DEBUG] Sending request to server
+2025-05-19 16:21:05,054 [DEBUG] Sending 3 bytes : [22f100]
+2025-05-19 16:21:05,054 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 16:21:05,056 [DEBUG] Waiting for server response
+2025-05-19 16:21:05,056 [DEBUG] Tx: <716> (08) [ ]	 0322f10000000000
+2025-05-19 16:21:05,057 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:05,058 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 00 00 00 00 00
+2025-05-19 16:21:05,082 [DEBUG] Rx: <71E> (08) [p]	 0662f100250401aa
+2025-05-19 16:21:05,085 [DEBUG] Received 6 bytes : [62f100250401]
+2025-05-19 16:21:05,089 [DEBUG] Received response from server
+2025-05-19 16:21:05,090 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+[DEBUG] OLED: B-CAN Version
+%
+2025-05-19 16:21:05,180 [INFO] [ECU Info] B-CAN Version (0xF100) = %
+2025-05-19 16:21:08,181 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf18c (ECUSerialNumberDataIdentifier)
+2025-05-19 16:21:08,183 [DEBUG] Sending request to server
+2025-05-19 16:21:08,188 [DEBUG] Sending 3 bytes : [22f18c]
+2025-05-19 16:21:08,189 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 16:21:08,191 [DEBUG] Waiting for server response
+2025-05-19 16:21:08,192 [DEBUG] Tx: <716> (08) [ ]	 0322f18c00000000
+2025-05-19 16:21:08,193 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:08,194 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 8c 00 00 00 00
+2025-05-19 16:21:08,214 [DEBUG] Rx: <71E> (08) [p]	 100d62f18c000000
+2025-05-19 16:21:08,218 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
+2025-05-19 16:21:08,219 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:08,221 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
+2025-05-19 16:21:08,223 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-19 16:21:08,229 [DEBUG] Rx: <71E> (08) [p]	 2100000000000000
+2025-05-19 16:21:08,232 [DEBUG] Received 13 bytes : [62f18c00000000000000000000]
+2025-05-19 16:21:08,235 [DEBUG] Received response from server
+2025-05-19 16:21:08,237 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+[DEBUG] OLED: ECU_Serial Number
 
-        for did_hex, info in self.info_dids.items():
-            label = info["label"]
-            did = int(did_hex, 16)
+2025-05-19 16:21:08,283 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-19 16:21:08,349 [INFO] [ECU Info] ECU_Serial Number (0xF18C) = 
+2025-05-19 16:21:11,350 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf193 (SystemSupplierECUHardwareVersionNumberDataIdentifier)
+2025-05-19 16:21:11,351 [DEBUG] Sending request to server
+2025-05-19 16:21:11,352 [DEBUG] Sending 3 bytes : [22f193]
+2025-05-19 16:21:11,353 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 16:21:11,353 [DEBUG] Waiting for server response
+2025-05-19 16:21:11,354 [DEBUG] Tx: <716> (08) [ ]	 0322f19300000000
+2025-05-19 16:21:11,355 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:11,355 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 93 00 00 00 00
+2025-05-19 16:21:11,373 [DEBUG] Rx: <71E> (08) [p]	 100862f19330312e
+2025-05-19 16:21:11,375 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
+2025-05-19 16:21:11,377 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:11,377 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
+2025-05-19 16:21:11,379 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-19 16:21:11,389 [DEBUG] Rx: <71E> (08) [p]	 213030aaaaaaaaaa
+2025-05-19 16:21:11,390 [DEBUG] Received 8 bytes : [62f19330312e3030]
+2025-05-19 16:21:11,392 [DEBUG] Received response from server
+2025-05-19 16:21:11,392 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+[DEBUG] OLED: H/W Version
+01.00
+2025-05-19 16:21:11,445 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-19 16:21:11,480 [INFO] [ECU Info] H/W Version (0xF193) = 01.00
+2025-05-19 16:21:14,482 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf18b (ECUManufacturingDateDataIdentifier)
+2025-05-19 16:21:14,484 [DEBUG] Sending request to server
+2025-05-19 16:21:14,487 [DEBUG] Sending 3 bytes : [22f18b]
+2025-05-19 16:21:14,489 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 16:21:14,491 [DEBUG] Waiting for server response
+2025-05-19 16:21:14,492 [DEBUG] Tx: <716> (08) [ ]	 0322f18b00000000
+2025-05-19 16:21:14,493 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:14,494 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 8b 00 00 00 00
+2025-05-19 16:21:14,514 [DEBUG] Rx: <71E> (08) [p]	 0762f18b61383132
+2025-05-19 16:21:14,516 [DEBUG] Received 7 bytes : [62f18b61383132]
+2025-05-19 16:21:14,519 [DEBUG] Received response from server
+2025-05-19 16:21:14,521 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+[DEBUG] OLED: Manufacturing Date
+a812
+2025-05-19 16:21:14,639 [INFO] [ECU Info] Manufacturing Date (0xF18B) = a812
+2025-05-19 16:21:17,640 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1dd (IdentificationOptionVehicleManufacturerSpecific)
+2025-05-19 16:21:17,641 [DEBUG] Sending request to server
+2025-05-19 16:21:17,642 [DEBUG] Sending 3 bytes : [22f1dd]
+2025-05-19 16:21:17,643 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 16:21:17,643 [DEBUG] Waiting for server response
+2025-05-19 16:21:17,644 [DEBUG] Tx: <716> (08) [ ]	 0322f1dd00000000
+2025-05-19 16:21:17,645 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:17,645 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 dd 00 00 00 00
+2025-05-19 16:21:17,663 [DEBUG] Rx: <71E> (08) [p]	 100b62f1dd30312e
+2025-05-19 16:21:17,665 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
+2025-05-19 16:21:17,666 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 16:21:17,667 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
+2025-05-19 16:21:17,668 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-19 16:21:17,673 [DEBUG] Rx: <71E> (08) [p]	 2130312e3030aaaa
+2025-05-19 16:21:17,675 [DEBUG] Received 11 bytes : [62f1dd30312e30312e3030]
+2025-05-19 16:21:17,678 [DEBUG] Received response from server
+2025-05-19 16:21:17,679 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+[DEBUG] OLED: S/W Version
+01.01.00
+2025-05-19 16:21:17,730 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-19 16:21:17,767 [INFO] [ECU Info] S/W Version (0xF1DD) = 01.01.00
+2025-05-19 16:21:20,770 [DEBUG] Stopping CanStack
+2025-05-19 16:21:20,772 [DEBUG] Main thread is exiting
+2025-05-19 16:21:20,793 [DEBUG] CanStack Stopped
+2025-05-19 16:21:20,794 [INFO] Connection closed
+2025-05-19 16:21:20,800 [ERROR] [CANLogger] Error during stop: I/O operation on closed file.
 
-            try:
-                response = client.read_data_by_identifier(did)
-                if response.positive:
-                    values = response.service_data.values[did]
-
-                    # Normalize the output
-                    if isinstance(values, (bytes, bytearray)):
-                        try:
-                            decoded = values.decode('ascii').strip()
-                            if not decoded:
-                                raise ValueError("Decoded ASCII is empty")
-                        except Exception:
-                            decoded = ' '.join(f"{b:02X}" for b in values)
-                    elif isinstance(values, str):
-                        decoded = values.strip()
-                    else:
-                        decoded = str(values).strip()
-
-                    if not decoded:
-                        decoded = "<no data>"
-
-                    # Logging and OLED display
-                    display_text = f"{label}\n{decoded}"
-                    print(f"[DEBUG] OLED: {display_text}")
-                    oled.display_centered_text(display_text)
-                    logging.info(f"[ECU Info] {label} ({did_hex}) = {decoded}")
-                else:
-                    nrc = hex(response.code)
-                    oled.display_centered_text(f"{label}\nNRC: {nrc}")
-                    logging.warning(f"[ECU Info] {label} - Negative Response Code: {nrc}")
-            except Exception as e:
-                error_msg = str(e)[:40]
-                oled.display_centered_text(f"{label}\nError: {error_msg}")
-                logging.error(f"[ECU Info] {label} - Exception: {e}")
-
-            time.sleep(3)  # Let the user read the text
-
-    self.stop_logging()
