@@ -1,120 +1,20 @@
-2025-05-19 15:27:03,670 [INFO] Created a socket
-2025-05-19 15:27:03,671 [DEBUG] Binding socket to channel=can0
-2025-05-19 15:27:03,672 [DEBUG] Bound socket.
-2025-05-19 15:27:03,675 [INFO] CAN logging started: /home/mobase/UDS_Tool_Raspberry_Pi/MKBD/udsoncan/output/can_logs/CANLog_ECU_Info_20250519_152703.asc
-2025-05-19 15:27:03,676 [DEBUG] Starting CanStack
-2025-05-19 15:27:03,678 [DEBUG] Main thread has started
-2025-05-19 15:27:03,680 [DEBUG] Relay thread has started
-2025-05-19 15:27:03,682 [INFO] Connection opened
-2025-05-19 15:27:03,685 [INFO] DiagnosticSessionControl<0x10> - Switching session to defaultSession (0x01)
-2025-05-19 15:27:03,687 [DEBUG] Sending request to server
-2025-05-19 15:27:03,688 [DEBUG] Sending 2 bytes : [1001]
-2025-05-19 15:27:03,689 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-19 15:27:03,691 [DEBUG] Waiting for server response
-2025-05-19 15:27:03,692 [DEBUG] Tx: <716> (08) [ ]	 0210010000000000
-2025-05-19 15:27:03,694 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:03,695 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 01 00 00 00 00 00
-2025-05-19 15:27:03,735 [DEBUG] Rx: <71E> (08) [p]	 065001003201f4aa
-2025-05-19 15:27:03,750 [DEBUG] Received 6 bytes : [5001003201f4]
-2025-05-19 15:27:03,753 [DEBUG] Received response from server
-2025-05-19 15:27:03,763 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
-2025-05-19 15:27:03,968 [INFO] DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
-2025-05-19 15:27:03,969 [DEBUG] Sending request to server
-2025-05-19 15:27:03,970 [DEBUG] Sending 2 bytes : [1003]
-2025-05-19 15:27:03,971 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-19 15:27:03,971 [DEBUG] Waiting for server response
-2025-05-19 15:27:03,972 [DEBUG] Tx: <716> (08) [ ]	 0210030000000000
-2025-05-19 15:27:03,973 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:03,974 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 03 00 00 00 00 00
-2025-05-19 15:27:03,994 [DEBUG] Rx: <71E> (08) [p]	 065003003201f4aa
-2025-05-19 15:27:03,996 [DEBUG] Received 6 bytes : [5003003201f4]
-2025-05-19 15:27:03,999 [DEBUG] Received response from server
-2025-05-19 15:27:04,002 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
-2025-05-19 15:27:04,205 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf100 (IdentificationOptionVehicleManufacturerSpecificDataIdentifier)
-2025-05-19 15:27:04,206 [DEBUG] Sending request to server
-2025-05-19 15:27:04,206 [DEBUG] Sending 3 bytes : [22f100]
-2025-05-19 15:27:04,207 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-19 15:27:04,207 [DEBUG] Waiting for server response
-2025-05-19 15:27:04,208 [DEBUG] Tx: <716> (08) [ ]	 0322f10000000000
-2025-05-19 15:27:04,209 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:04,209 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 00 00 00 00 00
-2025-05-19 15:27:04,234 [DEBUG] Rx: <71E> (08) [p]	 0662f100250401aa
-2025-05-19 15:27:04,236 [DEBUG] Received 6 bytes : [62f100250401]
-2025-05-19 15:27:04,239 [DEBUG] Received response from server
-2025-05-19 15:27:04,242 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-19 15:27:04,330 [INFO] [ECU Info] B-CAN Version (0xF100) = %
-2025-05-19 15:27:07,332 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf18c (ECUSerialNumberDataIdentifier)
-2025-05-19 15:27:07,333 [DEBUG] Sending request to server
-2025-05-19 15:27:07,334 [DEBUG] Sending 3 bytes : [22f18c]
-2025-05-19 15:27:07,338 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-19 15:27:07,339 [DEBUG] Waiting for server response
-2025-05-19 15:27:07,340 [DEBUG] Tx: <716> (08) [ ]	 0322f18c00000000
-2025-05-19 15:27:07,341 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:07,341 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 8c 00 00 00 00
-2025-05-19 15:27:07,365 [DEBUG] Rx: <71E> (08) [p]	 100d62f18c000000
-2025-05-19 15:27:07,367 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-19 15:27:07,368 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:07,370 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-19 15:27:07,374 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-19 15:27:07,380 [DEBUG] Rx: <71E> (08) [p]	 2100000000000000
-2025-05-19 15:27:07,382 [DEBUG] Received 13 bytes : [62f18c00000000000000000000]
-2025-05-19 15:27:07,384 [DEBUG] Received response from server
-2025-05-19 15:27:07,385 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-19 15:27:07,442 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-19 15:27:07,482 [INFO] [ECU Info] ECU_Serial Number (0xF18C) = 
-2025-05-19 15:27:10,484 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf193 (SystemSupplierECUHardwareVersionNumberDataIdentifier)
-2025-05-19 15:27:10,484 [DEBUG] Sending request to server
-2025-05-19 15:27:10,485 [DEBUG] Sending 3 bytes : [22f193]
-2025-05-19 15:27:10,486 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-19 15:27:10,487 [DEBUG] Waiting for server response
-2025-05-19 15:27:10,488 [DEBUG] Tx: <716> (08) [ ]	 0322f19300000000
-2025-05-19 15:27:10,489 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:10,489 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 93 00 00 00 00
-2025-05-19 15:27:10,515 [DEBUG] Rx: <71E> (08) [p]	 100862f19330312e
-2025-05-19 15:27:10,519 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-19 15:27:10,521 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:10,521 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-19 15:27:10,523 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-19 15:27:10,530 [DEBUG] Rx: <71E> (08) [p]	 213030aaaaaaaaaa
-2025-05-19 15:27:10,531 [DEBUG] Received 8 bytes : [62f19330312e3030]
-2025-05-19 15:27:10,534 [DEBUG] Received response from server
-2025-05-19 15:27:10,535 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-19 15:27:10,586 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-19 15:27:10,626 [INFO] [ECU Info] H/W Version (0xF193) = 01.00
-2025-05-19 15:27:13,630 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf18b (ECUManufacturingDateDataIdentifier)
-2025-05-19 15:27:13,631 [DEBUG] Sending request to server
-2025-05-19 15:27:13,632 [DEBUG] Sending 3 bytes : [22f18b]
-2025-05-19 15:27:13,632 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-19 15:27:13,633 [DEBUG] Waiting for server response
-2025-05-19 15:27:13,634 [DEBUG] Tx: <716> (08) [ ]	 0322f18b00000000
-2025-05-19 15:27:13,635 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:13,635 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 8b 00 00 00 00
-2025-05-19 15:27:13,654 [DEBUG] Rx: <71E> (08) [p]	 0762f18b61383132
-2025-05-19 15:27:13,656 [DEBUG] Received 7 bytes : [62f18b61383132]
-2025-05-19 15:27:13,660 [DEBUG] Received response from server
-2025-05-19 15:27:13,661 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-19 15:27:13,756 [INFO] [ECU Info] Manufacturing Date (0xF18B) = a812
-2025-05-19 15:27:16,757 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1dd (IdentificationOptionVehicleManufacturerSpecific)
-2025-05-19 15:27:16,758 [DEBUG] Sending request to server
-2025-05-19 15:27:16,760 [DEBUG] Sending 3 bytes : [22f1dd]
-2025-05-19 15:27:16,761 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-19 15:27:16,761 [DEBUG] Waiting for server response
-2025-05-19 15:27:16,762 [DEBUG] Tx: <716> (08) [ ]	 0322f1dd00000000
-2025-05-19 15:27:16,763 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:16,763 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 dd 00 00 00 00
-2025-05-19 15:27:16,784 [DEBUG] Rx: <71E> (08) [p]	 100b62f1dd30312e
-2025-05-19 15:27:16,785 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
-2025-05-19 15:27:16,786 [DEBUG] We've been asked to write a message to the bus
-2025-05-19 15:27:16,786 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
-2025-05-19 15:27:16,787 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-19 15:27:16,794 [DEBUG] Rx: <71E> (08) [p]	 2130312e3030aaaa
-2025-05-19 15:27:16,795 [DEBUG] Received 11 bytes : [62f1dd30312e30312e3030]
-2025-05-19 15:27:16,797 [DEBUG] Received response from server
-2025-05-19 15:27:16,797 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
-2025-05-19 15:27:16,853 [DEBUG] TxState=IDLE - RxState=IDLE
-2025-05-19 15:27:16,900 [INFO] [ECU Info] S/W Version (0xF1DD) = 01.01.00
-2025-05-19 15:27:19,902 [DEBUG] Stopping CanStack
-2025-05-19 15:27:19,903 [DEBUG] Main thread is exiting
-2025-05-19 15:27:19,922 [DEBUG] CanStack Stopped
-2025-05-19 15:27:19,923 [INFO] Connection closed
-2025-05-19 15:27:19,951 [ERROR] [CANLogger] Error during stop: I/O operation on closed file.
+if isinstance(values, (bytes, bytearray)):
+    try:
+        # Try decoding as ASCII first
+        ascii_str = values.decode('ascii')
+        hex_str = ascii_str.strip()
+    except UnicodeDecodeError:
+        # Fallback to hex if not ASCII
+        hex_str = ' '.join(f"{b:02X}" for b in values)
+elif isinstance(values, str):
+    hex_str = values
+else:
+    hex_str = str(values)
+
+# Now chunk hex_str into lines for OLED if it's too long
+lines = [label]
+chunk_size = 16  # Fits within 128px width
+for i in range(0, len(hex_str), chunk_size):
+    lines.append(hex_str[i:i+chunk_size])
+
+oled.display_centered_text('\n'.join(lines[:3]))  # Show max 3 lines
