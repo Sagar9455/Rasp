@@ -1,73 +1,120 @@
-['PayloadOverrider', 'SuppressPositiveResponse', '__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'access_timing_parameter', 'add_file', 'authentication', 'authentication_configuration', 'change_session', 'clear_all_dynamically_defined_did', 'clear_dtc', 'clear_dynamically_defined_did', 'close', 'communication_control', 'config', 'configure_logger', 'conn', 'control_dtc_setting', 'deauthenticate', 'delete_file', 'do_clear_dynamically_defined_did', 'dynamically_define_did', 'ecu_reset', 'get_dtc_by_status_mask', 'get_dtc_by_status_severity_mask', 'get_dtc_extended_data_by_dtc_number', 'get_dtc_extended_data_by_record_number', 'get_dtc_fault_counter', 'get_dtc_severity', 'get_dtc_snapshot_by_dtc_number', 'get_dtc_snapshot_by_record_number', 'get_dtc_snapshot_identification', 'get_dtc_with_permanent_status', 'get_emission_dtc_by_status_mask', 'get_first_confirmed_dtc', 'get_first_test_failed_dtc', 'get_mirrormemory_dtc_by_status_mask', 'get_mirrormemory_dtc_extended_data_by_dtc_number', 'get_mirrormemory_number_of_dtc_by_status_mask', 'get_most_recent_confirmed_dtc', 'get_most_recent_test_failed_dtc', 'get_number_of_dtc_by_status_mask', 'get_number_of_dtc_by_status_severity_mask', 'get_number_of_emission_dtc_by_status_mask', 'get_routine_result', 'get_supported_dtc', 'get_user_defined_dtc_extended_data_by_dtc_number', 'get_user_defined_dtc_snapshot_by_dtc_number', 'get_user_defined_memory_dtc_by_status_mask', 'io_control', 'last_response', 'link_control', 'logger', 'open', 'payload_override', 'proof_of_ownership', 'read_active_timing_parameters', 'read_data_by_identifier', 'read_data_by_identifier_first', 'read_dir', 'read_dtc_information', 'read_extended_timing_parameters', 'read_file', 'read_memory_by_address', 'refresh_config', 'replace_file', 'request_challenge_for_authentication', 'request_download', 'request_file_transfer', 'request_seed', 'request_transfer_exit', 'request_upload', 'request_upload_download', 'reset_default_timing_parameters', 'resume_file', 'routine_control', 'send_key', 'send_request', 'service_log_prefix', 'session_timing', 'set_config', 'set_configs', 'set_timing_parameters', 'standard_error_management', 'start_routine', 'stop_routine', 'suppress_positive_response', 'test_data_identifier', 'tester_present', 'transfer_data', 'transmit_certificate', 'unlock_security_access', 'validate_config', 'verify_certificate_bidirectional', 'verify_certificate_unidirectional', 'verify_proof_of_ownership_bidirectional', 'verify_proof_of_ownership_unidirectional', 'write_data_by_identifier', 'write_memory_by_address']
-Effective UDS Client Config:
-:exception_on_negative_response:False
-:exception_on_invalid_response:False
-:exception_on_unexpected_response:False
-:security_algo:None
-:security_algo_params:None
-:tolerate_zero_padding:True
-:ignore_all_zero_dtc:True
-:dtc_snapshot_did_size:2
-:server_address_format:None
-:server_memorysize_format:None
-:data_identifiers:{61696: <drivers.uds_client.SafeAsciiCodec object at 0x7f9a032a50>, 61889: <drivers.uds_client.SafeAsciiCodec object at 0x7f9a0596d0>, 61831: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedb50>, 61856: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedb90>, 61857: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedbd0>, 61873: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc10>, 61872: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc50>, 61843: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc90>, 61841: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedcd0>, 61845: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd10>, 61847: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd50>, 61917: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd90>, 61728: <drivers.uds_client.SafeAsciiCodec object at 0x7f99beddd0>, 61835: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede10>, 61935: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede50>, 61836: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede90>}
-:input_output:{}
-:request_timeout:5
-:p2_timeout:7.0
-:p2_star_timeout:5.0
-:standard_version:2020
-:use_server_timing:True
-:extended_data_size:None
-:s3_client_timeout:4.0
-2025-05-18 15:04:13,366 [INFO] Running Test Case: TC_001
-2025-05-18 15:04:13,367 [INFO] TC_001 - DefaultSession: SID=0x10, Sub=0x01, Expected=[80]
-2025-05-18 15:04:13,369 [INFO] DiagnosticSessionControl<0x10> - Switching session to defaultSession (0x01)
-2025-05-18 15:04:13,372 [DEBUG] Sending request to server
-2025-05-18 15:04:13,374 [DEBUG] Sending 2 bytes : [1001]
-2025-05-18 15:04:13,376 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-18 15:04:13,377 [DEBUG] Waiting for server response
-2025-05-18 15:04:13,378 [DEBUG] Tx: <716> (08) [ ]	 0210010000000000
-2025-05-18 15:04:13,380 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:13,382 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 01 00 00 00 00 00
-2025-05-18 15:04:13,429 [DEBUG] Rx: <71E> (08) [p]	 065001003201f4aa
-2025-05-18 15:04:13,437 [DEBUG] Received 6 bytes : [5001003201f4]
-2025-05-18 15:04:13,442 [DEBUG] Received response from server
-2025-05-18 15:04:13,443 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
-2025-05-18 15:04:13,446 [INFO] DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.050s and P2*=5.000s.  Using these value from now on.
-2025-05-18 15:04:13,648 [INFO] TC_001 DefaultSession -> PASS
-2025-05-18 15:04:15,797 [INFO] Running Test Case: TC_002
-2025-05-18 15:04:15,797 [INFO] TC_002 - Extended Session: SID=0x10, Sub=0x03, Expected=[80]
-2025-05-18 15:04:15,799 [INFO] DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
-2025-05-18 15:04:15,802 [DEBUG] Sending request to server
-2025-05-18 15:04:15,804 [DEBUG] Sending 2 bytes : [1003]
-2025-05-18 15:04:15,805 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-18 15:04:15,806 [DEBUG] Waiting for server response
-2025-05-18 15:04:15,807 [DEBUG] Tx: <716> (08) [ ]	 0210030000000000
-2025-05-18 15:04:15,809 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:15,811 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 03 00 00 00 00 00
-2025-05-18 15:04:15,847 [DEBUG] Rx: <71E> (08) [p]	 065003003201f4aa
-2025-05-18 15:04:15,850 [DEBUG] Received 6 bytes : [5003003201f4]
-2025-05-18 15:04:15,854 [DEBUG] Received response from server
-2025-05-18 15:04:15,856 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
-2025-05-18 15:04:15,857 [INFO] DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.050s and P2*=5.000s.  Using these value from now on.
-2025-05-18 15:04:16,058 [INFO] TC_002 Extended Session -> PASS
-2025-05-18 15:04:41,610 [INFO] Running Test Case: TC_006
-2025-05-18 15:04:41,610 [INFO] TC_006 - VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number): SID=0x22, Sub=0xF187, Expected=[98]
-2025-05-18 15:04:41,611 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf187 (VehicleManufacturerSparePartNumberDataIdentifier)
-2025-05-18 15:04:41,611 [DEBUG] Sending request to server
-2025-05-18 15:04:41,612 [DEBUG] Sending 3 bytes : [22f187]
-2025-05-18 15:04:41,613 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-18 15:04:41,614 [DEBUG] Waiting for server response
-2025-05-18 15:04:41,614 [DEBUG] Tx: <716> (08) [ ]	 0322f18700000000
-2025-05-18 15:04:41,615 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:41,615 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 87 00 00 00 00
-2025-05-18 15:04:41,666 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-18 15:04:41,669 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-18 15:04:41,672 [ERROR] TC_006 VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number) -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-18 15:04:41,956 [DEBUG] Rx: <71E> (08) [p]	 100d62f187393635
-2025-05-18 15:04:41,958 [DEBUG] Tx: <716> (08) [ ]	 30080f0000000000
-2025-05-18 15:04:41,961 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:41,964 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0f 00 00 00 00 00
-2025-05-18 15:04:41,966 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-18 15:04:41,975 [DEBUG] Rx: <71E> (08) [p]	 2134304459303030
-2025-05-18 15:04:42,027 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-19 15:27:03,670 [INFO] Created a socket
+2025-05-19 15:27:03,671 [DEBUG] Binding socket to channel=can0
+2025-05-19 15:27:03,672 [DEBUG] Bound socket.
+2025-05-19 15:27:03,675 [INFO] CAN logging started: /home/mobase/UDS_Tool_Raspberry_Pi/MKBD/udsoncan/output/can_logs/CANLog_ECU_Info_20250519_152703.asc
+2025-05-19 15:27:03,676 [DEBUG] Starting CanStack
+2025-05-19 15:27:03,678 [DEBUG] Main thread has started
+2025-05-19 15:27:03,680 [DEBUG] Relay thread has started
+2025-05-19 15:27:03,682 [INFO] Connection opened
+2025-05-19 15:27:03,685 [INFO] DiagnosticSessionControl<0x10> - Switching session to defaultSession (0x01)
+2025-05-19 15:27:03,687 [DEBUG] Sending request to server
+2025-05-19 15:27:03,688 [DEBUG] Sending 2 bytes : [1001]
+2025-05-19 15:27:03,689 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-19 15:27:03,691 [DEBUG] Waiting for server response
+2025-05-19 15:27:03,692 [DEBUG] Tx: <716> (08) [ ]	 0210010000000000
+2025-05-19 15:27:03,694 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:03,695 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 01 00 00 00 00 00
+2025-05-19 15:27:03,735 [DEBUG] Rx: <71E> (08) [p]	 065001003201f4aa
+2025-05-19 15:27:03,750 [DEBUG] Received 6 bytes : [5001003201f4]
+2025-05-19 15:27:03,753 [DEBUG] Received response from server
+2025-05-19 15:27:03,763 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
+2025-05-19 15:27:03,968 [INFO] DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
+2025-05-19 15:27:03,969 [DEBUG] Sending request to server
+2025-05-19 15:27:03,970 [DEBUG] Sending 2 bytes : [1003]
+2025-05-19 15:27:03,971 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
+2025-05-19 15:27:03,971 [DEBUG] Waiting for server response
+2025-05-19 15:27:03,972 [DEBUG] Tx: <716> (08) [ ]	 0210030000000000
+2025-05-19 15:27:03,973 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:03,974 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 03 00 00 00 00 00
+2025-05-19 15:27:03,994 [DEBUG] Rx: <71E> (08) [p]	 065003003201f4aa
+2025-05-19 15:27:03,996 [DEBUG] Received 6 bytes : [5003003201f4]
+2025-05-19 15:27:03,999 [DEBUG] Received response from server
+2025-05-19 15:27:04,002 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
+2025-05-19 15:27:04,205 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf100 (IdentificationOptionVehicleManufacturerSpecificDataIdentifier)
+2025-05-19 15:27:04,206 [DEBUG] Sending request to server
+2025-05-19 15:27:04,206 [DEBUG] Sending 3 bytes : [22f100]
+2025-05-19 15:27:04,207 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 15:27:04,207 [DEBUG] Waiting for server response
+2025-05-19 15:27:04,208 [DEBUG] Tx: <716> (08) [ ]	 0322f10000000000
+2025-05-19 15:27:04,209 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:04,209 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 00 00 00 00 00
+2025-05-19 15:27:04,234 [DEBUG] Rx: <71E> (08) [p]	 0662f100250401aa
+2025-05-19 15:27:04,236 [DEBUG] Received 6 bytes : [62f100250401]
+2025-05-19 15:27:04,239 [DEBUG] Received response from server
+2025-05-19 15:27:04,242 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+2025-05-19 15:27:04,330 [INFO] [ECU Info] B-CAN Version (0xF100) = %
+2025-05-19 15:27:07,332 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf18c (ECUSerialNumberDataIdentifier)
+2025-05-19 15:27:07,333 [DEBUG] Sending request to server
+2025-05-19 15:27:07,334 [DEBUG] Sending 3 bytes : [22f18c]
+2025-05-19 15:27:07,338 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 15:27:07,339 [DEBUG] Waiting for server response
+2025-05-19 15:27:07,340 [DEBUG] Tx: <716> (08) [ ]	 0322f18c00000000
+2025-05-19 15:27:07,341 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:07,341 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 8c 00 00 00 00
+2025-05-19 15:27:07,365 [DEBUG] Rx: <71E> (08) [p]	 100d62f18c000000
+2025-05-19 15:27:07,367 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
+2025-05-19 15:27:07,368 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:07,370 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
+2025-05-19 15:27:07,374 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-19 15:27:07,380 [DEBUG] Rx: <71E> (08) [p]	 2100000000000000
+2025-05-19 15:27:07,382 [DEBUG] Received 13 bytes : [62f18c00000000000000000000]
+2025-05-19 15:27:07,384 [DEBUG] Received response from server
+2025-05-19 15:27:07,385 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+2025-05-19 15:27:07,442 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-19 15:27:07,482 [INFO] [ECU Info] ECU_Serial Number (0xF18C) = 
+2025-05-19 15:27:10,484 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf193 (SystemSupplierECUHardwareVersionNumberDataIdentifier)
+2025-05-19 15:27:10,484 [DEBUG] Sending request to server
+2025-05-19 15:27:10,485 [DEBUG] Sending 3 bytes : [22f193]
+2025-05-19 15:27:10,486 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 15:27:10,487 [DEBUG] Waiting for server response
+2025-05-19 15:27:10,488 [DEBUG] Tx: <716> (08) [ ]	 0322f19300000000
+2025-05-19 15:27:10,489 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:10,489 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 93 00 00 00 00
+2025-05-19 15:27:10,515 [DEBUG] Rx: <71E> (08) [p]	 100862f19330312e
+2025-05-19 15:27:10,519 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
+2025-05-19 15:27:10,521 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:10,521 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
+2025-05-19 15:27:10,523 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-19 15:27:10,530 [DEBUG] Rx: <71E> (08) [p]	 213030aaaaaaaaaa
+2025-05-19 15:27:10,531 [DEBUG] Received 8 bytes : [62f19330312e3030]
+2025-05-19 15:27:10,534 [DEBUG] Received response from server
+2025-05-19 15:27:10,535 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+2025-05-19 15:27:10,586 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-19 15:27:10,626 [INFO] [ECU Info] H/W Version (0xF193) = 01.00
+2025-05-19 15:27:13,630 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf18b (ECUManufacturingDateDataIdentifier)
+2025-05-19 15:27:13,631 [DEBUG] Sending request to server
+2025-05-19 15:27:13,632 [DEBUG] Sending 3 bytes : [22f18b]
+2025-05-19 15:27:13,632 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 15:27:13,633 [DEBUG] Waiting for server response
+2025-05-19 15:27:13,634 [DEBUG] Tx: <716> (08) [ ]	 0322f18b00000000
+2025-05-19 15:27:13,635 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:13,635 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 8b 00 00 00 00
+2025-05-19 15:27:13,654 [DEBUG] Rx: <71E> (08) [p]	 0762f18b61383132
+2025-05-19 15:27:13,656 [DEBUG] Received 7 bytes : [62f18b61383132]
+2025-05-19 15:27:13,660 [DEBUG] Received response from server
+2025-05-19 15:27:13,661 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+2025-05-19 15:27:13,756 [INFO] [ECU Info] Manufacturing Date (0xF18B) = a812
+2025-05-19 15:27:16,757 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf1dd (IdentificationOptionVehicleManufacturerSpecific)
+2025-05-19 15:27:16,758 [DEBUG] Sending request to server
+2025-05-19 15:27:16,760 [DEBUG] Sending 3 bytes : [22f1dd]
+2025-05-19 15:27:16,761 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
+2025-05-19 15:27:16,761 [DEBUG] Waiting for server response
+2025-05-19 15:27:16,762 [DEBUG] Tx: <716> (08) [ ]	 0322f1dd00000000
+2025-05-19 15:27:16,763 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:16,763 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 dd 00 00 00 00
+2025-05-19 15:27:16,784 [DEBUG] Rx: <71E> (08) [p]	 100b62f1dd30312e
+2025-05-19 15:27:16,785 [DEBUG] Tx: <716> (08) [ ]	 30080a0000000000
+2025-05-19 15:27:16,786 [DEBUG] We've been asked to write a message to the bus
+2025-05-19 15:27:16,786 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0a 00 00 00 00 00
+2025-05-19 15:27:16,787 [DEBUG] TxState=IDLE - RxState=WAIT_CF
+2025-05-19 15:27:16,794 [DEBUG] Rx: <71E> (08) [p]	 2130312e3030aaaa
+2025-05-19 15:27:16,795 [DEBUG] Received 11 bytes : [62f1dd30312e30312e3030]
+2025-05-19 15:27:16,797 [DEBUG] Received response from server
+2025-05-19 15:27:16,797 [INFO] Received positive response for service ReadDataByIdentifier (0x22) from server.
+2025-05-19 15:27:16,853 [DEBUG] TxState=IDLE - RxState=IDLE
+2025-05-19 15:27:16,900 [INFO] [ECU Info] S/W Version (0xF1DD) = 01.01.00
+2025-05-19 15:27:19,902 [DEBUG] Stopping CanStack
+2025-05-19 15:27:19,903 [DEBUG] Main thread is exiting
+2025-05-19 15:27:19,922 [DEBUG] CanStack Stopped
+2025-05-19 15:27:19,923 [INFO] Connection closed
+2025-05-19 15:27:19,951 [ERROR] [CANLogger] Error during stop: I/O operation on closed file.
