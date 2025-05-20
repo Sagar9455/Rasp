@@ -1,0 +1,50 @@
+# In your CANLogger class or wherever start_logging is defined:
+def start_logging(self, log_name_suffix="Testcase"):
+    self.log_start_time = datetime.now()
+    # ... start logging to .asc file here ...
+    return self.log_start_time
+
+###
+
+in run testcase 
+start_time = self.start_logging(log_name_suffix="Testcase")
+###
+
+def start(self, filename=None):
+    """
+    Start CAN bus logging with ASCWriter attached to notifier.
+    Returns the precise datetime when logging started.
+    """
+    if self.notifier or self.writer:
+        self.stop()
+
+    os.makedirs(self.log_dir, exist_ok=True)
+
+    # Capture the exact logging start time
+    start_time = datetime.now()
+    timestamp = start_time.strftime("%Y%m%d_%H%M%S")
+
+    if filename is None:
+        filename = f"can_log_{timestamp}.asc"
+
+    self.log_path = os.path.join(self.log_dir, filename)
+
+    try:
+        # Open log file
+        self.file = open(self.log_path, 'w')
+
+        # Create CAN bus interface
+        self.bus = can.interface.Bus(channel=self.channel, bustype=self.interface)
+
+        # Attach ASCWriter to bus via Notifier
+        self.writer = ASCWriter(self.file)
+        self.notifier = can.Notifier(self.bus, [self.writer])
+
+        logging.info(f"CAN logging started: {self.log_path}")
+
+    except Exception as e:
+        logging.error(f"[CANLogger] Failed to start: {e}")
+
+    # Return the start time to synchronize timestamps
+    return start_time
+###
