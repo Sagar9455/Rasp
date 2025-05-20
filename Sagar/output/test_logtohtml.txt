@@ -1,0 +1,105 @@
+import os
+
+# === HARD-CODED FILE PATHS ===
+INPUT_ASC_FILE = "/home/pi/Outputs/asc_logs/logfile.asc"
+OUTPUT_HTML_FILE = "/home/pi/Outputs/html_reports/logfile_report.html"
+
+def is_header_or_comment(line):
+    return (
+        line.strip() == "" or
+        line.lower().startswith("base hex") or
+        line.lower().startswith("internal") or
+        "start of measurement" in line.lower() or
+        "begin triggerblock" in line.lower()
+    )
+
+def parse_line(line):
+    parts = line.strip().split()
+    if len(parts) < 7:
+        return None
+
+    try:
+        timestamp = float(parts[0])
+        channel = f"CH{parts[1]}"
+        msg_id = parts[2].upper()
+        direction = parts[3]
+        dtype = parts[4]
+        dlc = int(parts[5])
+        data = ' '.join(part.upper() for part in parts[6:6+dlc])
+
+        return {
+            "timestamp": timestamp,
+            "channel": channel,
+            "id": msg_id,
+            "direction": direction,
+            "dtype": dtype,
+            "data": data
+        }
+    except (ValueError, IndexError):
+        return None
+
+def convert_to_html(messages):
+    html = """
+    <html>
+    <head><title>CAN Log</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .rx { background-color: #e0f7fa; }
+        .tx { background-color: #fce4ec; }
+    </style>
+    </head>
+    <body>
+    <h2>CAN Log Report</h2>
+    """
+
+    if messages:
+        start_time = messages[0]['timestamp']
+        end_time = messages[-1]['timestamp']
+        duration = end_time - start_time
+        html += f"<p><strong>Start Time:</strong> {start_time:.6f} s<br>"
+        html += f"<strong>End Time:</strong> {end_time:.6f} s<br>"
+        html += f"<strong>Duration:</strong> {duration:.6f} s</p>"
+
+    html += "<table>"
+    html += "<tr><th>Timestamp (s)</th><th>Channel</th><th>ID</th><th>Direction</th><th>Type</th><th>Data</th></tr>"
+
+    for msg in messages:
+        row_class = "rx" if msg["direction"].lower() == "rx" else "tx"
+        html += f"<tr class='{row_class}'>"
+        html += f"<td>{msg['timestamp']:.6f}</td><td>{msg['channel']}</td><td>{msg['id']}</td>"
+        html += f"<td>{msg['direction']}</td><td>{msg['dtype']}</td><td>{msg['data']}</td></tr>\n"
+
+    html += "</table></body></html>"
+    return html
+
+def convert_asc_to_html(input_path, output_path):
+    messages = []
+    with open(input_path, 'r') as file:
+        for line in file:
+            if is_header_or_comment(line):
+                continue
+            msg = parse_line(line)
+            if msg:
+                messages.append(msg)
+
+    if not messages:
+        print("No CAN messages found.")
+        return
+
+    html_report = convert_to_html(messages)
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, 'w') as f:
+        f.write(html_report)
+
+    print(f"✅ HTML report saved to: {output_path}")
+
+# === MAIN EXECUTION ===
+if __name__ == "__main__":
+    if not os.path.isfile(INPUT_ASC_FILE):
+        print(f"❌ ASC file not found at: {INPUT_ASC_FILE}")
+    else:
+        convert_asc_to_html(INPUT_ASC_FILE, OUTPUT_HTML_FILE)
