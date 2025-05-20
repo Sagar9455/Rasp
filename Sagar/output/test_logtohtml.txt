@@ -1,8 +1,9 @@
 import os
 
-# === HARD-CODED FILE PATHS ===
+# === HARD-CODED CONFIG ===
 INPUT_ASC_FILE = "/home/pi/Outputs/asc_logs/logfile.asc"
 OUTPUT_HTML_FILE = "/home/pi/Outputs/html_reports/logfile_report.html"
+ALLOWED_IDS = {"17A", "54E"}  # ← Add CAN IDs to filter here (uppercase, no '0x')
 
 def is_header_or_comment(line):
     return (
@@ -26,6 +27,9 @@ def parse_line(line):
         dtype = parts[4]
         dlc = int(parts[5])
         data = ' '.join(part.upper() for part in parts[6:6+dlc])
+
+        if msg_id not in ALLOWED_IDS:
+            return None  # Skip messages not in filter
 
         return {
             "timestamp": timestamp,
@@ -62,6 +66,9 @@ def convert_to_html(messages):
         html += f"<p><strong>Start Time:</strong> {start_time:.6f} s<br>"
         html += f"<strong>End Time:</strong> {end_time:.6f} s<br>"
         html += f"<strong>Duration:</strong> {duration:.6f} s</p>"
+        html += f"<p><strong>Filtered IDs:</strong> {', '.join(ALLOWED_IDS)}</p>"
+    else:
+        html += "<p><strong>No messages found for specified IDs.</strong></p>"
 
     html += "<table>"
     html += "<tr><th>Timestamp (s)</th><th>Channel</th><th>ID</th><th>Direction</th><th>Type</th><th>Data</th></tr>"
@@ -85,12 +92,7 @@ def convert_asc_to_html(input_path, output_path):
             if msg:
                 messages.append(msg)
 
-    if not messages:
-        print("No CAN messages found.")
-        return
-
     html_report = convert_to_html(messages)
-
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w') as f:
         f.write(html_report)
