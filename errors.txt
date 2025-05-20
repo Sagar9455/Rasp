@@ -1,73 +1,44 @@
-['PayloadOverrider', 'SuppressPositiveResponse', '__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'access_timing_parameter', 'add_file', 'authentication', 'authentication_configuration', 'change_session', 'clear_all_dynamically_defined_did', 'clear_dtc', 'clear_dynamically_defined_did', 'close', 'communication_control', 'config', 'configure_logger', 'conn', 'control_dtc_setting', 'deauthenticate', 'delete_file', 'do_clear_dynamically_defined_did', 'dynamically_define_did', 'ecu_reset', 'get_dtc_by_status_mask', 'get_dtc_by_status_severity_mask', 'get_dtc_extended_data_by_dtc_number', 'get_dtc_extended_data_by_record_number', 'get_dtc_fault_counter', 'get_dtc_severity', 'get_dtc_snapshot_by_dtc_number', 'get_dtc_snapshot_by_record_number', 'get_dtc_snapshot_identification', 'get_dtc_with_permanent_status', 'get_emission_dtc_by_status_mask', 'get_first_confirmed_dtc', 'get_first_test_failed_dtc', 'get_mirrormemory_dtc_by_status_mask', 'get_mirrormemory_dtc_extended_data_by_dtc_number', 'get_mirrormemory_number_of_dtc_by_status_mask', 'get_most_recent_confirmed_dtc', 'get_most_recent_test_failed_dtc', 'get_number_of_dtc_by_status_mask', 'get_number_of_dtc_by_status_severity_mask', 'get_number_of_emission_dtc_by_status_mask', 'get_routine_result', 'get_supported_dtc', 'get_user_defined_dtc_extended_data_by_dtc_number', 'get_user_defined_dtc_snapshot_by_dtc_number', 'get_user_defined_memory_dtc_by_status_mask', 'io_control', 'last_response', 'link_control', 'logger', 'open', 'payload_override', 'proof_of_ownership', 'read_active_timing_parameters', 'read_data_by_identifier', 'read_data_by_identifier_first', 'read_dir', 'read_dtc_information', 'read_extended_timing_parameters', 'read_file', 'read_memory_by_address', 'refresh_config', 'replace_file', 'request_challenge_for_authentication', 'request_download', 'request_file_transfer', 'request_seed', 'request_transfer_exit', 'request_upload', 'request_upload_download', 'reset_default_timing_parameters', 'resume_file', 'routine_control', 'send_key', 'send_request', 'service_log_prefix', 'session_timing', 'set_config', 'set_configs', 'set_timing_parameters', 'standard_error_management', 'start_routine', 'stop_routine', 'suppress_positive_response', 'test_data_identifier', 'tester_present', 'transfer_data', 'transmit_certificate', 'unlock_security_access', 'validate_config', 'verify_certificate_bidirectional', 'verify_certificate_unidirectional', 'verify_proof_of_ownership_bidirectional', 'verify_proof_of_ownership_unidirectional', 'write_data_by_identifier', 'write_memory_by_address']
-Effective UDS Client Config:
-:exception_on_negative_response:False
-:exception_on_invalid_response:False
-:exception_on_unexpected_response:False
-:security_algo:None
-:security_algo_params:None
-:tolerate_zero_padding:True
-:ignore_all_zero_dtc:True
-:dtc_snapshot_did_size:2
-:server_address_format:None
-:server_memorysize_format:None
-:data_identifiers:{61696: <drivers.uds_client.SafeAsciiCodec object at 0x7f9a032a50>, 61889: <drivers.uds_client.SafeAsciiCodec object at 0x7f9a0596d0>, 61831: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedb50>, 61856: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedb90>, 61857: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedbd0>, 61873: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc10>, 61872: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc50>, 61843: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedc90>, 61841: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedcd0>, 61845: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd10>, 61847: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd50>, 61917: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bedd90>, 61728: <drivers.uds_client.SafeAsciiCodec object at 0x7f99beddd0>, 61835: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede10>, 61935: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede50>, 61836: <drivers.uds_client.SafeAsciiCodec object at 0x7f99bede90>}
-:input_output:{}
-:request_timeout:5
-:p2_timeout:7.0
-:p2_star_timeout:5.0
-:standard_version:2020
-:use_server_timing:True
-:extended_data_size:None
-:s3_client_timeout:4.0
-2025-05-18 15:04:13,366 [INFO] Running Test Case: TC_001
-2025-05-18 15:04:13,367 [INFO] TC_001 - DefaultSession: SID=0x10, Sub=0x01, Expected=[80]
-2025-05-18 15:04:13,369 [INFO] DiagnosticSessionControl<0x10> - Switching session to defaultSession (0x01)
-2025-05-18 15:04:13,372 [DEBUG] Sending request to server
-2025-05-18 15:04:13,374 [DEBUG] Sending 2 bytes : [1001]
-2025-05-18 15:04:13,376 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-18 15:04:13,377 [DEBUG] Waiting for server response
-2025-05-18 15:04:13,378 [DEBUG] Tx: <716> (08) [ ]	 0210010000000000
-2025-05-18 15:04:13,380 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:13,382 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 01 00 00 00 00 00
-2025-05-18 15:04:13,429 [DEBUG] Rx: <71E> (08) [p]	 065001003201f4aa
-2025-05-18 15:04:13,437 [DEBUG] Received 6 bytes : [5001003201f4]
-2025-05-18 15:04:13,442 [DEBUG] Received response from server
-2025-05-18 15:04:13,443 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
-2025-05-18 15:04:13,446 [INFO] DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.050s and P2*=5.000s.  Using these value from now on.
-2025-05-18 15:04:13,648 [INFO] TC_001 DefaultSession -> PASS
-2025-05-18 15:04:15,797 [INFO] Running Test Case: TC_002
-2025-05-18 15:04:15,797 [INFO] TC_002 - Extended Session: SID=0x10, Sub=0x03, Expected=[80]
-2025-05-18 15:04:15,799 [INFO] DiagnosticSessionControl<0x10> - Switching session to extendedDiagnosticSession (0x03)
-2025-05-18 15:04:15,802 [DEBUG] Sending request to server
-2025-05-18 15:04:15,804 [DEBUG] Sending 2 bytes : [1003]
-2025-05-18 15:04:15,805 [DEBUG] Enqueuing a SendRequest for 2 bytes and TAT=Physical
-2025-05-18 15:04:15,806 [DEBUG] Waiting for server response
-2025-05-18 15:04:15,807 [DEBUG] Tx: <716> (08) [ ]	 0210030000000000
-2025-05-18 15:04:15,809 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:15,811 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    02 10 03 00 00 00 00 00
-2025-05-18 15:04:15,847 [DEBUG] Rx: <71E> (08) [p]	 065003003201f4aa
-2025-05-18 15:04:15,850 [DEBUG] Received 6 bytes : [5003003201f4]
-2025-05-18 15:04:15,854 [DEBUG] Received response from server
-2025-05-18 15:04:15,856 [INFO] Received positive response for service DiagnosticSessionControl (0x10) from server.
-2025-05-18 15:04:15,857 [INFO] DiagnosticSessionControl<0x10> - Received new timing parameters. P2=0.050s and P2*=5.000s.  Using these value from now on.
-2025-05-18 15:04:16,058 [INFO] TC_002 Extended Session -> PASS
-2025-05-18 15:04:41,610 [INFO] Running Test Case: TC_006
-2025-05-18 15:04:41,610 [INFO] TC_006 - VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number): SID=0x22, Sub=0xF187, Expected=[98]
-2025-05-18 15:04:41,611 [INFO] ReadDataByIdentifier<0x22> - Reading data identifier : 0xf187 (VehicleManufacturerSparePartNumberDataIdentifier)
-2025-05-18 15:04:41,611 [DEBUG] Sending request to server
-2025-05-18 15:04:41,612 [DEBUG] Sending 3 bytes : [22f187]
-2025-05-18 15:04:41,613 [DEBUG] Enqueuing a SendRequest for 3 bytes and TAT=Physical
-2025-05-18 15:04:41,614 [DEBUG] Waiting for server response
-2025-05-18 15:04:41,614 [DEBUG] Tx: <716> (08) [ ]	 0322f18700000000
-2025-05-18 15:04:41,615 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:41,615 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    03 22 f1 87 00 00 00 00
-2025-05-18 15:04:41,666 [DEBUG] No data received: [TimeoutException] - Did not receive IsoTP frame from the Transport layer in time (timeout=0.05 sec) 
-2025-05-18 15:04:41,669 [ERROR] [TimeoutException] : Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-18 15:04:41,672 [ERROR] TC_006 VehicleManufacturerSparePartNumBErDataIdentifier(HKMC Part Number) -> EXCEPTION - Did not receive response in time. P2 timeout time has expired (timeout=0.050 sec)
-2025-05-18 15:04:41,956 [DEBUG] Rx: <71E> (08) [p]	 100d62f187393635
-2025-05-18 15:04:41,958 [DEBUG] Tx: <716> (08) [ ]	 30080f0000000000
-2025-05-18 15:04:41,961 [DEBUG] We've been asked to write a message to the bus
-2025-05-18 15:04:41,964 [DEBUG] sending: Timestamp:        0.000000        ID: 0716    S Rx                DL:  8    30 08 0f 00 00 00 00 00
-2025-05-18 15:04:41,966 [DEBUG] TxState=IDLE - RxState=WAIT_CF
-2025-05-18 15:04:41,975 [DEBUG] Rx: <71E> (08) [p]	 2134304459303030
-2025-05-18 15:04:42,027 [DEBUG] TxState=IDLE - RxState=IDLE
+#TC_ID-0 , Sub Service Description , Service ID , Sub service ID , Positive response data
+TC_001 , DefaultSession(10 01) , 0x10 , 0x01 , 0x50
+TC_002 , Hard Reset(11 01) , 0x11 , 0x01 , 0x51
+TC_003 , TesterPresent(3E 00) , 0x3E , 0x00 , 0x7E
+TC_004 , S/W Version Dataidentifier(22 F1 DD) , 0x22 , 0xF1DD , 0x62
+TC_005 , BodyCANDataBaseVersionNumBErDataIdentifier(22 F1 00) , 0x22 , 0xF100 , 0x62
+TC_006 , VehicleManufacturerSparePartNumBErDataIdentifier(22 F1 87) , 0x22 , 0xF187 , 0x62
+TC_007 , ECUManufacturingDateDataIdentifier(22 F1 8B) , 0x22 , 0xF18B , 0x62
+TC_008 , ECUSerialNumberDataIdentifier (22 F1 8C), 0x22 , 0xF18C , 0x62
+TC_009 , SystemSupplierECUHardwareVersionNumberDataIdentifier(22 F1 91), 0x22 , 0xF191 , 0x62
+TC_010 , SystemSupplierECUHardwareVersionNumberDataIdentifier(22 F1 93) , 0x22 , 0xF193 , 0x62
+TC_011 , SystemSupplierECUSoftwareVersionNumbe DataIdentifier(22 F1 95) , 0x22 , 0xF195 , 0x62
+TC_012 , SoftwareVersionHKMCVehicleManufactureDataIdentifier(22 F1 A0) , 0x22 , 0xF1A0 , 0x62
+TC_013 , ECUSupplierCodeDataIdentifier(22 F1 A1)  , 0x22 , 0xF1A1 , 0x62
+TC_014 , ECUSoftwareUNITnumberDataIdentifier(22 F1 B0) , 0x22 , 0xF1B0 , 0x62
+TC_015 , ECU Software UNIT1 Version Data Identifier(22 F1 B1) , 0x22 , 0xF1B1 , 0x62
+TC_016 , SystemNameOrEngineTypeDataIdentifier(22 F1 97) , 0x22 , 0xF197 , 0x62
+TC_017 , ECUSoftwareUnit1IVDDataIdentifier(22 F1 C1) , 0x22 , 0xF1C1 , 0x62
+TC_018 , LocalRXSWINDataIdentifier(22 F1 EF) , 0x22 , 0xF1EF , 0x62
+TC_019 , Read DTC(19 01) , 0x19 , 0x01 , 0x59
+TC_020 , Fault memory clear(14 0xFFFFFF) , 0x14 , 0xFFFFFF , 0x54
+
+TC_021 , DefaultSession(10 01) , 0x10 , 0x01 , 0x50
+TC_022 , Extended Session (10 03) , 0x10 , 0x03 , 0x50
+TC_023 , TesterPresent(3E 00) , 0x3E , 0x00 , 0x7E
+TC_024,	 Request seed((27 11)) , 0x27 , 0x11 , 0x67
+TC_025 , ECUManufacturingDateDataIdentifier(2E F1 8B) , 0x2E , 0xF18B , 0x6E
+TC_026 , ECUSupplierCodeDataIdentifier (2E F1 A1) , 0x2E , 0xF1A1 , 0x6E
+TC_027 , VehicleManufacturerSparePartNumBErDataIdentifier(2E F1 87) , 0x2E , 0xF187 , 0x6E
+TC_028  , ECUSerialNumberDataIdentifier (2E F1 8C), 0x2E , 0xF18C , 0x6E
+TC_029  , SystemSupplierECUHardwareVersionNumberDataIdentifier(2E F1 91) , 0x2E , 0xF191 , 0x6E
+TC_030  , SystemSupplierECUHardwareVersionNumberDataIdentifier(2E F1 93) , 0x2E , 0xF193 , 0x6E
+TC_031  , SystemSupplierECUSoftwareVersionNumbe DataIdentifier(2E F1 95) , 0x2E , 0xF195 , 0x6E
+TC_032 , SystemNameOrEngineTypeDataIdentifier(2E F1 97) , 0x2E , 0xF197 , 0x6E
+TC_033 , ECUSoftwareUnit1IVDDataIdentifier(2E F1 C1) , 0x2E , 0xF1C1 , 0x6E
+TC_034 , DTC setting ON (85 01), 0x85 , 0x01 , 0xC5
+TC_035 , DTC setting OFF(85 02) , 0x85 , 0x02 , 0xC5
+TC_036 , EnableRxAndEnableTx(28 00) , 0x28 , 0x00 , 0x68
+TC_037 , EnableRxAndDisableTx(28 01) , 0x28 , 0x01 , 0x68
+TC_038 , DisableRxAndEnableTx(28 02) , 0x28 , 0x02 , 0x68
+TC_039 , DisableRxAndDisableTx(28 03) , 0x28 , 0x03 , 0x68
+TC_040 , Hard Reset(11 01) , 0x11 , 0x01 , 0x51
+TC_041 , Read DTC(19 01) , 0x19 , 0x01 , 0x59
+TC_042 , Fault memory clear(14 0xFFFFFF) , 0x14 , 0xFFFFFF , 0x54
