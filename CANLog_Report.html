@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CAN Log Styled Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+        }
+        button.accordion {
+            background-color: #ddd;
+            color: black;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        .panel {
+            display: none;
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: white;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+            overflow-wrap: break-word;
+            white-space: normal;
+            max-width: 200px;
+        }
+        th {
+            background-color: #eee;
+        }
+        .step-pass {
+            background-color: #e0f7fa;
+        }
+        .step-fail {
+            background-color: #fce4ec;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const acc = document.getElementsByClassName("accordion");
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+                });
+            }
+
+            const ctx = document.getElementById("summaryChart").getContext("2d");
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Rx', 'Tx'],
+                    datasets: [{
+                        label: 'Message Direction',
+                        data: [69, 62],
+                        backgroundColor: ['#4CAF50', '#F44336'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>CAN Log Styled Report</h1>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <p><strong>Generated:</strong> 2025-05-21 12:17:39</p>
+        <p><strong>Total Messages:</strong> 131</p>
+        <p style="color:green;"><strong>Rx:</strong> 69</p>
+        <p style="color:red;"><strong>Tx:</strong> 62</p>
+        <p><strong>Log Duration:</strong> 89.407 seconds</p>
+        <p><strong>Filtered CAN IDs:</strong> 716, 71E</p>
+    </div>
+    <canvas id="summaryChart" width="300" height="300" style="display: block; margin: 0 auto 30px;"></canvas>
+    <button class="accordion">▶ CAN ID: 716 - Messages: 62</button>
+<div class="panel"><table><tr><th>Timestamp</th><th>Channel</th><th>Direction</th><th>Type</th><th>Data</th></tr>
+<tr class="step-fail"><td>0.000000</td><td>CH1</td><td>Tx</td><td>d</td><td>02 10 01 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>2.142793</td><td>CH1</td><td>Tx</td><td>d</td><td>02 11 01 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>4.298303</td><td>CH1</td><td>Tx</td><td>d</td><td>02 3E 00 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>6.431404</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 DD 00 00 00 00</td></tr>
+<tr class="step-fail"><td>6.456146</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>8.598919</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>10.752205</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 87 00 00 00 00</td></tr>
+<tr class="step-fail"><td>10.775697</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>12.914084</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 8B 00 00 00 00</td></tr>
+<tr class="step-fail"><td>15.062054</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 8C 00 00 00 00</td></tr>
+<tr class="step-fail"><td>15.088573</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>17.236492</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 91 00 00 00 00</td></tr>
+<tr class="step-fail"><td>17.265396</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>19.406621</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 93 00 00 00 00</td></tr>
+<tr class="step-fail"><td>19.434752</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>21.578214</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 95 00 00 00 00</td></tr>
+<tr class="step-fail"><td>21.610561</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>23.746064</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 A0 00 00 00 00</td></tr>
+<tr class="step-fail"><td>23.774966</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>25.914089</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 A1 00 00 00 00</td></tr>
+<tr class="step-fail"><td>28.064640</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 B0 00 00 00 00</td></tr>
+<tr class="step-fail"><td>30.227139</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 B1 00 00 00 00</td></tr>
+<tr class="step-fail"><td>30.253695</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>32.386858</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 97 00 00 00 00</td></tr>
+<tr class="step-fail"><td>34.538887</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 C1 00 00 00 00</td></tr>
+<tr class="step-fail"><td>34.568650</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>36.755553</td><td>CH1</td><td>Tx</td><td>d</td><td>03 22 F1 EF 00 00 00 00</td></tr>
+<tr class="step-fail"><td>36.784025</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>38.998859</td><td>CH1</td><td>Tx</td><td>d</td><td>03 19 01 FF 00 00 00 00</td></tr>
+<tr class="step-fail"><td>41.128333</td><td>CH1</td><td>Tx</td><td>d</td><td>04 14 FF FF FF 00 00 00</td></tr>
+<tr class="step-fail"><td>43.288553</td><td>CH1</td><td>Tx</td><td>d</td><td>02 10 01 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>45.430921</td><td>CH1</td><td>Tx</td><td>d</td><td>02 10 03 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>47.570106</td><td>CH1</td><td>Tx</td><td>d</td><td>02 3E 00 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>49.728289</td><td>CH1</td><td>Tx</td><td>d</td><td>02 27 11 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>49.752558</td><td>CH1</td><td>Tx</td><td>d</td><td>30 08 0A 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>50.602905</td><td>CH1</td><td>Tx</td><td>d</td><td>10 0A 27 12 68 EE BE 76</td></tr>
+<tr class="step-fail"><td>50.615359</td><td>CH1</td><td>Tx</td><td>d</td><td>21 7A 7A 10 6C 00 00 00</td></tr>
+<tr class="step-fail"><td>52.763155</td><td>CH1</td><td>Tx</td><td>d</td><td>07 2E F1 8B 61 38 31 32</td></tr>
+<tr class="step-fail"><td>54.960294</td><td>CH1</td><td>Tx</td><td>d</td><td>07 2E F1 A1 61 38 31 32</td></tr>
+<tr class="step-fail"><td>57.142657</td><td>CH1</td><td>Tx</td><td>d</td><td>10 0D 2E F1 87 61 38 31</td></tr>
+<tr class="step-fail"><td>57.154938</td><td>CH1</td><td>Tx</td><td>d</td><td>21 32 33 61 38 31 32 33</td></tr>
+<tr class="step-fail"><td>61.450954</td><td>CH1</td><td>Tx</td><td>d</td><td>10 08 2E F1 91 61 38 31</td></tr>
+<tr class="step-fail"><td>61.463131</td><td>CH1</td><td>Tx</td><td>d</td><td>21 32 33 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>63.614957</td><td>CH1</td><td>Tx</td><td>d</td><td>10 08 2E F1 93 61 38 31</td></tr>
+<tr class="step-fail"><td>63.628832</td><td>CH1</td><td>Tx</td><td>d</td><td>21 32 33 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>65.770745</td><td>CH1</td><td>Tx</td><td>d</td><td>10 08 2E F1 95 61 38 31</td></tr>
+<tr class="step-fail"><td>65.786817</td><td>CH1</td><td>Tx</td><td>d</td><td>21 32 33 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>67.949334</td><td>CH1</td><td>Tx</td><td>d</td><td>07 2E F1 97 61 38 31 32</td></tr>
+<tr class="step-fail"><td>70.117338</td><td>CH1</td><td>Tx</td><td>d</td><td>10 23 2E F1 C1 61 38 31</td></tr>
+<tr class="step-fail"><td>70.136997</td><td>CH1</td><td>Tx</td><td>d</td><td>21 31 32 33 34 35 61 38</td></tr>
+<tr class="step-fail"><td>70.143371</td><td>CH1</td><td>Tx</td><td>d</td><td>22 31 31 32 33 34 35 61</td></tr>
+<tr class="step-fail"><td>70.156557</td><td>CH1</td><td>Tx</td><td>d</td><td>23 38 31 31 32 33 34 35</td></tr>
+<tr class="step-fail"><td>70.163913</td><td>CH1</td><td>Tx</td><td>d</td><td>24 61 38 31 31 32 33 34</td></tr>
+<tr class="step-fail"><td>70.171537</td><td>CH1</td><td>Tx</td><td>d</td><td>25 35 00 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>72.316365</td><td>CH1</td><td>Tx</td><td>d</td><td>02 85 01 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>74.438812</td><td>CH1</td><td>Tx</td><td>d</td><td>02 85 02 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>78.682232</td><td>CH1</td><td>Tx</td><td>d</td><td>03 28 01 01 00 00 00 00</td></tr>
+<tr class="step-fail"><td>80.841523</td><td>CH1</td><td>Tx</td><td>d</td><td>03 28 02 02 00 00 00 00</td></tr>
+<tr class="step-fail"><td>82.988901</td><td>CH1</td><td>Tx</td><td>d</td><td>03 28 03 03 00 00 00 00</td></tr>
+<tr class="step-fail"><td>85.133214</td><td>CH1</td><td>Tx</td><td>d</td><td>02 11 01 00 00 00 00 00</td></tr>
+<tr class="step-fail"><td>87.273013</td><td>CH1</td><td>Tx</td><td>d</td><td>03 19 01 FF 00 00 00 00</td></tr>
+<tr class="step-fail"><td>89.393899</td><td>CH1</td><td>Tx</td><td>d</td><td>04 14 FF FF FF 00 00 00</td></tr>
+</table></div>
+<button class="accordion">▶ CAN ID: 71E - Messages: 69</button>
+<div class="panel"><table><tr><th>Timestamp</th><th>Channel</th><th>Direction</th><th>Type</th><th>Data</th></tr>
+<tr class="step-pass"><td>0.015803</td><td>CH1</td><td>Rx</td><td>d</td><td>06 50 01 00 32 01 F4 AA</td></tr>
+<tr class="step-pass"><td>2.156672</td><td>CH1</td><td>Rx</td><td>d</td><td>02 51 01 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>4.310604</td><td>CH1</td><td>Rx</td><td>d</td><td>02 7E 00 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>6.450431</td><td>CH1</td><td>Rx</td><td>d</td><td>10 0B 62 F1 DD 30 31 2E</td></tr>
+<tr class="step-pass"><td>6.460441</td><td>CH1</td><td>Rx</td><td>d</td><td>21 30 31 2E 30 30 AA AA</td></tr>
+<tr class="step-pass"><td>8.621568</td><td>CH1</td><td>Rx</td><td>d</td><td>06 62 F1 00 25 04 01 AA</td></tr>
+<tr class="step-pass"><td>10.770098</td><td>CH1</td><td>Rx</td><td>d</td><td>10 0D 62 F1 87 39 36 35</td></tr>
+<tr class="step-pass"><td>10.780060</td><td>CH1</td><td>Rx</td><td>d</td><td>21 34 30 44 59 30 30 30</td></tr>
+<tr class="step-pass"><td>12.929987</td><td>CH1</td><td>Rx</td><td>d</td><td>07 62 F1 8B 61 38 31 32</td></tr>
+<tr class="step-pass"><td>15.079865</td><td>CH1</td><td>Rx</td><td>d</td><td>10 0D 62 F1 8C 00 00 00</td></tr>
+<tr class="step-pass"><td>15.094868</td><td>CH1</td><td>Rx</td><td>d</td><td>21 00 00 00 00 00 00 00</td></tr>
+<tr class="step-pass"><td>17.259509</td><td>CH1</td><td>Rx</td><td>d</td><td>10 08 62 F1 91 30 31 2E</td></tr>
+<tr class="step-pass"><td>17.269514</td><td>CH1</td><td>Rx</td><td>d</td><td>21 30 30 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>19.429332</td><td>CH1</td><td>Rx</td><td>d</td><td>10 08 62 F1 93 30 31 2E</td></tr>
+<tr class="step-pass"><td>19.440559</td><td>CH1</td><td>Rx</td><td>d</td><td>21 30 30 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>21.600455</td><td>CH1</td><td>Rx</td><td>d</td><td>10 08 62 F1 95 30 31 2E</td></tr>
+<tr class="step-pass"><td>21.614267</td><td>CH1</td><td>Rx</td><td>d</td><td>21 30 31 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>23.768994</td><td>CH1</td><td>Rx</td><td>d</td><td>10 08 62 F1 A0 30 31 2E</td></tr>
+<tr class="step-pass"><td>23.779049</td><td>CH1</td><td>Rx</td><td>d</td><td>21 30 31 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>25.928815</td><td>CH1</td><td>Rx</td><td>d</td><td>07 62 F1 A1 61 38 31 32</td></tr>
+<tr class="step-pass"><td>28.078680</td><td>CH1</td><td>Rx</td><td>d</td><td>04 62 F1 B0 01 AA AA AA</td></tr>
+<tr class="step-pass"><td>30.248429</td><td>CH1</td><td>Rx</td><td>d</td><td>10 08 62 F1 B1 30 31 2E</td></tr>
+<tr class="step-pass"><td>30.258410</td><td>CH1</td><td>Rx</td><td>d</td><td>21 30 31 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>32.408293</td><td>CH1</td><td>Rx</td><td>d</td><td>07 62 F1 97 4D 4B 42 44</td></tr>
+<tr class="step-pass"><td>34.558254</td><td>CH1</td><td>Rx</td><td>d</td><td>10 23 62 F1 C1 A6 32 F7</td></tr>
+<tr class="step-pass"><td>34.573297</td><td>CH1</td><td>Rx</td><td>d</td><td>21 CD 4D F6 CD A6 04 EB</td></tr>
+<tr class="step-pass"><td>34.589342</td><td>CH1</td><td>Rx</td><td>d</td><td>22 7E 3A 2E 85 0A 39 2D</td></tr>
+<tr class="step-pass"><td>34.603199</td><td>CH1</td><td>Rx</td><td>d</td><td>23 6D F1 C0 AA 2C 5A F0</td></tr>
+<tr class="step-pass"><td>34.619939</td><td>CH1</td><td>Rx</td><td>d</td><td>24 13 B5 45 F5 BC C9 D6</td></tr>
+<tr class="step-pass"><td>34.633090</td><td>CH1</td><td>Rx</td><td>d</td><td>25 FD AA AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>36.777922</td><td>CH1</td><td>Rx</td><td>d</td><td>10 2B 62 F1 EF 07 16 0B</td></tr>
+<tr class="step-pass"><td>36.789211</td><td>CH1</td><td>Rx</td><td>d</td><td>21 52 31 30 20 4B 59 31</td></tr>
+<tr class="step-pass"><td>36.802997</td><td>CH1</td><td>Rx</td><td>d</td><td>22 2F 31 2F 30 0C 52 31</td></tr>
+<tr class="step-pass"><td>36.819051</td><td>CH1</td><td>Rx</td><td>d</td><td>23 35 35 20 4B 59 31 2F</td></tr>
+<tr class="step-pass"><td>36.832934</td><td>CH1</td><td>Rx</td><td>d</td><td>24 31 2F 30 0C 52 31 35</td></tr>
+<tr class="step-pass"><td>36.848052</td><td>CH1</td><td>Rx</td><td>d</td><td>25 36 20 4B 59 31 2F 31</td></tr>
+<tr class="step-pass"><td>36.863255</td><td>CH1</td><td>Rx</td><td>d</td><td>26 2F 30 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>39.007740</td><td>CH1</td><td>Rx</td><td>d</td><td>06 59 01 FF 00 00 00 AA</td></tr>
+<tr class="step-pass"><td>41.137667</td><td>CH1</td><td>Rx</td><td>d</td><td>01 54 AA AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>43.307437</td><td>CH1</td><td>Rx</td><td>d</td><td>06 50 01 00 32 01 F4 AA</td></tr>
+<tr class="step-pass"><td>45.447256</td><td>CH1</td><td>Rx</td><td>d</td><td>06 50 03 00 32 01 F4 AA</td></tr>
+<tr class="step-pass"><td>47.577139</td><td>CH1</td><td>Rx</td><td>d</td><td>02 7E 00 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>49.746856</td><td>CH1</td><td>Rx</td><td>d</td><td>10 0A 67 11 4E FF 86 29</td></tr>
+<tr class="step-pass"><td>49.756835</td><td>CH1</td><td>Rx</td><td>d</td><td>21 71 CD 0C 09 AA AA AA</td></tr>
+<tr class="step-pass"><td>50.604093</td><td>CH1</td><td>Rx</td><td>d</td><td>30 00 05 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>50.638091</td><td>CH1</td><td>Rx</td><td>d</td><td>02 67 12 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>52.806801</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 78 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>52.817978</td><td>CH1</td><td>Rx</td><td>d</td><td>03 6E F1 8B AA AA AA AA</td></tr>
+<tr class="step-pass"><td>54.997857</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 78 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>55.006616</td><td>CH1</td><td>Rx</td><td>d</td><td>03 6E F1 A1 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>57.143831</td><td>CH1</td><td>Rx</td><td>d</td><td>30 00 05 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>57.176349</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 22 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>61.452145</td><td>CH1</td><td>Rx</td><td>d</td><td>30 00 05 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>61.486057</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 31 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>63.617325</td><td>CH1</td><td>Rx</td><td>d</td><td>30 00 05 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>63.645772</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 31 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>65.772016</td><td>CH1</td><td>Rx</td><td>d</td><td>30 00 05 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>65.805942</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 31 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>67.965454</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 31 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>70.118616</td><td>CH1</td><td>Rx</td><td>d</td><td>30 00 05 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>70.186539</td><td>CH1</td><td>Rx</td><td>d</td><td>03 7F 2E 31 AA AA AA AA</td></tr>
+<tr class="step-pass"><td>72.325104</td><td>CH1</td><td>Rx</td><td>d</td><td>02 C5 01 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>74.444957</td><td>CH1</td><td>Rx</td><td>d</td><td>02 C5 02 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>78.704649</td><td>CH1</td><td>Rx</td><td>d</td><td>02 68 01 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>80.864555</td><td>CH1</td><td>Rx</td><td>d</td><td>02 68 02 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>83.004414</td><td>CH1</td><td>Rx</td><td>d</td><td>02 68 03 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>85.144362</td><td>CH1</td><td>Rx</td><td>d</td><td>02 51 01 AA AA AA AA AA</td></tr>
+<tr class="step-pass"><td>87.276913</td><td>CH1</td><td>Rx</td><td>d</td><td>06 59 01 FF 00 00 00 AA</td></tr>
+<tr class="step-pass"><td>89.406591</td><td>CH1</td><td>Rx</td><td>d</td><td>01 54 AA AA AA AA AA AA</td></tr>
+</table></div>
+
+</body>
+</html>

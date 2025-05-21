@@ -3,8 +3,9 @@ from collections import defaultdict
 from datetime import datetime
 
 # === CONFIGURATION ===
-INPUT_ASC_FILE = "CANLog_Testcase_20250520_103229.asc"
-OUTPUT_HTML_FILE = "CANLog_Report.html"
+# === CONFIGURATION ===
+INPUT_ASC_FILE = "/home/mobase/UDS_Tool_Raspberry_Pi/MKBD/udsoncan/output/can_logs/CANLog_Testcase_20250521_121028.asc"
+OUTPUT_HTML_FILE = "/home/mobase/UDS_Tool_Raspberry_Pi/MKBD/udsoncan/output/can_logs/CANLog_Report.html"
 ALLOWED_IDS = {"716", "71E"}  # Uppercase only (no '0x')
 
 
