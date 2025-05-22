@@ -3,9 +3,9 @@ from openpyxl import load_workbook
 import os
 
 # === Input files ===
-input_cdd_file = "your_input_file.cdd"
-template_file = "your_template_file.xlsx"
-output_excel_file = "template_DiagserviceList_filled.xlsx"
+input_cdd_file = "/home/mobase/Rasp/Sahithi/KY_MKBD_Diagnostic_Rev01.cdd"
+template_file = "/home/mobase/Rasp/Sahithi/template_DiagserviceList.xlsx"
+output_excel_file = "2205_DiagserviceList_01.xlsx"
 
 # === Step 1: Parse the XML ===
 tree = etree.parse(input_cdd_file)
