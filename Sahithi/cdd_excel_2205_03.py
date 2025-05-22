@@ -5,7 +5,7 @@ import os
 # === Input files ===
 input_cdd_file = "/home/mobase/Rasp/Sahithi/KY_MKBD_Diagnostic_Rev01.cdd"
 template_file = "/home/mobase/Rasp/Sahithi/template_DiagserviceList.xlsx"
-output_excel_file = "2205_DiagserviceList_03.xlsx"
+output_excel_file = "2205_DiagserviceList_04.xlsx"
 
 # === Step 1: Parse the XML ===
 tree = etree.parse(input_cdd_file)
@@ -65,9 +65,10 @@ for diagclass in root.xpath(".//DIAGCLASS"):
             tmplref_v1 = service_elem.get("tmplref", "")
 
         tmplref_v2 = dclsrvtmpl_map.get(tmplref_v1, "")
-        print(f"✅ Excel saved  tmplref_v2: { tmplref_v2}")
-        service_id = protocol_map.get(tmplref_v2, "")
-        print(f"✅ Excel saved  service_id: { service_id}")
+        raw_id = protocol_map.get(tmplref_v2, "")
+        service_id = f"0x{raw_id}"if raw_id else ""
+        print(f"✅ Excel saved service_id: {service_id}")
+         
         results.append([service_name, subservice_name, static_value_hex, service_id])
 
 # === Step 5: Write to Excel ===
