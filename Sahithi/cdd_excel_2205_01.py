@@ -50,11 +50,11 @@ results = []
 for diagclass in root.xpath(".//DIAGCLASS"):
     service_name_elem = diagclass.find(".//QUAL")
     service_name = service_name_elem.text.strip() if service_name_elem is not None else ""
-
+    print(f"✅ Excel saved service_name: {service_name}")
     for diaginst in diagclass.xpath(".//DIAGINST"):
         subservice_name_elem = diaginst.find(".//QUAL")
         subservice_name = subservice_name_elem.text.strip() if subservice_name_elem is not None else ""
-
+        print(f"✅ Excel saved subservice_name: {subservice_name}")
         # SubService ID
         static_value_hex = ""
         staticvalue_elem = diaginst.xpath(".//STATICVALUE")
@@ -62,16 +62,22 @@ for diagclass in root.xpath(".//DIAGCLASS"):
             value = staticvalue_elem[0].get("v", "")
             if value.isdigit():
                 static_value_hex = f"0x{int(value):02X}"
-
+        print(f"✅ Excel saved staticvalue_elem: {staticvalue_elem}")
+        
         # === Step 4: Get service ID through reference chain ===
         service_elem = diaginst.find(".//SERVICE")
         tmplref_v1 = service_elem.get("tmplref") if service_elem is not None else ""
-
+        print(f"✅ Excel saved tmplref_v1: {tmplref_v1}")
+        
         tmplref_v2 = dclsrvtmpl_map.get(tmplref_v1, "")
+        print(f"✅ Excel saved  tmplref_v2 : { tmplref_v2 }")
         service_id = protocol_map.get(tmplref_v2, "")
-
+        print(f"✅ Excel saved  service_id: { service_id}")
+        
         results.append([service_name, subservice_name, static_value_hex, service_id])
-
+        
+        
+        
 # === Step 5: Write to Excel ===
 wb = load_workbook(template_file)
 ws = wb.active
