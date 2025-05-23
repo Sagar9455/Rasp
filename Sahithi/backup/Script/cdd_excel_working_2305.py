@@ -3,48 +3,41 @@ from openpyxl import load_workbook
 import os
 
 # === Input files ===
-input_cdd_file = "/home/mobase/Rasp/Sahithi/KY_MKBD_Diagnostic_Rev01.cdd"
-template_file = "/home/mobase/Rasp/Sahithi/template_DiagserviceList.xlsx"
-output_excel_file = "MKBD_DiagserviceList_2305_01.xlsx"
+input_cdd_file = "/home/mobase/Rasp/Sahithi/backup/input/KY_MKBD_Diagnostic_Rev01.cdd"
+template_file = "/home/mobase/Rasp/Sahithi/backup/input/template_DiagserviceList.xlsx"
+output_excel_file = "/home/mobase/Rasp/Sahithi/backup/output/MKBD_DiagserviceList_2305.xlsx"
 
 # === Step 1: Parse the XML ===
 tree = etree.parse(input_cdd_file)
 root = tree.getroot()
 cdd_file_name = os.path.basename(input_cdd_file)
 
-# Read raw lines for text-based matching
-with open(input_cdd_file, 'r', encoding='utf-8') as f:
-    all_text_lines = f.readlines()
+# === Step 2: Build lookup maps from XML ===
 
-# === Step 2: Build lookup maps ===
-
-# Map: DCLSRVTMPL id -> tmplref
+# Map: DCLSRVTMPL id -> tmplref (e.g. "_0C864D20" -> "_04AB2210")
 dclsrvtmpl_map = {}
-for line in all_text_lines:
-    if "<DCLSRVTMPL " in line and "id=" in line and "tmplref=" in line:
-        try:
-            id_val = line.split('id="')[1].split('"')[0]
-            tmplref_val = line.split('tmplref="')[1].split('"')[0]
-            dclsrvtmpl_map[id_val] = tmplref_val
-        except IndexError:
-            continue
+for dcl in root.xpath(".//DCLSRVTMPL"):
+    id_val = dcl.get("id", "")
+    tmplref_val = dcl.get("tmplref", "")
+    if id_val and tmplref_val:
+        dclsrvtmpl_map[id_val] = tmplref_val
 
-# Map: PROTOCOLSERVICE id -> service ID (extracted from TUV >($xx)
+# Map: PROTOCOLSERVICE id -> service ID (value inside <TUV>)
 protocol_map = {}
-for i, line in enumerate(all_text_lines):
-    if "<PROTOCOLSERVICE " in line and "id=" in line:
-        try:
-            proto_id = line.split('id="')[1].split('"')[0]
-            next_line = all_text_lines[i + 1]
-            if "TUV" in next_line and "($" in next_line:
-                start = next_line.index(">$(") + 3
-                end = next_line.index(")", start)
-                service_id = next_line[start:end]
-                if service_id:
-                    service_id = f"0x{service_id}"  # Add 0x prefix here
-                    protocol_map[proto_id] = service_id
-        except (IndexError, ValueError):
-            continue
+for proto in root.xpath(".//PROTOCOLSERVICE"):
+    proto_id = proto.get("id", "")
+    tuv_elem = proto.find(".//TUV")
+    if proto_id and tuv_elem is not None and tuv_elem.text:
+        text = tuv_elem.text.strip()
+        # Expecting something like: >($10)
+        if "$" in text:
+            try:
+                start = text.index("$") + 1
+                end = text.index(")", start)
+                service_id = text[start:end]
+                protocol_map[proto_id] = service_id
+            except ValueError:
+                continue
 
 # === Step 3: Extract DIAGCLASS content ===
 results = []
@@ -59,18 +52,23 @@ for diagclass in root.xpath(".//DIAGCLASS"):
 
         # SubService ID
         static_value_hex = ""
-        staticvalue_elem = diaginst.xpath(".//STATICVALUE")
-        if staticvalue_elem:
-            value = staticvalue_elem[0].get("v", "")
+        staticvalue_elem = diaginst.find(".//STATICVALUE")
+        if staticvalue_elem is not None:
+            value = staticvalue_elem.get("v", "")
             if value.isdigit():
                 static_value_hex = f"0x{int(value):02X}"
 
         # === Step 4: Get service ID through reference chain ===
+        tmplref_v1 = ""
         service_elem = diaginst.find(".//SERVICE")
-        tmplref_v1 = service_elem.get("tmplref") if service_elem is not None else ""
+        if service_elem is not None:
+            tmplref_v1 = service_elem.get("tmplref", "")
+
         tmplref_v2 = dclsrvtmpl_map.get(tmplref_v1, "")
-        service_id = protocol_map.get(tmplref_v2, "")
-        print(f"✅ Excel saved service_id: {service_id}")
+        raw_id = protocol_map.get(tmplref_v2, "")
+        service_id = f"0x{raw_id}"if raw_id else ""
+        
+         
         results.append([service_name, subservice_name, static_value_hex, service_id])
 
 # === Step 5: Write to Excel ===
@@ -88,7 +86,6 @@ for i, row_data in enumerate(results, start=start_row):
             pos_response = f"0x{int(service_id, 16) + 0x40:02X}"
         except ValueError:
             pass
-    print(f"✅ Excel saved pos_response: {pos_response}")
     
     ws.cell(row=i, column=1).value = f"TC_ID-{i - start_row + 1}"  # Column A: TC_ID
     ws.cell(row=i, column=2).value = cdd_file_name                 # Column B: Ref Document
@@ -98,6 +95,5 @@ for i, row_data in enumerate(results, start=start_row):
     ws.cell(row=i, column=6).value = row_data[1]                   # Column F: SubService Name
     ws.cell(row=i, column=7).value = pos_response                  # Column G: Positive Response
 
-# === Save Excel ===
 wb.save(output_excel_file)
 print(f"✅ Excel saved: {output_excel_file}")
