@@ -1,0 +1,226 @@
+import os
+import re
+from datetime import datetime
+from collections import defaultdict
+
+# === File Paths ===
+INPUT_ASC_FILE = "Outputs/asc_logs/testcase_log_20250522_184129.asc"
+OUTPUT_HTML_FILE = "Outputs/html_reports/testcase_log_20250522_184129.html"
+
+# === UDS NRC Codes ===
+UDS_NRC_REASONS = {
+    "10": "General Reject",
+    "11": "Service Not Supported",
+    "12": "Sub-Function Not Supported",
+    "13": "Incorrect Message Length or Invalid Format",
+    "22": "Conditions Not Correct",
+    "31": "Request Out of Range",
+    "33": "Security Access Denied",
+    "35": "Invalid Key",
+    "7E": "Sub-Function Not Supported in Active Session",
+    "7F": "Service Not Supported in Active Session",
+}
+
+def decode_uds_failure(data_bytes):
+    """
+    Detect UDS failure reason based on NRC in response data.
+    Expects list of hex byte strings like ['7F', '10', '11']
+    """
+    if len(data_bytes) >= 3 and data_bytes[0].upper() == "7F":
+        nrc = data_bytes[2].upper()
+        reason = UDS_NRC_REASONS.get(nrc, "Unknown NRC Code")
+        return f"NRC {nrc} - {reason}"
+    return "-"
+
+def is_header_or_comment(line):
+    return line.startswith("date") or line.startswith("//")
+
+def parse_line(line):
+    match = re.match(r"\s*(\d+\.\d+)s\s+Raspi\s+([\w]+)\s+(Rx|Tx)\s+d\s+(.*)", line)
+    if match:
+        timestamp = float(match.group(1))
+        msg_id = match.group(2)
+        direction = match.group(3)
+        data = match.group(4).split()
+
+        if len(data) >= 6:
+            test_case_id = data[0]
+            step_number = int(data[1])
+            description = bytes.fromhex(''.join(data[2:5])).decode('ascii', errors='ignore')
+            status = 'Pass' if data[5] == '00' else 'Fail'
+
+            # UDS Failure Reason Extraction
+            if status == 'Fail':
+                failure_reason = decode_uds_failure(data[6:]) if len(data) > 6 else "-"
+            else:
+                failure_reason = "-"
+
+            return {
+                'timestamp': timestamp,
+                'id': test_case_id,
+                'step': step_number,
+                'description': description,
+                'status': status,
+                'failure_reason': failure_reason,
+                'response_timestamp': timestamp + 0.001
+            }
+    return None
+
+def calculate_duration(messages):
+    if not messages:
+        return 0.0
+    start_time = messages[0]['timestamp']
+    end_time = messages[-1]['timestamp']
+    return end_time - start_time
+
+def generate_report(test_cases, filename, log_filename, generated_time, total_duration):
+    total = len(test_cases)
+    passed = sum(1 for tc in test_cases if tc['status'] == 'Pass')
+    failed = total - passed
+
+    table_html = ""
+    for index, tc in enumerate(test_cases):
+        section_id = f"testcase_{index}"
+        row_class = "pass-row" if tc['status'] == "Pass" else "fail-row"
+
+        table_html += f'''
+        <button class="accordion">Testcase ID: {tc['name']} | Overall Status: {tc['status']}</button>
+        <div class="panel">
+            <table>
+                <tr>
+                    <th>Step</th>
+                    <th>Description</th>
+                    <th>Timestamp</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Failure Reason</th>
+                </tr>
+        '''
+        steps = tc['steps']
+        for i in range(0, len(steps), 2):
+            req = steps[i]
+            res = steps[i+1]
+            table_html += f'''
+                <tr class="{row_class}">
+                    <td rowspan="2">{req['step']}</td>
+                    <td rowspan="2">{req['description']}</td>
+                    <td>{req['timestamp']:.3f}s</td>
+                    <td>{req['type']}</td>
+                    <td>{req['status']}</td>
+                    <td>{req['reason']}</td>
+                </tr>
+                <tr class="{row_class}">
+                    <td>{res['timestamp']:.3f}s</td>
+                    <td>{res['type']}</td>
+                    <td>{res['status']}</td>
+                    <td>{res['reason']}</td>
+                </tr>
+            '''
+        table_html += "</table></div>"
+
+    html = f'''
+    <html>
+    <head>
+        <title>UDS Testcase Report</title>
+        <style>
+            body {{ font-family: Arial, sans-serif; }}
+            .pass-row {{ background-color: #d4edda; }}
+            .fail-row {{ background-color: #f8d7da; }}
+            table {{ width: 100%; border-collapse: collapse; margin-bottom: 20px; }}
+            th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
+            th {{ background-color: #f2f2f2; }}
+            .accordion {{ background-color: #eee; color: #444; cursor: pointer; padding: 10px; width: 100%; text-align: left; border: none; outline: none; transition: 0.4s; }}
+            .active, .accordion:hover {{ background-color: #ccc; }}
+            .panel {{ padding: 0 18px; display: none; background-color: white; overflow: hidden; }}
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {{
+                var acc = document.getElementsByClassName("accordion");
+                for (let i = 0; i < acc.length; i++) {{
+                    acc[i].addEventListener("click", function() {{
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {{
+                            panel.style.display = "none";
+                        }} else {{
+                            panel.style.display = "block";
+                        }}
+                    }});
+                }}
+            }});
+        </script>
+    </head>
+    <body>
+        <h1>UDS Testcase Report</h1>
+        <p><strong>Log File:</strong> {log_filename}</p>
+        <p><strong>Report Generated:</strong> {generated_time}</p>
+        <p><strong>Total Duration:</strong> {total_duration:.2f} seconds</p>
+        <p><strong>Total Testcases:</strong> {total}</p>
+        <p><strong>Passed:</strong> {passed}</p>
+        <p><strong>Failed:</strong> {failed}</p>
+        {table_html}
+    </body>
+    </html>
+    '''
+
+    with open(filename, 'w') as f:
+        f.write(html)
+    print(f"✅ HTML report generated: {filename}")
+
+def convert_to_html(messages):
+    grouped = defaultdict(list)
+    for msg in messages:
+        grouped[msg['id']].append(msg)
+
+    test_cases = []
+    for tc_id, steps in grouped.items():
+        overall_status = "Pass"
+        step_entries = []
+
+        for i, step in enumerate(steps):
+            if step["status"].lower() != "pass":
+                overall_status = "Fail"
+
+            description = step["description"]
+            if " - " in description:
+                description = description.split(" - ", 1)[1]
+
+            step_num = i + 1
+            step_entries.append({
+                "step": step_num,
+                "description": description,
+                "timestamp": step["timestamp"],
+                "type": "Request Sent",
+                "status": step["status"].capitalize(),
+                "reason": step["failure_reason"],
+                "rowspan": 2
+            })
+            step_entries.append({
+                "timestamp": step["response_timestamp"],
+                "type": "Response Received",
+                "status": step["status"].capitalize(),
+                "reason": step["failure_reason"]
+            })
+
+        test_cases.append({
+            "name": tc_id,
+            "status": overall_status,
+            "steps": step_entries
+        })
+
+    generate_report(test_cases, filename=OUTPUT_HTML_FILE, log_filename=INPUT_ASC_FILE, generated_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S"), total_duration=calculate_duration(messages))
+
+# === MAIN ===
+if __name__ == "__main__":
+    if not os.path.isfile(INPUT_ASC_FILE):
+        print(f"❌ ASC file not found at: {INPUT_ASC_FILE}")
+    else:
+        messages = []
+        with open(INPUT_ASC_FILE, 'r') as file:
+            for line in file:
+                if is_header_or_comment(line):
+                    continue
+                msg = parse_line(line)
+                if msg:
+                    messages.append(msg)
+        convert_to_html(messages)
