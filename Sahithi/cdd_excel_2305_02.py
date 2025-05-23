@@ -1,0 +1,101 @@
+from lxml import etree
+from openpyxl import load_workbook
+import os
+
+# === Input files ===
+input_cdd_file = "your_input_file.cdd"
+template_file = "your_template_file.xlsx"
+output_excel_file = "template_DiagserviceList_filled.xlsx"
+
+# === Step 1: Parse the XML ===
+tree = etree.parse(input_cdd_file)
+root = tree.getroot()
+cdd_file_name = os.path.basename(input_cdd_file)
+
+# Read raw lines for text-based matching
+with open(input_cdd_file, 'r', encoding='utf-8') as f:
+    all_text_lines = f.readlines()
+
+# === Step 2: Build lookup maps ===
+
+# Map: DCLSRVTMPL id -> tmplref
+dclsrvtmpl_map = {}
+for line in all_text_lines:
+    if "<DCLSRVTMPL " in line and "id=" in line and "tmplref=" in line:
+        try:
+            id_val = line.split('id="')[1].split('"')[0]
+            tmplref_val = line.split('tmplref="')[1].split('"')[0]
+            dclsrvtmpl_map[id_val] = tmplref_val
+        except IndexError:
+            continue
+
+# Map: PROTOCOLSERVICE id -> service ID (extracted from TUV >($xx)
+protocol_map = {}
+for i, line in enumerate(all_text_lines):
+    if "<PROTOCOLSERVICE " in line and "id=" in line:
+        try:
+            proto_id = line.split('id="')[1].split('"')[0]
+            next_line = all_text_lines[i + 1]
+            if "TUV" in next_line and "($" in next_line:
+                start = next_line.index(">$(") + 3
+                end = next_line.index(")", start)
+                service_id = next_line[start:end]
+                protocol_map[proto_id] = service_id
+        except (IndexError, ValueError):
+            continue
+
+# === Step 3: Extract DIAGCLASS content ===
+results = []
+
+for diagclass in root.xpath(".//DIAGCLASS"):
+    service_name_elem = diagclass.find(".//QUAL")
+    service_name = service_name_elem.text.strip() if service_name_elem is not None else ""
+
+    for diaginst in diagclass.xpath(".//DIAGINST"):
+        # SubService ID
+        static_value_hex = ""
+        staticvalue_elem = diaginst.xpath(".//STATICVALUE")
+        if staticvalue_elem:
+            value = staticvalue_elem[0].get("v", "")
+            if value.isdigit():
+                static_value_hex = f"0x{int(value):02X}"
+
+        # Iterate through all SERVICE elements inside this DIAGINST
+        for service_elem in diaginst.findall(".//SERVICE"):
+            tmplref_v1 = service_elem.get("tmplref", "")
+            tmplref_v2 = dclsrvtmpl_map.get(tmplref_v1, "")
+            service_id_raw = protocol_map.get(tmplref_v2, "")
+            service_id = f"0x{service_id_raw}" if service_id_raw else ""
+
+            try:
+                positive_response = f"0x{int(service_id_raw, 16) + 0x40:02X}" if service_id_raw else ""
+            except ValueError:
+                positive_response = ""
+
+            shortcutqual_elem = service_elem.find(".//SHORTCUTQUAL")
+            subservice_name = shortcutqual_elem.text.strip() if shortcutqual_elem is not None else ""
+
+            results.append([
+                service_name,
+                subservice_name,
+                static_value_hex,
+                service_id,
+                positive_response
+            ])
+
+# === Step 4: Write to Excel ===
+wb = load_workbook(template_file)
+ws = wb.active
+start_row = 2
+
+for i, row_data in enumerate(results, start=start_row):
+    ws.cell(row=i, column=1).value = f"TC_ID-{i - start_row + 1}"  # TC_ID
+    ws.cell(row=i, column=2).value = cdd_file_name                 # Ref Document
+    ws.cell(row=i, column=3).value = row_data[3]                   # Service ID
+    ws.cell(row=i, column=4).value = row_data[0]                   # Service Name
+    ws.cell(row=i, column=5).value = row_data[2]                   # SubService ID
+    ws.cell(row=i, column=6).value = row_data[1]                   # SubService Name
+    ws.cell(row=i, column=7).value = row_data[4]                   # Positive Response (Service ID + 0x40)
+
+wb.save(output_excel_file)
+print(f"✅ Excel saved: {output_excel_file}")
